@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "ATabBarViewController.h"
+#import "FLEXManager.h"
 @interface SceneDelegate ()
 
 @end
@@ -15,7 +16,7 @@
 
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions {
-    
+    [[FLEXManager sharedManager] showExplorer];
     UIWindowScene *windowScene = (UIWindowScene *)scene;
     self.window = [[UIWindow alloc] initWithWindowScene:windowScene];
     self.window.frame = windowScene.coordinateSpace.bounds;

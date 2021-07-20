@@ -8,11 +8,14 @@
 #import "AViewController.h"
 #import "QJCommonWebViewController.h"
 #import "RACVC.h"
+#import "Person.h"
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
 
 @property(nonatomic,strong)NSMutableArray *dataArray;
+
+@property (nonatomic,strong)Person *DuoDuo;
 @end
 
 @implementation AViewController
@@ -22,40 +25,53 @@
     self.navigationItem.title = @"A";
     [self UI];
     [self nav];
+    [self block_text];
+    [self func_chain];
+}
+//block 练习
+-(void)block_text{
+    
+    static int a = 10;
+    void(^block)(void) = ^{
+        
+        NSLog(@"- %d",a);
+        //20
+    };
+    a = 20;
+    block();
+    
+    //作用域测试
+    __weak id tmp = nil;
+    {
+    NSObject *obj = [NSObject new];
+    tmp = obj;
+    }
+    NSLog(@"--- %@",tmp); //出了作用域 就消失了
+}
+//链式编程 练习
+-(void)func_chain{
+    
+    self.DuoDuo = [Person new];
+    
+    //[self.xiaoDuo.add(2).add(5).add(6) run];
+    
+    self.DuoDuo.chi(4,2).add(8);
+    
+    //[self.xiaoDuo add](5);
+    
+    NSLog(@" - %d",self.DuoDuo.num);
+    
+    
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSLog(@"- %s -",__func__);
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    NSLog(@"- %s -",__func__);
+}
 
 -(void)UI{
     [self.view addSubview:self.tableView];

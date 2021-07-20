@@ -15,15 +15,9 @@
 
 @interface QJCommonWebViewController ()<WKNavigationDelegate,WKUIDelegate,WKScriptMessageHandler>
 
-
-
 @property (nonatomic, strong)UIProgressView *progressView;
 
 @property(nonatomic,strong)QJCommonWebViewCustomNav *nav;
-@property (nonatomic, strong) NSTimer *timer;
-@property (nonatomic, assign) NSTimeInterval detentionIndex;
-@property (nonatomic, assign) BOOL detentionTag;
-@property (nonatomic, assign) BOOL detentionTag1;
 
 @end
 
@@ -35,19 +29,6 @@
     [self UI];
     [self requestData];
    
-}
--(void)viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
- 
-    
-}
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-}
-
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
-    
 }
 -(void)UI{
     self.view.backgroundColor = [UIColor whiteColor];
@@ -107,14 +88,8 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
 }
 // 记得取消监听
-- (void)dealloc
-{
-    if (self.timer) {
-        [self.timer invalidate];
-        self.timer = nil;
-    }
+- (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
-    
 }
 // 计算wkWebView进度条
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context

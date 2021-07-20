@@ -11,6 +11,8 @@
 #import <YYModel.h>
 #import "RACCell.h"
 #import <Masonry/Masonry.h>
+#import "RACKeyWordUseVC.h"
+
 @interface RACVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UILabel *label;
@@ -32,6 +34,22 @@
     }
     return _dataArray;
 }
+-(void)nav{
+    @weakify(self);
+    self.navigationItem.rightBarButtonItem = ({
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [btn setTitle:@"Keyword" forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blueColor] forState:(UIControlStateHighlighted)];
+        [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        btn.titleLabel.font = [UIFont systemFontOfSize:16];
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            [self.navigationController pushViewController:RACKeyWordUseVC.new animated:YES];
+        }];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
+        item;
+    });
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.cyanColor;
@@ -39,7 +57,7 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    
+    [self nav];
     
     //TODO:开始你的表演
     [self rac_RACSignal];
