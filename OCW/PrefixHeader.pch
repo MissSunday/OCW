@@ -1,0 +1,33 @@
+//
+//  PrefixHeader.pch
+//  OCW
+//
+//  Created by 朵朵 on 2021/7/14.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import <Masonry/Masonry.h>
+#import <ReactiveObjC.h>
+#import <YYModel.h>
+#import <YYImage/YYImage.h>
+#import <YYCategories/YYCategories.h>
+#import <YYModel/YYModel.h>
+
+#import "UIColor+someColor.h"
+
+#define kStatuBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+#define IS_IPHONEX (kStatuBarHeight > 20)
+#define kS_H [UIScreen mainScreen].bounds.size.height
+#define kS_W [UIScreen mainScreen].bounds.size.width
+#define kNavHeight (IS_IPHONEX ? (kStatuBarHeight + 44) : 64)
+#define kTabbarHeight  (IS_IPHONEX ? 83 : 49)
+#define kBottomHeight (IS_IPHONEX ? 34 : 0)
+#define kBottomLittleHeiget (IS_IPHONEX ? 14 : 0)
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,29 @@
+# Uncomment the next line to define a global platform for your project
+#source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+
+target 'OCW' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+  
+  # Pods for OCW
+  pod 'AFNetworking', '4.0.1'
+  pod 'FLEX', '4.4.1'
+  pod 'Masonry', '1.1.0'
+  pod 'ReactiveObjC', '3.1.1'
+  pod 'YYModel', '1.0.4'
+  pod 'YYText', '1.0.7'
+  pod 'YYImage', '1.0.4'
+  pod 'YYCategories', '1.0.4'
+  target 'OCWTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'OCWUITests' do
+    # Pods for testing
+  end
+
+end
