@@ -18,6 +18,14 @@
 		1D169D9F26A6684B00933E1C /* DViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D9E26A6684B00933E1C /* DViewController.m */; };
 		1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DA226A66BCC00933E1C /* UIColor+someColor.m */; };
 		1D169DA826A6B42B00933E1C /* RACKeyWordUseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DA726A6B42B00933E1C /* RACKeyWordUseVC.m */; };
+		1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DAC26A7C19200933E1C /* SPPageMenu.m */; };
+		1D169DB326A7C26400933E1C /* BTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DB226A7C26400933E1C /* BTViewController.m */; };
+		1D169DB726A7C81500933E1C /* BHViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DB626A7C81500933E1C /* BHViewController.m */; };
+		1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DBF26A7C8F700933E1C /* GKPageListContainerView.m */; };
+		1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC026A7C8F700933E1C /* GKPageScrollView.m */; };
+		1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC126A7C8F700933E1C /* GKPageTableView.m */; };
+		1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC326A7C8F700933E1C /* GKBaseListViewController.m */; };
+		1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */; };
 		1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8A626561C2E0089E899 /* AppDelegate.m */; };
 		1D2BA8AA26561C2E0089E899 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8A926561C2E0089E899 /* SceneDelegate.m */; };
 		1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B126561C2F0089E899 /* Assets.xcassets */; };
@@ -76,6 +84,22 @@
 		1D169DA226A66BCC00933E1C /* UIColor+someColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+someColor.m"; sourceTree = "<group>"; };
 		1D169DA626A6B42B00933E1C /* RACKeyWordUseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACKeyWordUseVC.h; sourceTree = "<group>"; };
 		1D169DA726A6B42B00933E1C /* RACKeyWordUseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACKeyWordUseVC.m; sourceTree = "<group>"; };
+		1D169DAC26A7C19200933E1C /* SPPageMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPPageMenu.m; sourceTree = "<group>"; };
+		1D169DAD26A7C19200933E1C /* SPPageMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPPageMenu.h; sourceTree = "<group>"; };
+		1D169DB126A7C26400933E1C /* BTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTViewController.h; sourceTree = "<group>"; };
+		1D169DB226A7C26400933E1C /* BTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTViewController.m; sourceTree = "<group>"; };
+		1D169DB526A7C81500933E1C /* BHViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHViewController.h; sourceTree = "<group>"; };
+		1D169DB626A7C81500933E1C /* BHViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHViewController.m; sourceTree = "<group>"; };
+		1D169DB926A7C8F700933E1C /* GKBaseListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseListViewController.h; sourceTree = "<group>"; };
+		1D169DBC26A7C8F700933E1C /* GKPageListContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPageListContainerView.h; sourceTree = "<group>"; };
+		1D169DBD26A7C8F700933E1C /* GKPageTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPageTableView.h; sourceTree = "<group>"; };
+		1D169DBE26A7C8F700933E1C /* GKPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPageScrollView.h; sourceTree = "<group>"; };
+		1D169DBF26A7C8F700933E1C /* GKPageListContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPageListContainerView.m; sourceTree = "<group>"; };
+		1D169DC026A7C8F700933E1C /* GKPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPageScrollView.m; sourceTree = "<group>"; };
+		1D169DC126A7C8F700933E1C /* GKPageTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPageTableView.m; sourceTree = "<group>"; };
+		1D169DC226A7C8F700933E1C /* GKBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseTableViewController.h; sourceTree = "<group>"; };
+		1D169DC326A7C8F700933E1C /* GKBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseListViewController.m; sourceTree = "<group>"; };
+		1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseTableViewController.m; sourceTree = "<group>"; };
 		1D2BA8A226561C2E0089E899 /* OCW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2BA8A526561C2E0089E899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D2BA8A626561C2E0089E899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,8 +188,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
-				1D169D9726A6683A00933E1C /* BViewController.h */,
-				1D169D9826A6683A00933E1C /* BViewController.m */,
+				1D169DAF26A7C22400933E1C /* 分段控制器 */,
 				1D169D9A26A6684300933E1C /* CViewController.h */,
 				1D169D9B26A6684300933E1C /* CViewController.m */,
 				1D169D9D26A6684B00933E1C /* DViewController.h */,
@@ -234,6 +257,62 @@
 			path = "Runtime相关";
 			sourceTree = "<group>";
 		};
+		1D169DAB26A7C19200933E1C /* SPPageMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1D169DAD26A7C19200933E1C /* SPPageMenu.h */,
+				1D169DAC26A7C19200933E1C /* SPPageMenu.m */,
+			);
+			path = SPPageMenu;
+			sourceTree = "<group>";
+		};
+		1D169DAF26A7C22400933E1C /* 分段控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				1D169D9726A6683A00933E1C /* BViewController.h */,
+				1D169D9826A6683A00933E1C /* BViewController.m */,
+				1D169DB426A7C7E200933E1C /* 高级 */,
+				1D169DB026A7C23F00933E1C /* 样本vc */,
+			);
+			path = "分段控制器";
+			sourceTree = "<group>";
+		};
+		1D169DB026A7C23F00933E1C /* 样本vc */ = {
+			isa = PBXGroup;
+			children = (
+				1D169DB126A7C26400933E1C /* BTViewController.h */,
+				1D169DB226A7C26400933E1C /* BTViewController.m */,
+			);
+			path = "样本vc";
+			sourceTree = "<group>";
+		};
+		1D169DB426A7C7E200933E1C /* 高级 */ = {
+			isa = PBXGroup;
+			children = (
+				1D169DB526A7C81500933E1C /* BHViewController.h */,
+				1D169DB626A7C81500933E1C /* BHViewController.m */,
+				1D169DB926A7C8F700933E1C /* GKBaseListViewController.h */,
+				1D169DC326A7C8F700933E1C /* GKBaseListViewController.m */,
+				1D169DC226A7C8F700933E1C /* GKBaseTableViewController.h */,
+				1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */,
+				1D169DBB26A7C8F700933E1C /* GKPageScrollView */,
+			);
+			path = "高级";
+			sourceTree = "<group>";
+		};
+		1D169DBB26A7C8F700933E1C /* GKPageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				1D169DBC26A7C8F700933E1C /* GKPageListContainerView.h */,
+				1D169DBF26A7C8F700933E1C /* GKPageListContainerView.m */,
+				1D169DBE26A7C8F700933E1C /* GKPageScrollView.h */,
+				1D169DC026A7C8F700933E1C /* GKPageScrollView.m */,
+				1D169DBD26A7C8F700933E1C /* GKPageTableView.h */,
+				1D169DC126A7C8F700933E1C /* GKPageTableView.m */,
+			);
+			path = GKPageScrollView;
+			sourceTree = "<group>";
+		};
 		1D2BA89926561C2E0089E899 = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +349,7 @@
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
+				1D169DAB26A7C19200933E1C /* SPPageMenu */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
 				1D2BA8B126561C2F0089E899 /* Assets.xcassets */,
 				1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */,
@@ -569,18 +649,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
 				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
 				1D169D8A26A6650700933E1C /* BaseViewController.m in Sources */,
+				1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */,
+				1D169DB726A7C81500933E1C /* BHViewController.m in Sources */,
 				1D2C2F14269ED91700EEA3EC /* QJCommonWebViewController.m in Sources */,
 				1D169D9F26A6684B00933E1C /* DViewController.m in Sources */,
 				1D169DA826A6B42B00933E1C /* RACKeyWordUseVC.m in Sources */,
+				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,
 				1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */,
+				1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */,
+				1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */,
 				1D0FD648269E72D300726555 /* RuntimeVC.m in Sources */,
 				1DD006A2265D27A900B805FE /* Person.m in Sources */,
+				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
 				1D169D9C26A6684300933E1C /* CViewController.m in Sources */,
 				1D7301E82693FA5B00708655 /* RACCell.m in Sources */,
@@ -588,6 +675,7 @@
 				1D169D9926A6683A00933E1C /* BViewController.m in Sources */,
 				1D2BA8AA26561C2E0089E899 /* SceneDelegate.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
+				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
 				1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */,
 			);

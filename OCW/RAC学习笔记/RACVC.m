@@ -290,7 +290,6 @@
     }];
     //写在一起就是下面
     [array.rac_sequence.signal subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
         NSLog(@"--- %@",x);
         //遍历
     }];
@@ -300,13 +299,12 @@
     };
     
     [dict.rac_sequence.signal subscribeNext:^(RACTuple * _Nullable x) {
-        @strongify(self);NSLog(@"%@",x);
+        NSLog(@"%@",x);
     }];
     [dict.rac_sequence.signal subscribeNext:^(RACTuple * _Nullable x) {
-        @strongify(self); NSLog(@"key - %@ value - %@",x[0],x[1]);
+        NSLog(@"key - %@ value - %@",x[0],x[1]);
     }];
     [dict.rac_sequence.signal subscribeNext:^(RACTuple * _Nullable x) {
-        @strongify(self);
         RACTupleUnpack(NSString *key,id value) = x;
         NSLog(@"key - %@ value - %@",key,value);
     }];
@@ -314,7 +312,6 @@
     // !!!: 字典转型
     NSArray *p = @[@{@"num":@5},@{@"num":@6},@{@"num":@7}];
     NSMutableArray *persons = [[[p.rac_sequence map:^id _Nullable(NSDictionary *value) {
-        @strongify(self);
         return [Person yy_modelWithDictionary:value];
     }]array]mutableCopy];
     

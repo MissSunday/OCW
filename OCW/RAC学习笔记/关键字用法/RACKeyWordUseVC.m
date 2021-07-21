@@ -6,7 +6,7 @@
 //
 
 #import "RACKeyWordUseVC.h"
-
+#import "Person.h"
 @interface RACKeyWordUseVC ()
 @property(nonatomic,strong)UITextField *tf;
 
@@ -53,6 +53,14 @@
     }]subscribeNext:^(id  _Nullable x) {
         NSLog(@"执行后的结果 = %@",x);
     }];
+    
+    // !!!: 字典转型
+    NSArray *p = @[@{@"num":@5},@{@"num":@6},@{@"num":@7}];
+    NSMutableArray *persons = [[[p.rac_sequence map:^id _Nullable(NSDictionary *value) {
+        @strongify(self);
+        return [Person yy_modelWithDictionary:value];
+    }]array]mutableCopy];
+    NSLog(@"模型数组 - %@",persons);
     
     
 }

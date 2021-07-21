@@ -17,6 +17,11 @@ target 'OCW' do
   pod 'YYText', '1.0.7'
   pod 'YYImage', '1.0.4'
   pod 'YYCategories', '1.0.4'
+  pod 'MJRefresh'
+  
+  pod 'JXCategoryView', '1.5.9'
+  
+  
   target 'OCWTests' do
     inherit! :search_paths
     # Pods for testing

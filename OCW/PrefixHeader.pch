@@ -18,7 +18,7 @@
 #import <YYImage/YYImage.h>
 #import <YYCategories/YYCategories.h>
 #import <YYModel/YYModel.h>
-
+#import <MJRefresh/MJRefresh.h>
 #import "UIColor+someColor.h"
 
 #define kStatuBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
