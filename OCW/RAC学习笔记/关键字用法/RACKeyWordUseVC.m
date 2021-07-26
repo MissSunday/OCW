@@ -47,7 +47,7 @@
         BOOL c = a && b;
         return c;
     }] map:^id _Nullable(NSString * _Nullable value) {
-        
+
         NSString *result = [NSString stringWithFormat:@"%@-aaa",value];
         return result;
     }]subscribeNext:^(id  _Nullable x) {

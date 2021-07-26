@@ -9,7 +9,8 @@
 #import "BHViewController.h"
 #import "BTViewController.h"
 #import "SPPageMenu.h"
-
+#import "BHLTViewController.h"
+#import "BTOneViewController.h"
 #define pageMenuH 50
 
 #define scrollViewHeight (kS_H-kNavHeight-kTabbarHeight-pageMenuH)
@@ -59,10 +60,10 @@
     
     [self.view addSubview:self.scrollView];
     
-    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"BTViewController",@"BTViewController",@"BTViewController", nil];
+    NSArray *controllerClassNames = [NSArray arrayWithObjects:@"BTOneViewController",@"BTViewController",@"BTViewController", nil];
     for (int i = 0; i < self.titleArray.count; i++) {
         if (controllerClassNames.count > i) {
-            BTViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
+            BaseViewController *baseVc = [[NSClassFromString(controllerClassNames[i]) alloc] init];
             id object = [self.pageMenu contentForItemAtIndex:i];
             if ([object isKindOfClass:[NSString class]]) {
                 
@@ -79,7 +80,7 @@
     
     // pageMenu.selectedItemIndex就是选中的item下标
     if (self.pageMenu.selectedItemIndex < self.myChildViewControllers.count) {
-        BTViewController *baseVc = self.myChildViewControllers[self.pageMenu.selectedItemIndex];
+        BaseViewController *baseVc = self.myChildViewControllers[self.pageMenu.selectedItemIndex];
         
         [self.scrollView addSubview:baseVc.view];
         baseVc.view.frame = CGRectMake(kS_W*self.pageMenu.selectedItemIndex, 0, kS_W, scrollViewHeight);
@@ -108,7 +109,7 @@
     
     if (self.myChildViewControllers.count <= toIndex) {return;}
     
-    BTViewController *targetViewController = self.myChildViewControllers[toIndex];
+    BaseViewController *targetViewController = self.myChildViewControllers[toIndex];
     // 如果已经加载过，就不再加载
     if ([targetViewController isViewLoaded]) return;
     if (toIndex == 0) {
@@ -123,20 +124,7 @@
     
 }
 -(void)nav{
-    @weakify(self);
-    self.navigationItem.rightBarButtonItem = ({
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setTitle:@"高级分段" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor orangeColor] forState:(UIControlStateHighlighted)];
-        [btn setTitleColor:[UIColor systemPinkColor] forState:UIControlStateNormal];
-        btn.titleLabel.font = [UIFont systemFontOfSize:16];
-        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
-            @strongify(self);
-            [self.navigationController pushViewController:BHViewController.new animated:YES];
-        }];
-        UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
-        item;
-    });
+   
 }
 - (UIScrollView *)scrollView {
     if (!_scrollView) {

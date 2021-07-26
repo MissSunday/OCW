@@ -27,6 +27,9 @@
     [self nav];
     [self block_text];
     [self func_chain];
+    test1 *t1 = [[test1 alloc]init];
+    [t1 show];
+    
 }
 //block 练习
 -(void)block_text{

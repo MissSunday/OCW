@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		021926C118C208E4C721FC25 /* Pods_OCWTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAC3B171FFF874EF6065A0C /* Pods_OCWTests.framework */; };
 		1D0FD648269E72D300726555 /* RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD647269E72D200726555 /* RuntimeVC.m */; };
+		1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD75926AAB41F00A61E96 /* swiftClass.swift */; };
+		1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD79F26AE51D600A61E96 /* BHLTViewController.m */; };
+		1D0FD7AB26AE5F8A00A61E96 /* BTOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7AA26AE5F8A00A61E96 /* BTOneViewController.m */; };
+		1D0FD7B026AE998B00A61E96 /* BHLTListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7AF26AE998B00A61E96 /* BHLTListViewController.m */; };
+		1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7B526AEA54C00A61E96 /* BHLTMViewController.m */; };
+		1D0FD7B926AEA57700A61E96 /* BHLTMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7B826AEA57700A61E96 /* BHLTMListViewController.m */; };
+		1D0FD7BC26AEA63D00A61E96 /* BHLTMHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7BB26AEA63D00A61E96 /* BHLTMHeaderView.m */; };
 		1D169D8A26A6650700933E1C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D8926A6650700933E1C /* BaseViewController.m */; };
 		1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D8C26A6652900933E1C /* BaseNavigationController.m */; };
 		1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D9226A667F200933E1C /* ATabBarViewController.m */; };
@@ -27,7 +34,6 @@
 		1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC326A7C8F700933E1C /* GKBaseListViewController.m */; };
 		1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */; };
 		1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8A626561C2E0089E899 /* AppDelegate.m */; };
-		1D2BA8AA26561C2E0089E899 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8A926561C2E0089E899 /* SceneDelegate.m */; };
 		1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B126561C2F0089E899 /* Assets.xcassets */; };
 		1D2BA8B526561C2F0089E899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */; };
 		1D2BA8B826561C2F0089E899 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B726561C2F0089E899 /* main.m */; };
@@ -66,6 +72,20 @@
 		1BAC3B171FFF874EF6065A0C /* Pods_OCWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0FD646269E72D200726555 /* RuntimeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeVC.h; sourceTree = "<group>"; };
 		1D0FD647269E72D200726555 /* RuntimeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeVC.m; sourceTree = "<group>"; };
+		1D0FD75826AAB41E00A61E96 /* OCW-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCW-Bridging-Header.h"; sourceTree = "<group>"; };
+		1D0FD75926AAB41F00A61E96 /* swiftClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftClass.swift; sourceTree = "<group>"; };
+		1D0FD79E26AE51D600A61E96 /* BHLTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHLTViewController.h; sourceTree = "<group>"; };
+		1D0FD79F26AE51D600A61E96 /* BHLTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTViewController.m; sourceTree = "<group>"; };
+		1D0FD7A926AE5F8A00A61E96 /* BTOneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTOneViewController.h; sourceTree = "<group>"; };
+		1D0FD7AA26AE5F8A00A61E96 /* BTOneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTOneViewController.m; sourceTree = "<group>"; };
+		1D0FD7AE26AE998B00A61E96 /* BHLTListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHLTListViewController.h; sourceTree = "<group>"; };
+		1D0FD7AF26AE998B00A61E96 /* BHLTListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTListViewController.m; sourceTree = "<group>"; };
+		1D0FD7B426AEA54C00A61E96 /* BHLTMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHLTMViewController.h; sourceTree = "<group>"; };
+		1D0FD7B526AEA54C00A61E96 /* BHLTMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTMViewController.m; sourceTree = "<group>"; };
+		1D0FD7B726AEA57700A61E96 /* BHLTMListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHLTMListViewController.h; sourceTree = "<group>"; };
+		1D0FD7B826AEA57700A61E96 /* BHLTMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTMListViewController.m; sourceTree = "<group>"; };
+		1D0FD7BA26AEA63D00A61E96 /* BHLTMHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHLTMHeaderView.h; sourceTree = "<group>"; };
+		1D0FD7BB26AEA63D00A61E96 /* BHLTMHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTMHeaderView.m; sourceTree = "<group>"; };
 		1D169D8826A6650700933E1C /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1D169D8926A6650700933E1C /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		1D169D8B26A6652900933E1C /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -103,8 +123,6 @@
 		1D2BA8A226561C2E0089E899 /* OCW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2BA8A526561C2E0089E899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D2BA8A626561C2E0089E899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1D2BA8A826561C2E0089E899 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		1D2BA8A926561C2E0089E899 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		1D2BA8B126561C2F0089E899 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1D2BA8B426561C2F0089E899 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1D2BA8B626561C2F0089E899 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,31 +188,95 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0FD75726AAB3E600A61E96 /* swift */ = {
+			isa = PBXGroup;
+			children = (
+				1D0FD75926AAB41F00A61E96 /* swiftClass.swift */,
+				1D0FD75826AAB41E00A61E96 /* OCW-Bridging-Header.h */,
+			);
+			path = swift;
+			sourceTree = "<group>";
+		};
+		1D0FD79D26AE51A900A61E96 /* 更高级LTScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				1D0FD7B126AEA4EE00A61E96 /* 顶部刷新，不记录位置 */,
+				1D0FD7B226AEA50700A61E96 /* 中间刷新，记录位置 */,
+				1D0FD7B326AEA51600A61E96 /* 顶部刷新，记录位置，有难度，未做 */,
+			);
+			path = "更高级LTScrollView";
+			sourceTree = "<group>";
+		};
+		1D0FD7AC26AE697A00A61E96 /* [web][RAC] */ = {
+			isa = PBXGroup;
+			children = (
+				1D169D9426A6682700933E1C /* AViewController.h */,
+				1D169D9526A6682700933E1C /* AViewController.m */,
+			);
+			path = "[web][RAC]";
+			sourceTree = "<group>";
+		};
+		1D0FD7AD26AE69D200A61E96 /* 功能待定 */ = {
+			isa = PBXGroup;
+			children = (
+				1D169D9A26A6684300933E1C /* CViewController.h */,
+				1D169D9B26A6684300933E1C /* CViewController.m */,
+				1D169D9D26A6684B00933E1C /* DViewController.h */,
+				1D169D9E26A6684B00933E1C /* DViewController.m */,
+			);
+			path = "功能待定";
+			sourceTree = "<group>";
+		};
+		1D0FD7B126AEA4EE00A61E96 /* 顶部刷新，不记录位置 */ = {
+			isa = PBXGroup;
+			children = (
+				1D0FD79E26AE51D600A61E96 /* BHLTViewController.h */,
+				1D0FD79F26AE51D600A61E96 /* BHLTViewController.m */,
+				1D0FD7AE26AE998B00A61E96 /* BHLTListViewController.h */,
+				1D0FD7AF26AE998B00A61E96 /* BHLTListViewController.m */,
+			);
+			path = "顶部刷新，不记录位置";
+			sourceTree = "<group>";
+		};
+		1D0FD7B226AEA50700A61E96 /* 中间刷新，记录位置 */ = {
+			isa = PBXGroup;
+			children = (
+				1D0FD7B426AEA54C00A61E96 /* BHLTMViewController.h */,
+				1D0FD7B526AEA54C00A61E96 /* BHLTMViewController.m */,
+				1D0FD7B726AEA57700A61E96 /* BHLTMListViewController.h */,
+				1D0FD7B826AEA57700A61E96 /* BHLTMListViewController.m */,
+				1D0FD7BA26AEA63D00A61E96 /* BHLTMHeaderView.h */,
+				1D0FD7BB26AEA63D00A61E96 /* BHLTMHeaderView.m */,
+			);
+			path = "中间刷新，记录位置";
+			sourceTree = "<group>";
+		};
+		1D0FD7B326AEA51600A61E96 /* 顶部刷新，记录位置，有难度，未做 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "顶部刷新，记录位置，有难度，未做";
+			sourceTree = "<group>";
+		};
 		1D169D8526A660A700933E1C /* 进入 */ = {
 			isa = PBXGroup;
 			children = (
 				1D2BA8A526561C2E0089E899 /* AppDelegate.h */,
 				1D2BA8A626561C2E0089E899 /* AppDelegate.m */,
-				1D2BA8A826561C2E0089E899 /* SceneDelegate.h */,
-				1D2BA8A926561C2E0089E899 /* SceneDelegate.m */,
 				1D169D9126A667F200933E1C /* ATabBarViewController.h */,
 				1D169D9226A667F200933E1C /* ATabBarViewController.m */,
 			);
 			path = "进入";
 			sourceTree = "<group>";
 		};
-		1D169D8626A6617300933E1C /* VC */ = {
+		1D169D8626A6617300933E1C /* TabBarVC */ = {
 			isa = PBXGroup;
 			children = (
-				1D169D9426A6682700933E1C /* AViewController.h */,
-				1D169D9526A6682700933E1C /* AViewController.m */,
+				1D0FD7AC26AE697A00A61E96 /* [web][RAC] */,
 				1D169DAF26A7C22400933E1C /* 分段控制器 */,
-				1D169D9A26A6684300933E1C /* CViewController.h */,
-				1D169D9B26A6684300933E1C /* CViewController.m */,
-				1D169D9D26A6684B00933E1C /* DViewController.h */,
-				1D169D9E26A6684B00933E1C /* DViewController.m */,
+				1D0FD7AD26AE69D200A61E96 /* 功能待定 */,
 			);
-			path = VC;
+			path = TabBarVC;
 			sourceTree = "<group>";
 		};
 		1D169D8726A664E200933E1C /* Base */ = {
@@ -271,8 +353,10 @@
 			children = (
 				1D169D9726A6683A00933E1C /* BViewController.h */,
 				1D169D9826A6683A00933E1C /* BViewController.m */,
-				1D169DB426A7C7E200933E1C /* 高级 */,
+				1D169DB426A7C7E200933E1C /* 高级GKPageScrollView */,
+				1D0FD79D26AE51A900A61E96 /* 更高级LTScrollView */,
 				1D169DB026A7C23F00933E1C /* 样本vc */,
+				1D169DAB26A7C19200933E1C /* SPPageMenu */,
 			);
 			path = "分段控制器";
 			sourceTree = "<group>";
@@ -280,13 +364,15 @@
 		1D169DB026A7C23F00933E1C /* 样本vc */ = {
 			isa = PBXGroup;
 			children = (
+				1D0FD7A926AE5F8A00A61E96 /* BTOneViewController.h */,
+				1D0FD7AA26AE5F8A00A61E96 /* BTOneViewController.m */,
 				1D169DB126A7C26400933E1C /* BTViewController.h */,
 				1D169DB226A7C26400933E1C /* BTViewController.m */,
 			);
 			path = "样本vc";
 			sourceTree = "<group>";
 		};
-		1D169DB426A7C7E200933E1C /* 高级 */ = {
+		1D169DB426A7C7E200933E1C /* 高级GKPageScrollView */ = {
 			isa = PBXGroup;
 			children = (
 				1D169DB526A7C81500933E1C /* BHViewController.h */,
@@ -297,7 +383,7 @@
 				1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */,
 				1D169DBB26A7C8F700933E1C /* GKPageScrollView */,
 			);
-			path = "高级";
+			path = "高级GKPageScrollView";
 			sourceTree = "<group>";
 		};
 		1D169DBB26A7C8F700933E1C /* GKPageScrollView */ = {
@@ -341,15 +427,15 @@
 				1D169D8526A660A700933E1C /* 进入 */,
 				1D169D8726A664E200933E1C /* Base */,
 				1D169DA026A66B9F00933E1C /* Category */,
-				1D169D8626A6617300933E1C /* VC */,
+				1D169D8626A6617300933E1C /* TabBarVC */,
 				1D169DA526A6B3D600933E1C /* RAC学习笔记 */,
 				1D169DAA26A6C18100933E1C /* Runtime相关 */,
 				1D169DA426A6AF1100933E1C /* 链式编程模型 */,
+				1D0FD75726AAB3E600A61E96 /* swift */,
 				1DF9E4C026895A42008BCB38 /* SVC.h */,
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
-				1D169DAB26A7C19200933E1C /* SPPageMenu */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
 				1D2BA8B126561C2F0089E899 /* Assets.xcassets */,
 				1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */,
@@ -484,6 +570,7 @@
 				TargetAttributes = {
 					1D2BA8A126561C2E0089E899 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 					};
 					1D2BA8BC26561C2F0089E899 = {
 						CreatedOnToolsVersion = 12.5;
@@ -649,9 +736,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */,
 				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
+				1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
 				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
@@ -659,21 +748,25 @@
 				1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */,
 				1D169DB726A7C81500933E1C /* BHViewController.m in Sources */,
 				1D2C2F14269ED91700EEA3EC /* QJCommonWebViewController.m in Sources */,
+				1D0FD7BC26AEA63D00A61E96 /* BHLTMHeaderView.m in Sources */,
 				1D169D9F26A6684B00933E1C /* DViewController.m in Sources */,
 				1D169DA826A6B42B00933E1C /* RACKeyWordUseVC.m in Sources */,
+				1D0FD7AB26AE5F8A00A61E96 /* BTOneViewController.m in Sources */,
 				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,
 				1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */,
 				1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */,
+				1D0FD7B926AEA57700A61E96 /* BHLTMListViewController.m in Sources */,
 				1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */,
 				1D0FD648269E72D300726555 /* RuntimeVC.m in Sources */,
 				1DD006A2265D27A900B805FE /* Person.m in Sources */,
+				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
 				1D169D9C26A6684300933E1C /* CViewController.m in Sources */,
+				1D0FD7B026AE998B00A61E96 /* BHLTListViewController.m in Sources */,
 				1D7301E82693FA5B00708655 /* RACCell.m in Sources */,
 				1D2BA8B826561C2F0089E899 /* main.m in Sources */,
 				1D169D9926A6683A00933E1C /* BViewController.m in Sources */,
-				1D2BA8AA26561C2E0089E899 /* SceneDelegate.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
 				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
@@ -846,11 +939,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MK55SWB3V5;
 				INFOPLIST_FILE = OCW/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -858,6 +953,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_profile;
+				SWIFT_OBJC_BRIDGING_HEADER = "OCW/swift/OCW-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -868,11 +966,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MK55SWB3V5;
 				INFOPLIST_FILE = OCW/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -880,6 +980,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_profile;
+				SWIFT_OBJC_BRIDGING_HEADER = "OCW/swift/OCW-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -888,6 +990,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5F1A1825B97DB3C1E70DAFD5 /* Pods-OCWTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OCWTests/Info.plist;
@@ -908,6 +1011,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 45CB95BC28DDA4EF3B0A3D90 /* Pods-OCWTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OCWTests/Info.plist;
@@ -928,6 +1032,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OCWUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -946,6 +1051,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 760C1F4CB50F427A4FA1BBF4 /* Pods-OCW-OCWUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = OCWUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
