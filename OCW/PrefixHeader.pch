@@ -11,23 +11,29 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-
+//三方工具
 #import <Masonry/Masonry.h>
 #import <ReactiveObjC.h>
 #import <YYModel.h>
 #import <YYImage/YYImage.h>
+#import <YYWebImage/YYWebImage.h>
+#import <YYCache/YYCache.h>
 #import <YYCategories/YYCategories.h>
 #import <YYModel/YYModel.h>
 #import <MJRefresh/MJRefresh.h>
 #import <Reachability/Reachability.h>
+#import <KNPhotoBrowser/KNPhotoBrowser.h>
+#import <SDWebImage/SDWebImage.h>
+
+//自定义工具
+#import "XRNetRequest.h"
 #import "UIColor+someColor.h"
+
+//桥接文件
 #import "OCW-Bridging-Header.h"
 #import "OCW-Swift.h"
 
-
-#import "XRNetRequest.h"
-
-
+//宏定义
 #define kStatuBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
 #define IS_IPHONEX (kStatuBarHeight > 20)
 #define kS_H [UIScreen mainScreen].bounds.size.height
@@ -36,5 +42,33 @@
 #define kTabbarHeight  (IS_IPHONEX ? 83 : 49)
 #define kBottomHeight (IS_IPHONEX ? 34 : 0)
 #define kBottomLittleHeiget (IS_IPHONEX ? 14 : 0)
+/** 屏幕适配比率 */
+#define XR_SCALE(a) (kS_W/375)*(a)
+//weakSelf
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+#pragma mark NSLog
+#ifdef DEBUG
+#define NSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
+
+
+
+//APP对象 （单例对象）
+#define kApplication [UIApplication sharedApplication]
+//主窗口 （keyWindow）
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+//NSUserDefaults实例化
+#define kUserDefaults [NSUserDefaults standardUserDefaults]
+//通知中心 （单例对象）
+#define kNotificationCenter [NSNotificationCenter defaultCenter]
+//发送通知
+#define KPostNotification(name,obj) [[NSNotificationCenter defaultCenter] postNotificationName:name object:obj]
+//APP版本号
+#define kVersion [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
+//系统版本号
+#define kSystemVersion [[UIDevice currentDevice] systemVersion]
 
 #endif /* PrefixHeader_pch */

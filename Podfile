@@ -15,10 +15,13 @@ target 'OCW' do
   pod 'ReactiveObjC', '3.1.1'
   pod 'YYModel', '1.0.4'
   pod 'YYText', '1.0.7'
-  pod 'YYImage', '1.0.4'
+  #pod 'YYImage', '1.0.4'
+  pod 'YYWebImage', '1.0.5'
   pod 'YYCategories', '1.0.4'
   pod 'MJRefresh'
   pod 'Reachability', '~> 3.2'
+  pod 'KNPhotoBrowser', '2.5.3' #依赖SDWebImage ～> 5.0
+  
   pod 'LTScrollView', '0.3.0'
   pod 'JXCategoryView', '1.5.9'
   

@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong)Person *model;
 
+//weak修饰 保证会被释放
 @property(nonatomic,weak)UIViewController *vc;
 @end
 

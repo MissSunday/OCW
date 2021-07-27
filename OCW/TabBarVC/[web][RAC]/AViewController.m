@@ -7,6 +7,7 @@
 
 #import "AViewController.h"
 #import "QJCommonWebViewController.h"
+#import "KNPhotoBrowserVC.h"
 #import "RACVC.h"
 #import "Person.h"
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -22,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"A";
+    self.navigationItem.title = @"各种功能入口";
     [self UI];
     [self nav];
     [self block_text];
@@ -91,8 +92,8 @@
     self.navigationItem.rightBarButtonItem = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTitle:@"RAC" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:(UIControlStateHighlighted)];
-        [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor orangeColor] forState:(UIControlStateHighlighted)];
+        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:16];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
@@ -104,8 +105,8 @@
     self.navigationItem.leftBarButtonItem = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTitle:@"WEB" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:(UIControlStateHighlighted)];
-        [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor orangeColor] forState:(UIControlStateHighlighted)];
+        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:16];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
@@ -122,13 +123,19 @@
     return self.dataArray.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 60;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell className] forIndexPath:indexPath];
     NSString *a = self.dataArray[indexPath.row];
     cell.textLabel.text = a;
     return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        [self.navigationController pushViewController:KNPhotoBrowserVC.new animated:YES];
+    }
 }
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -150,7 +157,7 @@
 }
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"1",@"2",@"3",@"4",@"5",@"6"].mutableCopy;
+        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"2",@"3",@"4",@"5",@"6"].mutableCopy;
     }
     return _dataArray;
 }

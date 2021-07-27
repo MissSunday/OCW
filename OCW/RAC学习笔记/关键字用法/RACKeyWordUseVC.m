@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.navigationItem.title = NSStringFromClass([self class]);
     [self UI];
 }
 -(void)UI{

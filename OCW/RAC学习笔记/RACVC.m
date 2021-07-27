@@ -39,8 +39,8 @@
     self.navigationItem.rightBarButtonItem = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setTitle:@"Keyword" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor blueColor] forState:(UIControlStateHighlighted)];
-        [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor orangeColor] forState:(UIControlStateHighlighted)];
+        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:16];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
@@ -53,6 +53,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = UIColor.cyanColor;
+    self.navigationItem.title = NSStringFromClass([self class]);
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -64,7 +65,7 @@
     [self rac_RACDisposable];
     [self rac_RACSubject];
     [self rac_use];
-    
+    [self rac_liftSelector];
     [self racCommand];
 }
 #pragma mark RACSignal RACMulticastConnection
@@ -257,7 +258,8 @@
                        @{@"title":@"RACSubject、RACReplaySubject"},
                        @{@"title":@"基本用法"},
                        @{@"title":@"RACTuple、RACSequence"},
-                       @{@"title":@"7777777"}];
+                       @{@"title":@"rac_liftSelector"},
+                       @{@"title":@"racCommand"}];
     self.dataArray = [[[array.rac_sequence map:^id _Nullable(NSDictionary *  _Nullable value) {
         return [Person yy_modelWithDictionary:value];
     }]array]mutableCopy];
@@ -345,7 +347,7 @@
     [self rac_liftSelector:@selector(updateUIWithData1:Data2:Data3:) withSignalsFromArray:@[firstSignal, secondSignal, thirdSignal]];
     
 }
-/// 监听多个模块全部执行完成
+/// 监听多个模块 全部执行完成 全部完成 才能往下进行
 /// 方法的参数必须与监听的信号一一对应
 /// 方法的参数就是每个信号发送的数据
 /// @param data1 对应上面firstSignal 监听的信号发送的数据
