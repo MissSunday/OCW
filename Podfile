@@ -21,6 +21,7 @@ target 'OCW' do
   pod 'MJRefresh'
   pod 'Reachability', '~> 3.2'
   pod 'KNPhotoBrowser', '2.5.3' #依赖SDWebImage ～> 5.0
+  pod 'TZImagePickerController', '3.6.0'
   
   pod 'LTScrollView', '0.3.0'
   pod 'JXCategoryView', '1.5.9'
