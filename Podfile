@@ -18,8 +18,8 @@ target 'OCW' do
   pod 'YYImage', '1.0.4'
   pod 'YYCategories', '1.0.4'
   pod 'MJRefresh'
-  pod 'LTScrollView', '~> 0.3.0'
-  
+  pod 'Reachability', '~> 3.2'
+  pod 'LTScrollView', '0.3.0'
   pod 'JXCategoryView', '1.5.9'
   
   

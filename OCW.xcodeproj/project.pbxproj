@@ -16,6 +16,7 @@
 		1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7B526AEA54C00A61E96 /* BHLTMViewController.m */; };
 		1D0FD7B926AEA57700A61E96 /* BHLTMListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7B826AEA57700A61E96 /* BHLTMListViewController.m */; };
 		1D0FD7BC26AEA63D00A61E96 /* BHLTMHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7BB26AEA63D00A61E96 /* BHLTMHeaderView.m */; };
+		1D0FD7C026AEB28600A61E96 /* XRNetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D0FD7BF26AEB28600A61E96 /* XRNetRequest.m */; };
 		1D169D8A26A6650700933E1C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D8926A6650700933E1C /* BaseViewController.m */; };
 		1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D8C26A6652900933E1C /* BaseNavigationController.m */; };
 		1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169D9226A667F200933E1C /* ATabBarViewController.m */; };
@@ -86,6 +87,8 @@
 		1D0FD7B826AEA57700A61E96 /* BHLTMListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTMListViewController.m; sourceTree = "<group>"; };
 		1D0FD7BA26AEA63D00A61E96 /* BHLTMHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BHLTMHeaderView.h; sourceTree = "<group>"; };
 		1D0FD7BB26AEA63D00A61E96 /* BHLTMHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BHLTMHeaderView.m; sourceTree = "<group>"; };
+		1D0FD7BE26AEB28600A61E96 /* XRNetRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRNetRequest.h; sourceTree = "<group>"; };
+		1D0FD7BF26AEB28600A61E96 /* XRNetRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRNetRequest.m; sourceTree = "<group>"; };
 		1D169D8826A6650700933E1C /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		1D169D8926A6650700933E1C /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		1D169D8B26A6652900933E1C /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -256,6 +259,15 @@
 			children = (
 			);
 			path = "顶部刷新，记录位置，有难度，未做";
+			sourceTree = "<group>";
+		};
+		1D0FD7BD26AEB22E00A61E96 /* 原生网络请求封装 */ = {
+			isa = PBXGroup;
+			children = (
+				1D0FD7BE26AEB28600A61E96 /* XRNetRequest.h */,
+				1D0FD7BF26AEB28600A61E96 /* XRNetRequest.m */,
+			);
+			path = "原生网络请求封装";
 			sourceTree = "<group>";
 		};
 		1D169D8526A660A700933E1C /* 进入 */ = {
@@ -434,6 +446,7 @@
 				1D0FD75726AAB3E600A61E96 /* swift */,
 				1DF9E4C026895A42008BCB38 /* SVC.h */,
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
+				1D0FD7BD26AEB22E00A61E96 /* 原生网络请求封装 */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
@@ -767,6 +780,7 @@
 				1D7301E82693FA5B00708655 /* RACCell.m in Sources */,
 				1D2BA8B826561C2F0089E899 /* main.m in Sources */,
 				1D169D9926A6683A00933E1C /* BViewController.m in Sources */,
+				1D0FD7C026AEB28600A61E96 /* XRNetRequest.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
 				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
