@@ -65,6 +65,9 @@
 		1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC126A7C8F700933E1C /* GKPageTableView.m */; };
 		1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC326A7C8F700933E1C /* GKBaseListViewController.m */; };
 		1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */; };
+		1D1EE34026B13FF0001BE780 /* bizhi_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D1EE33F26B13FF0001BE780 /* bizhi_01.jpg */; };
+		1D1EE34326B15A99001BE780 /* XRPhotoBrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1EE34226B15A99001BE780 /* XRPhotoBrower.m */; };
+		1D1EE34626B15BCA001BE780 /* XRPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1EE34526B15BCA001BE780 /* XRPhotoPreviewCell.m */; };
 		1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8A626561C2E0089E899 /* AppDelegate.m */; };
 		1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B126561C2F0089E899 /* Assets.xcassets */; };
 		1D2BA8B526561C2F0089E899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */; };
@@ -191,6 +194,11 @@
 		1D169DC226A7C8F700933E1C /* GKBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKBaseTableViewController.h; sourceTree = "<group>"; };
 		1D169DC326A7C8F700933E1C /* GKBaseListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseListViewController.m; sourceTree = "<group>"; };
 		1D169DC426A7C8F700933E1C /* GKBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKBaseTableViewController.m; sourceTree = "<group>"; };
+		1D1EE33F26B13FF0001BE780 /* bizhi_01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bizhi_01.jpg; sourceTree = "<group>"; };
+		1D1EE34126B15A99001BE780 /* XRPhotoBrower.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRPhotoBrower.h; sourceTree = "<group>"; };
+		1D1EE34226B15A99001BE780 /* XRPhotoBrower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRPhotoBrower.m; sourceTree = "<group>"; };
+		1D1EE34426B15BCA001BE780 /* XRPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRPhotoPreviewCell.h; sourceTree = "<group>"; };
+		1D1EE34526B15BCA001BE780 /* XRPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRPhotoPreviewCell.m; sourceTree = "<group>"; };
 		1D2BA8A226561C2E0089E899 /* OCW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2BA8A526561C2E0089E899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D2BA8A626561C2E0089E899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -393,6 +401,7 @@
 				1D0FD83726AFFA6100A61E96 /* TZImagePickerItem.m */,
 				1D0FD83C26B004D000A61E96 /* TZImagePickerItemModel.h */,
 				1D0FD83D26B004D000A61E96 /* TZImagePickerItemModel.m */,
+				1D1EE34726B160FF001BE780 /* 自定义图片浏览器push */,
 			);
 			path = "选取上传图片，保存到本地";
 			sourceTree = "<group>";
@@ -433,6 +442,8 @@
 		1D169DA026A66B9F00933E1C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				1D0FD83926B0001800A61E96 /* NSObject+Property.h */,
+				1D0FD83A26B0001800A61E96 /* NSObject+Property.m */,
 				1D169DA126A66BCC00933E1C /* UIColor+someColor.h */,
 				1D169DA226A66BCC00933E1C /* UIColor+someColor.m */,
 			);
@@ -538,6 +549,25 @@
 			path = GKPageScrollView;
 			sourceTree = "<group>";
 		};
+		1D1EE33E26B13F47001BE780 /* 壁纸 */ = {
+			isa = PBXGroup;
+			children = (
+				1D1EE33F26B13FF0001BE780 /* bizhi_01.jpg */,
+			);
+			path = "壁纸";
+			sourceTree = "<group>";
+		};
+		1D1EE34726B160FF001BE780 /* 自定义图片浏览器push */ = {
+			isa = PBXGroup;
+			children = (
+				1D1EE34126B15A99001BE780 /* XRPhotoBrower.h */,
+				1D1EE34226B15A99001BE780 /* XRPhotoBrower.m */,
+				1D1EE34426B15BCA001BE780 /* XRPhotoPreviewCell.h */,
+				1D1EE34526B15BCA001BE780 /* XRPhotoPreviewCell.m */,
+			);
+			path = "自定义图片浏览器push";
+			sourceTree = "<group>";
+		};
 		1D2BA89926561C2E0089E899 = {
 			isa = PBXGroup;
 			children = (
@@ -571,13 +601,12 @@
 				1D169DAA26A6C18100933E1C /* Runtime相关 */,
 				1D169DA426A6AF1100933E1C /* 链式编程模型 */,
 				1D0FD75726AAB3E600A61E96 /* swift */,
+				1D0FD7BD26AEB22E00A61E96 /* 原生网络请求封装 */,
 				1DF9E4C026895A42008BCB38 /* SVC.h */,
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
-				1D0FD7BD26AEB22E00A61E96 /* 原生网络请求封装 */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
-				1D0FD83926B0001800A61E96 /* NSObject+Property.h */,
-				1D0FD83A26B0001800A61E96 /* NSObject+Property.m */,
+				1D1EE33E26B13F47001BE780 /* 壁纸 */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
 				1D2BA8B126561C2F0089E899 /* Assets.xcassets */,
 				1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */,
@@ -774,6 +803,7 @@
 				1D0FD82F26AFEAB700A61E96 /* aozima_11.jpeg in Resources */,
 				1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */,
 				1D0FD82D26AFEAB700A61E96 /* aozima_20.jpeg in Resources */,
+				1D1EE34026B13FF0001BE780 /* bizhi_01.jpg in Resources */,
 				1D0FD81E26AFEAB700A61E96 /* aozima_04.jpeg in Resources */,
 				1D0FD81A26AFEAB700A61E96 /* aozima_05.jpeg in Resources */,
 			);
@@ -924,6 +954,7 @@
 				1D0FD83E26B004D000A61E96 /* TZImagePickerItemModel.m in Sources */,
 				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,
 				1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */,
+				1D1EE34626B15BCA001BE780 /* XRPhotoPreviewCell.m in Sources */,
 				1D0FD83526AFF24600A61E96 /* TZImagePickerVC.m in Sources */,
 				1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */,
 				1D0FD7B926AEA57700A61E96 /* BHLTMListViewController.m in Sources */,
@@ -944,6 +975,7 @@
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
 				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
+				1D1EE34326B15A99001BE780 /* XRPhotoBrower.m in Sources */,
 				1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

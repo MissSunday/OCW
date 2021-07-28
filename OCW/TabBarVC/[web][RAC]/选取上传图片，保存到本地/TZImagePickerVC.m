@@ -9,7 +9,7 @@
 #import "TZImagePickerItem.h"
 #import "T.h"
 #import "TZImagePickerItemModel.h"
-
+#import "XRPhotoBrower.h"
 #define TZImagePickerVCImageKey @"TZImagePickerVCImageKey"
 
 @interface TZImagePickerVC ()<
@@ -171,7 +171,7 @@ UICollectionViewDataSource
     return reSizeImage;
 }
 #pragma mark - 存取
-//查
+// !!!: 查
 -(NSArray *)takeLocationData{
     NSData *data = [kUserDefaults objectForKey:TZImagePickerVCImageKey];
     if (data) {
@@ -184,12 +184,12 @@ UICollectionViewDataSource
         return @[];
     }
 }
-//增
+/// !!!: 增
 -(void)addImages:(NSArray *)array{
     [self.pictures addObjectsFromArray:array];
     [self save];
 }
-//删
+/// !!!: 删
 -(void)deleteWithIndex:(NSInteger)index{
     [self.pictures removeObjectAtIndex:index];
     [self save];
@@ -198,7 +198,7 @@ UICollectionViewDataSource
     [self.pictures removeObject:model];
     [self save];
 }
-//存
+// !!!: 存
 -(void)save{
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.pictures];
     [kUserDefaults setObject:data forKey:TZImagePickerVCImageKey];
@@ -224,6 +224,10 @@ UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
    
     
+    NSArray *a = @[@"bizhi_01.jpg",@"bizhi_01.jpg"];
+    XRPhotoBrower *vc = [[XRPhotoBrower alloc]init];
+    vc.photos = a;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - LazyLoad
 - (UIImageView *)imageV{
