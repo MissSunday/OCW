@@ -223,10 +223,13 @@ UICollectionViewDataSource
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
    
-    
-    NSArray *a = @[@"bizhi_01.jpg",@"bizhi_01.jpg"];
+    NSMutableArray *array = [NSMutableArray new];
+    for (TZImagePickerItemModel *model in self.pictures) {
+        [array addObject:model.image];
+    }
     XRPhotoBrower *vc = [[XRPhotoBrower alloc]init];
-    vc.photos = a;
+    vc.photos = array;
+    vc.selectIndex = indexPath.item;
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - LazyLoad

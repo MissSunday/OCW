@@ -17,10 +17,13 @@
     }
     return self;
 }
-
 - (void)configSubviews {
     self.previewView = [[XRPhotoPreviewView alloc] initWithFrame:CGRectZero];
     [self addSubview:self.previewView];
+    WS(weakSelf)
+    self.previewView.tapBlock = ^{
+        [weakSelf.subject sendNext:nil];
+    };
 }
 - (void)recoverSubviews {
     [_previewView recoverSubviews];
@@ -31,11 +34,21 @@
 }
 - (void)setImageUrl:(NSString *)imageUrl{
     _imageUrl = imageUrl;
-    
+    self.previewView.imageUrl = imageUrl;
 }
-- (void)setImage:(NSString *)image{
+- (void)setImageName:(NSString *)imageName{
+    _imageName = imageName;
+    self.previewView.imageName = imageName;
+}
+- (void)setImage:(UIImage *)image{
     _image = image;
     self.previewView.image = image;
+}
+- (RACSubject *)subject{
+    if (!_subject) {
+        _subject = [RACSubject subject];
+    }
+    return _subject;
 }
 @end
 
@@ -98,8 +111,8 @@
 - (void)resizeSubviews {
     _imageContainerView.origin = CGPointZero;
     _imageContainerView.width = self.scrollView.width;
-    _imageContainerView.height = 0.75 * self.scrollView.width;
-    _imageContainerView.centerY = self.height / 2;
+    //_imageContainerView.height = 0.75 * self.scrollView.width;
+    //_imageContainerView.centerY = self.height / 2;
     
     UIImage *image = _imageView.image;
     if (image.size.height / image.size.width > self.height / self.scrollView.width) {
@@ -116,11 +129,9 @@
     }
     CGFloat contentSizeH = MAX(_imageContainerView.height, self.height);
     _scrollView.contentSize = CGSizeMake(self.scrollView.width, contentSizeH);
-    _scrollView.alwaysBounceVertical = _imageContainerView.height <= self.height ? NO : YES;
     [_scrollView scrollRectToVisible:self.bounds animated:NO];
+    _scrollView.alwaysBounceVertical = _imageContainerView.height <= self.height ? NO : YES;
     _imageView.frame = _imageContainerView.bounds;
-    
-    
 }
 - (void)configMaximumZoomScale {
     _scrollView.maximumZoomScale = 2.5;
@@ -133,9 +144,16 @@
     }];
     [self configMaximumZoomScale];
 }
-- (void)setImage:(NSString *)image{
+- (void)setImageName:(NSString *)imageName{
+    _imageName = imageName;
+    self.imageView.image = [UIImage imageNamed:imageName];
+    [_scrollView setZoomScale:1.0 animated:NO];
+    [self resizeSubviews];
+    [self configMaximumZoomScale];
+}
+- (void)setImage:(UIImage *)image{
     _image = image;
-    self.imageView.image = [UIImage imageNamed:image];
+    self.imageView.image = image;
     [_scrollView setZoomScale:1.0 animated:NO];
     [self resizeSubviews];
     [self configMaximumZoomScale];
@@ -157,6 +175,9 @@
 }
 
 - (void)singleTap:(UITapGestureRecognizer *)tap {
+    if (self.tapBlock) {
+        self.tapBlock();
+    }
 }
 #pragma mark - UIScrollViewDelegate
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {

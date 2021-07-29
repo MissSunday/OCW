@@ -68,6 +68,7 @@
 		1D1EE34026B13FF0001BE780 /* bizhi_01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D1EE33F26B13FF0001BE780 /* bizhi_01.jpg */; };
 		1D1EE34326B15A99001BE780 /* XRPhotoBrower.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1EE34226B15A99001BE780 /* XRPhotoBrower.m */; };
 		1D1EE34626B15BCA001BE780 /* XRPhotoPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1EE34526B15BCA001BE780 /* XRPhotoPreviewCell.m */; };
+		1D1EE34A26B2A3E9001BE780 /* XRPhotoBrowerNav.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1EE34926B2A3E8001BE780 /* XRPhotoBrowerNav.m */; };
 		1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2BA8A626561C2E0089E899 /* AppDelegate.m */; };
 		1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B126561C2F0089E899 /* Assets.xcassets */; };
 		1D2BA8B526561C2F0089E899 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */; };
@@ -199,6 +200,8 @@
 		1D1EE34226B15A99001BE780 /* XRPhotoBrower.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRPhotoBrower.m; sourceTree = "<group>"; };
 		1D1EE34426B15BCA001BE780 /* XRPhotoPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRPhotoPreviewCell.h; sourceTree = "<group>"; };
 		1D1EE34526B15BCA001BE780 /* XRPhotoPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRPhotoPreviewCell.m; sourceTree = "<group>"; };
+		1D1EE34826B2A3E8001BE780 /* XRPhotoBrowerNav.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRPhotoBrowerNav.h; sourceTree = "<group>"; };
+		1D1EE34926B2A3E8001BE780 /* XRPhotoBrowerNav.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRPhotoBrowerNav.m; sourceTree = "<group>"; };
 		1D2BA8A226561C2E0089E899 /* OCW.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCW.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D2BA8A526561C2E0089E899 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D2BA8A626561C2E0089E899 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -564,6 +567,8 @@
 				1D1EE34226B15A99001BE780 /* XRPhotoBrower.m */,
 				1D1EE34426B15BCA001BE780 /* XRPhotoPreviewCell.h */,
 				1D1EE34526B15BCA001BE780 /* XRPhotoPreviewCell.m */,
+				1D1EE34826B2A3E8001BE780 /* XRPhotoBrowerNav.h */,
+				1D1EE34926B2A3E8001BE780 /* XRPhotoBrowerNav.m */,
 			);
 			path = "自定义图片浏览器push";
 			sourceTree = "<group>";
@@ -938,6 +943,7 @@
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
 				1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */,
+				1D1EE34A26B2A3E9001BE780 /* XRPhotoBrowerNav.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
 				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
