@@ -36,6 +36,19 @@
 //block 练习
 -(void)block_text{
     
+    //gcd测试
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"gcd - 0");
+        dispatch_sync(dispatch_get_global_queue(0, 0), ^{
+            NSLog(@"gcd - 1");
+        });
+        NSLog(@"gcd - 2");
+    });
+    NSLog(@"gcd - 3");
+    
+    
+    
+    
     static int a = 10;
     void(^block)(void) = ^{
         
