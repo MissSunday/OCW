@@ -81,6 +81,16 @@
 		1D7301E52692F6E600708655 /* RACVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7301E42692F6E600708655 /* RACVC.m */; };
 		1D7301E82693FA5B00708655 /* RACCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7301E72693FA5B00708655 /* RACCell.m */; };
 		1DD006A2265D27A900B805FE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD006A1265D27A900B805FE /* Person.m */; };
+		1DE9870726CE56B40086731A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE9870626CE56B40086731A /* WidgetKit.framework */; };
+		1DE9870926CE56B40086731A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE9870826CE56B40086731A /* SwiftUI.framework */; };
+		1DE9870C26CE56B40086731A /* MainWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9870B26CE56B40086731A /* MainWidget.swift */; };
+		1DE9870E26CE56B50086731A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE9870D26CE56B50086731A /* Assets.xcassets */; };
+		1DE9871226CE56B50086731A /* MainWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1DE9870526CE56B40086731A /* MainWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1DE9871A26CE57E20086731A /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9871826CE57E20086731A /* Open.swift */; };
+		1DE9871C26CE598E0086731A /* OpenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9871B26CE598E0086731A /* OpenView.swift */; };
+		1DE9871E26CE5F1D0086731A /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9871D26CE5F1D0086731A /* Medium.swift */; };
+		1DE9872126CE5F320086731A /* MediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9871F26CE5F310086731A /* MediumView.swift */; };
+		1DE9872226CE5F320086731A /* MediumPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9872026CE5F310086731A /* MediumPlaceholder.swift */; };
 		1DF9E4C226895A42008BCB38 /* SVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C126895A42008BCB38 /* SVC.m */; };
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
@@ -102,7 +112,28 @@
 			remoteGlobalIDString = 1D2BA8A126561C2E0089E899;
 			remoteInfo = OCW;
 		};
+		1DE9871026CE56B50086731A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1D2BA89A26561C2E0089E899 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1DE9870426CE56B40086731A;
+			remoteInfo = MainWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1DE9871326CE56B50086731A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1DE9871226CE56B50086731A /* MainWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1BAC3B171FFF874EF6065A0C /* Pods_OCWTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCWTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +259,17 @@
 		1D7301E72693FA5B00708655 /* RACCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACCell.m; sourceTree = "<group>"; };
 		1DD006A0265D27A900B805FE /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		1DD006A1265D27A900B805FE /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		1DE9870526CE56B40086731A /* MainWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MainWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE9870626CE56B40086731A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		1DE9870826CE56B40086731A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		1DE9870B26CE56B40086731A /* MainWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWidget.swift; sourceTree = "<group>"; };
+		1DE9870D26CE56B50086731A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DE9870F26CE56B50086731A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DE9871826CE57E20086731A /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
+		1DE9871B26CE598E0086731A /* OpenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenView.swift; sourceTree = "<group>"; };
+		1DE9871D26CE5F1D0086731A /* Medium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
+		1DE9871F26CE5F310086731A /* MediumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumView.swift; sourceTree = "<group>"; };
+		1DE9872026CE5F310086731A /* MediumPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumPlaceholder.swift; sourceTree = "<group>"; };
 		1DF9E4C026895A42008BCB38 /* SVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVC.h; sourceTree = "<group>"; };
 		1DF9E4C126895A42008BCB38 /* SVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVC.m; sourceTree = "<group>"; };
 		1DF9E4C326895B76008BCB38 /* T.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T.h; sourceTree = "<group>"; };
@@ -264,6 +306,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DE9870226CE56B40086731A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE9870926CE56B40086731A /* SwiftUI.framework in Frameworks */,
+				1DE9870726CE56B40086731A /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +630,7 @@
 				1D2BA8A426561C2E0089E899 /* OCW */,
 				1D2BA8C026561C2F0089E899 /* OCWTests */,
 				1D2BA8CB26561C2F0089E899 /* OCWUITests */,
+				1DE9870A26CE56B40086731A /* MainWidget */,
 				1D2BA8A326561C2E0089E899 /* Products */,
 				D2B49B938ED8488470DA895B /* Pods */,
 				E7652818A61F1470D07E8A19 /* Frameworks */,
@@ -591,6 +643,7 @@
 				1D2BA8A226561C2E0089E899 /* OCW.app */,
 				1D2BA8BD26561C2F0089E899 /* OCWTests.xctest */,
 				1D2BA8C826561C2F0089E899 /* OCWUITests.xctest */,
+				1DE9870526CE56B40086731A /* MainWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -652,6 +705,37 @@
 			path = WKWbView;
 			sourceTree = "<group>";
 		};
+		1DE9870A26CE56B40086731A /* MainWidget */ = {
+			isa = PBXGroup;
+			children = (
+				1DE9872326CE5F780086731A /* views */,
+				1DE9871726CE57A20086731A /* widgets */,
+				1DE9870B26CE56B40086731A /* MainWidget.swift */,
+				1DE9870D26CE56B50086731A /* Assets.xcassets */,
+				1DE9870F26CE56B50086731A /* Info.plist */,
+			);
+			path = MainWidget;
+			sourceTree = "<group>";
+		};
+		1DE9871726CE57A20086731A /* widgets */ = {
+			isa = PBXGroup;
+			children = (
+				1DE9871826CE57E20086731A /* Open.swift */,
+				1DE9871D26CE5F1D0086731A /* Medium.swift */,
+			);
+			path = widgets;
+			sourceTree = "<group>";
+		};
+		1DE9872326CE5F780086731A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1DE9871B26CE598E0086731A /* OpenView.swift */,
+				1DE9871F26CE5F310086731A /* MediumView.swift */,
+				1DE9872026CE5F310086731A /* MediumPlaceholder.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		D2B49B938ED8488470DA895B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +755,8 @@
 				BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */,
 				D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */,
 				1BAC3B171FFF874EF6065A0C /* Pods_OCWTests.framework */,
+				1DE9870626CE56B40086731A /* WidgetKit.framework */,
+				1DE9870826CE56B40086731A /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -687,10 +773,12 @@
 				1D2BA89F26561C2E0089E899 /* Frameworks */,
 				1D2BA8A026561C2E0089E899 /* Resources */,
 				0382A4E8773BEE39CC9F32EF /* [CP] Embed Pods Frameworks */,
+				1DE9871326CE56B50086731A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1DE9871126CE56B50086731A /* PBXTargetDependency */,
 			);
 			name = OCW;
 			productName = OCW;
@@ -736,12 +824,30 @@
 			productReference = 1D2BA8C826561C2F0089E899 /* OCWUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		1DE9870426CE56B40086731A /* MainWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DE9871626CE56B50086731A /* Build configuration list for PBXNativeTarget "MainWidgetExtension" */;
+			buildPhases = (
+				1DE9870126CE56B40086731A /* Sources */,
+				1DE9870226CE56B40086731A /* Frameworks */,
+				1DE9870326CE56B40086731A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MainWidgetExtension;
+			productName = MainWidgetExtension;
+			productReference = 1DE9870526CE56B40086731A /* MainWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		1D2BA89A26561C2E0089E899 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
 					1D2BA8A126561C2E0089E899 = {
@@ -755,6 +861,9 @@
 					1D2BA8C726561C2F0089E899 = {
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 1D2BA8A126561C2E0089E899;
+					};
+					1DE9870426CE56B40086731A = {
+						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
@@ -774,6 +883,7 @@
 				1D2BA8A126561C2E0089E899 /* OCW */,
 				1D2BA8BC26561C2F0089E899 /* OCWTests */,
 				1D2BA8C726561C2F0089E899 /* OCWUITests */,
+				1DE9870426CE56B40086731A /* MainWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -825,6 +935,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1DE9870326CE56B40086731A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE9870E26CE56B50086731A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1120,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1DE9870126CE56B40086731A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1DE9872126CE5F320086731A /* MediumView.swift in Sources */,
+				1DE9871E26CE5F1D0086731A /* Medium.swift in Sources */,
+				1DE9870C26CE56B40086731A /* MainWidget.swift in Sources */,
+				1DE9871C26CE598E0086731A /* OpenView.swift in Sources */,
+				1DE9872226CE5F320086731A /* MediumPlaceholder.swift in Sources */,
+				1DE9871A26CE57E20086731A /* Open.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1014,6 +1145,11 @@
 			isa = PBXTargetDependency;
 			target = 1D2BA8A126561C2E0089E899 /* OCW */;
 			targetProxy = 1D2BA8C926561C2F0089E899 /* PBXContainerItemProxy */;
+		};
+		1DE9871126CE56B50086731A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1DE9870426CE56B40086731A /* MainWidgetExtension */;
+			targetProxy = 1DE9871026CE56B50086731A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1081,7 +1217,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1136,7 +1272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1149,6 +1285,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E36B1675AB64D895E7B80047 /* Pods-OCW.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1176,6 +1313,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5F6B17FC109494DB9ACC11D /* Pods-OCW.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
@@ -1278,6 +1416,58 @@
 			};
 			name = Release;
 		};
+		1DE9871426CE56B50086731A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WED6K5JJW6;
+				INFOPLIST_FILE = MainWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife.MainWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1DE9871526CE56B50086731A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WED6K5JJW6;
+				INFOPLIST_FILE = MainWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife.MainWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1313,6 +1503,15 @@
 			buildConfigurations = (
 				1D2BA8D826561C2F0089E899 /* Debug */,
 				1D2BA8D926561C2F0089E899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DE9871626CE56B50086731A /* Build configuration list for PBXNativeTarget "MainWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DE9871426CE56B50086731A /* Debug */,
+				1DE9871526CE56B50086731A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

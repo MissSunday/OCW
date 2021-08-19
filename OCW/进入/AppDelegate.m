@@ -26,7 +26,12 @@
     
     return YES;
 }
-
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options{
+    
+    NSLog(@"收到跳转信息 scheme %@ host %@",url.scheme,url.host);
+    
+    return YES;
+}
 
 #pragma mark - UISceneSession lifecycle
 
