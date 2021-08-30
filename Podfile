@@ -26,7 +26,7 @@ target 'OCW' do
   pod 'LTScrollView', '0.3.0'
   pod 'JXCategoryView', '1.5.9'
   
-  
+  pod 'XRToolSDK', '0.2.0'
   target 'OCWTests' do
     inherit! :search_paths
     # Pods for testing

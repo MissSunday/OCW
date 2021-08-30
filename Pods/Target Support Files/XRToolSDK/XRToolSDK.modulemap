@@ -1,0 +1,6 @@
+framework module XRToolSDK {
+  umbrella header "XRToolSDK-umbrella.h"
+
+  export *
+  module * { export * }
+}
