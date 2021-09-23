@@ -81,7 +81,6 @@
 		1D7301E52692F6E600708655 /* RACVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7301E42692F6E600708655 /* RACVC.m */; };
 		1D7301E82693FA5B00708655 /* RACCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7301E72693FA5B00708655 /* RACCell.m */; };
 		1DD006A2265D27A900B805FE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD006A1265D27A900B805FE /* Person.m */; };
-		1DE2128F26D891B400D92C47 /* XRYYSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE2128E26D891B400D92C47 /* XRYYSDK.framework */; };
 		1DE9870726CE56B40086731A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE9870626CE56B40086731A /* WidgetKit.framework */; };
 		1DE9870926CE56B40086731A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE9870826CE56B40086731A /* SwiftUI.framework */; };
 		1DE9870C26CE56B40086731A /* MainWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9870B26CE56B40086731A /* MainWidget.swift */; };
@@ -270,7 +269,6 @@
 		1D7301E72693FA5B00708655 /* RACCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACCell.m; sourceTree = "<group>"; };
 		1DD006A0265D27A900B805FE /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		1DD006A1265D27A900B805FE /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		1DE2128E26D891B400D92C47 /* XRYYSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = XRYYSDK.framework; sourceTree = "<group>"; };
 		1DE9870526CE56B40086731A /* MainWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MainWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE9870626CE56B40086731A /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		1DE9870826CE56B40086731A /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -302,7 +300,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */,
-				1DE2128F26D891B400D92C47 /* XRYYSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +676,7 @@
 				1DF9E4C426895B77008BCB38 /* T.m */,
 				1D1EE33E26B13F47001BE780 /* 壁纸 */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
-				1DE2129026D891E000D92C47 /* 动态库 */,
+				1DE2129026D891E000D92C47 /* 静态库 */,
 				1D2BA8B126561C2F0089E899 /* Assets.xcassets */,
 				1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */,
 				1D2BA8B626561C2F0089E899 /* Info.plist */,
@@ -719,12 +716,11 @@
 			path = WKWbView;
 			sourceTree = "<group>";
 		};
-		1DE2129026D891E000D92C47 /* 动态库 */ = {
+		1DE2129026D891E000D92C47 /* 静态库 */ = {
 			isa = PBXGroup;
 			children = (
-				1DE2128E26D891B400D92C47 /* XRYYSDK.framework */,
 			);
-			path = "动态库";
+			path = "静态库";
 			sourceTree = "<group>";
 		};
 		1DE9870A26CE56B40086731A /* MainWidget */ = {
@@ -1319,6 +1315,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OCW",
+					"$(PROJECT_DIR)/OCW/静态库",
 				);
 				INFOPLIST_FILE = OCW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1351,6 +1348,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OCW",
+					"$(PROJECT_DIR)/OCW/静态库",
 				);
 				INFOPLIST_FILE = OCW/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

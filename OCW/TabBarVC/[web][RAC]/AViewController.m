@@ -11,7 +11,7 @@
 #import "TZImagePickerVC.h"
 #import "RACVC.h"
 #import "Person.h"
-#import <XRYYSDK/XRYYSDK.h>
+
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -47,7 +47,7 @@
     });
     NSLog(@"gcd - 3");
     
-    [PersonSDK runSDK];
+    
     
     
     static int a = 10;

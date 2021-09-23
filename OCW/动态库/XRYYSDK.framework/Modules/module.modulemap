@@ -1,6 +1,0 @@
-framework module XRYYSDK {
-  umbrella header "XRYYSDK.h"
-
-  export *
-  module * { export * }
-}

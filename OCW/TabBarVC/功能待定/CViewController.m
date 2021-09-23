@@ -6,7 +6,7 @@
 //
 
 #import "CViewController.h"
-
+//#import <SenseTimeFaceSDK_iOS/SenseTimeFaceHeader.h>
 @interface CViewController ()
 
 @end
@@ -20,15 +20,14 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     
-    NSDictionary *dic = @{@"accountId":@"101010010000002",
-                          @"password": @"14BD12E5143B7D2812C361993CAA0EE2"};
-    
-    [XRNetRequest postWithUrl:@"https://houseagent.91hilife.com/hshxf/app/login/passwordLogin" header:dic body:@{} success:^(id  _Nullable data, BOOL isCanUse) {
-        
-    } failure:^(NSError * _Nonnull error, BOOL haveNet) {
-        
-    }];
-    
+//    NSDictionary *dic = @{@"accountId":@"101010010000002",
+//                          @"password": @"14BD12E5143B7D2812C361993CAA0EE2"};
+//
+//    [XRNetRequest postWithUrl:@"https://houseagent.91hilife.com/hshxf/app/login/passwordLogin" header:dic body:@{} success:^(id  _Nullable data, BOOL isCanUse) {
+//
+//    } failure:^(NSError * _Nonnull error, BOOL haveNet) {
+//
+//    }];
     
 }
 /*
