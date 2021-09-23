@@ -95,6 +95,8 @@
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
+		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
+		B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */ = {isa = PBXBuildFile; fileRef = B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,6 +290,9 @@
 		5F1A1825B97DB3C1E70DAFD5 /* Pods-OCWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWTests.debug.xcconfig"; path = "Target Support Files/Pods-OCWTests/Pods-OCWTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760C1F4CB50F427A4FA1BBF4 /* Pods-OCW-OCWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.release.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.release.xcconfig"; sourceTree = "<group>"; };
 		786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.debug.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocalSaveVC.h; sourceTree = "<group>"; };
+		B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocalSaveVC.m; sourceTree = "<group>"; };
+		B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Markdown 语法使用说明.md"; sourceTree = "<group>"; };
 		BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F6B17FC109494DB9ACC11D /* Pods-OCW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW.release.xcconfig"; path = "Target Support Files/Pods-OCW/Pods-OCW.release.xcconfig"; sourceTree = "<group>"; };
 		D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW_OCWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +360,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				B42C462D26FC605000785D93 /* 本地存储 */,
 				1D0FD7C126AFA98A00A61E96 /* 图片浏览器KNPhotoBrowser */,
 				1D0FD83226AFF1F600A61E96 /* 选取上传图片，保存到本地 */,
 			);
@@ -674,6 +680,7 @@
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
+				B42C463126FC63BA00785D93 /* 文件 */,
 				1D1EE33E26B13F47001BE780 /* 壁纸 */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
 				1DE2129026D891E000D92C47 /* 静态库 */,
@@ -752,6 +759,23 @@
 				1DE9872026CE5F310086731A /* MediumPlaceholder.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		B42C462D26FC605000785D93 /* 本地存储 */ = {
+			isa = PBXGroup;
+			children = (
+				B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */,
+				B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */,
+			);
+			path = "本地存储";
+			sourceTree = "<group>";
+		};
+		B42C463126FC63BA00785D93 /* 文件 */ = {
+			isa = PBXGroup;
+			children = (
+				B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */,
+			);
+			path = "文件";
 			sourceTree = "<group>";
 		};
 		D2B49B938ED8488470DA895B /* Pods */ = {
@@ -934,6 +958,7 @@
 				1D0FD82826AFEAB700A61E96 /* aozima_21.jpeg in Resources */,
 				1D0FD82926AFEAB700A61E96 /* aozima_01.jpeg in Resources */,
 				1D0FD82226AFEAB700A61E96 /* aozima_15.jpeg in Resources */,
+				B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */,
 				1D0FD82F26AFEAB700A61E96 /* aozima_11.jpeg in Resources */,
 				1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */,
 				1D0FD82D26AFEAB700A61E96 /* aozima_20.jpeg in Resources */,
@@ -1076,6 +1101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */,
+				B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */,
 				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,

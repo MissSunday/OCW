@@ -9,6 +9,7 @@
 #import "QJCommonWebViewController.h"
 #import "KNPhotoBrowserVC.h"
 #import "TZImagePickerVC.h"
+#import "XRLocalSaveVC.h"
 #import "RACVC.h"
 #import "Person.h"
 
@@ -152,6 +153,8 @@
         [self.navigationController pushViewController:KNPhotoBrowserVC.new animated:YES];
     }else if (indexPath.row == 1){
         [self.navigationController pushViewController:TZImagePickerVC.new animated:YES];
+    }else if (indexPath.row == 2){
+        [self.navigationController pushViewController:XRLocalSaveVC.new animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -174,7 +177,7 @@
 }
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"1. 图片浏览器-KNPhotoBrowser",@"2. 选取上传图片，保存到本地",@"3",@"4",@"5",@"6"].mutableCopy;
+        _dataArray = @[@"1. 图片浏览器-KNPhotoBrowser",@"2. 选取上传图片，保存到本地",@"3. 本地存储",@"4",@"5",@"6"].mutableCopy;
     }
     return _dataArray;
 }
