@@ -97,6 +97,7 @@
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
 		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
 		B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */ = {isa = PBXBuildFile; fileRef = B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */; };
+		B42C463526FC6B1500785D93 /* directorie.png in Resources */ = {isa = PBXBuildFile; fileRef = B42C463426FC6B1500785D93 /* directorie.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +294,7 @@
 		B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocalSaveVC.h; sourceTree = "<group>"; };
 		B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocalSaveVC.m; sourceTree = "<group>"; };
 		B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Markdown 语法使用说明.md"; sourceTree = "<group>"; };
+		B42C463426FC6B1500785D93 /* directorie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directorie.png; sourceTree = "<group>"; };
 		BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F6B17FC109494DB9ACC11D /* Pods-OCW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW.release.xcconfig"; path = "Target Support Files/Pods-OCW/Pods-OCW.release.xcconfig"; sourceTree = "<group>"; };
 		D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW_OCWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -766,6 +768,7 @@
 			children = (
 				B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */,
 				B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */,
+				B42C463426FC6B1500785D93 /* directorie.png */,
 			);
 			path = "本地存储";
 			sourceTree = "<group>";
@@ -953,6 +956,7 @@
 				1D0FD82A26AFEAB700A61E96 /* aozima_17.jpeg in Resources */,
 				1D0FD81F26AFEAB700A61E96 /* aozima_12.jpeg in Resources */,
 				1D0FD82526AFEAB700A61E96 /* aozima_14.jpeg in Resources */,
+				B42C463526FC6B1500785D93 /* directorie.png in Resources */,
 				1D0FD82626AFEAB700A61E96 /* aozima_18.jpeg in Resources */,
 				1D0FD83126AFEAB700A61E96 /* aozima_06.jpeg in Resources */,
 				1D0FD82826AFEAB700A61E96 /* aozima_21.jpeg in Resources */,
