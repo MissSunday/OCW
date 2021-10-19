@@ -81,6 +81,10 @@
     
     NSLog(@" - %d",self.DuoDuo.num);
     
+    NSMutableArray *array = @[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10].mutableCopy;
+    NSArray *subA = [array subarrayWithRange:NSMakeRange(1, 4)];
+    NSLog(@"%@\n%@",array,subA);
+    
     
 }
 
