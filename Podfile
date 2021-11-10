@@ -27,10 +27,13 @@ target 'OCW' do
   pod 'JXCategoryView', '1.5.9'
   #组件化工具
   pod 'CTMediator', '~> 46'
-  
+  pod 'JLRoutes', '~> 2.1'
   #pod 'AMap3DMap'
   
   pod 'XRToolSDK', '0.2.0'
+  
+  #pod "A_Category", :path => "../A_Category"本地引用
+  
   target 'OCWTests' do
     inherit! :search_paths
     # Pods for testing

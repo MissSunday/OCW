@@ -8,7 +8,7 @@
 
 //继承基类vc
 //可以把基类封装成组件 然后模块组件依赖基类组件
-//s.dependon
+//s.dependency '' 某个库或者组件
 #import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
