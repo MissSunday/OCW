@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - CTMediator (46)
   - FLEX (4.4.1)
   - JXCategoryView (1.5.9)
   - KNPhotoBrowser (2.5.3):
@@ -43,6 +44,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 4.0.1)
+  - CTMediator (~> 46)
   - FLEX (= 4.4.1)
   - JXCategoryView (= 1.5.9)
   - KNPhotoBrowser (= 2.5.3)
@@ -61,6 +63,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - CTMediator
     - FLEX
     - JXCategoryView
     - KNPhotoBrowser
@@ -81,6 +84,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FLEX: 7ca2c8cd3a435ff501ff6d2f2141e9bdc934eaab
   JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
   KNPhotoBrowser: 38371b4b9113c6eadb7511b56a1bd2befefa04bc
@@ -99,6 +103,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 87317923ff11806f72fccd3ac55c36d31532de5e
+PODFILE CHECKSUM: 0999c70e9cf9b0c328297e34537845010c39158c
 
 COCOAPODS: 1.11.2

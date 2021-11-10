@@ -98,6 +98,12 @@
 		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
 		B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */ = {isa = PBXBuildFile; fileRef = B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */; };
 		B42C463526FC6B1500785D93 /* directorie.png in Resources */ = {isa = PBXBuildFile; fileRef = B42C463426FC6B1500785D93 /* directorie.png */; };
+		B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */; };
+		B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */; };
+		B4859C9D273BA90C00F49091 /* Target_second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9C273BA90C00F49091 /* Target_second.m */; };
+		B4859CA0273BA91B00F49091 /* Target_first.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9F273BA91B00F49091 /* Target_first.m */; };
+		B4859CA3273BA94700F49091 /* CTMediator+First.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859CA2273BA94700F49091 /* CTMediator+First.m */; };
+		B4859CA6273BA95700F49091 /* CTMediator+Second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859CA5273BA95700F49091 /* CTMediator+Second.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -295,6 +301,18 @@
 		B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocalSaveVC.m; sourceTree = "<group>"; };
 		B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Markdown 语法使用说明.md"; sourceTree = "<group>"; };
 		B42C463426FC6B1500785D93 /* directorie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directorie.png; sourceTree = "<group>"; };
+		B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFirstViewController.h; sourceTree = "<group>"; };
+		B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFirstViewController.m; sourceTree = "<group>"; };
+		B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSecondViewController.h; sourceTree = "<group>"; };
+		B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJSecondViewController.m; sourceTree = "<group>"; };
+		B4859C9B273BA90C00F49091 /* Target_second.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_second.h; sourceTree = "<group>"; };
+		B4859C9C273BA90C00F49091 /* Target_second.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_second.m; sourceTree = "<group>"; };
+		B4859C9E273BA91B00F49091 /* Target_first.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_first.h; sourceTree = "<group>"; };
+		B4859C9F273BA91B00F49091 /* Target_first.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_first.m; sourceTree = "<group>"; };
+		B4859CA1273BA94700F49091 /* CTMediator+First.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+First.h"; sourceTree = "<group>"; };
+		B4859CA2273BA94700F49091 /* CTMediator+First.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+First.m"; sourceTree = "<group>"; };
+		B4859CA4273BA95700F49091 /* CTMediator+Second.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+Second.h"; sourceTree = "<group>"; };
+		B4859CA5273BA95700F49091 /* CTMediator+Second.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+Second.m"; sourceTree = "<group>"; };
 		BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F6B17FC109494DB9ACC11D /* Pods-OCW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW.release.xcconfig"; path = "Target Support Files/Pods-OCW/Pods-OCW.release.xcconfig"; sourceTree = "<group>"; };
 		D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW_OCWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -362,6 +380,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				B4859C92273BA86C00F49091 /* CTMediator组件间通信 */,
 				B42C462D26FC605000785D93 /* 本地存储 */,
 				1D0FD7C126AFA98A00A61E96 /* 图片浏览器KNPhotoBrowser */,
 				1D0FD83226AFF1F600A61E96 /* 选取上传图片，保存到本地 */,
@@ -781,6 +800,41 @@
 			path = "文件";
 			sourceTree = "<group>";
 		};
+		B4859C92273BA86C00F49091 /* CTMediator组件间通信 */ = {
+			isa = PBXGroup;
+			children = (
+				B4859C93273BA88900F49091 /* 组件1 */,
+				B4859C94273BA89400F49091 /* 组件2 */,
+			);
+			path = "CTMediator组件间通信";
+			sourceTree = "<group>";
+		};
+		B4859C93273BA88900F49091 /* 组件1 */ = {
+			isa = PBXGroup;
+			children = (
+				B4859CA1273BA94700F49091 /* CTMediator+First.h */,
+				B4859CA2273BA94700F49091 /* CTMediator+First.m */,
+				B4859C9E273BA91B00F49091 /* Target_first.h */,
+				B4859C9F273BA91B00F49091 /* Target_first.m */,
+				B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */,
+				B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */,
+			);
+			path = "组件1";
+			sourceTree = "<group>";
+		};
+		B4859C94273BA89400F49091 /* 组件2 */ = {
+			isa = PBXGroup;
+			children = (
+				B4859CA4273BA95700F49091 /* CTMediator+Second.h */,
+				B4859CA5273BA95700F49091 /* CTMediator+Second.m */,
+				B4859C9B273BA90C00F49091 /* Target_second.h */,
+				B4859C9C273BA90C00F49091 /* Target_second.m */,
+				B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */,
+				B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */,
+			);
+			path = "组件2";
+			sourceTree = "<group>";
+		};
 		D2B49B938ED8488470DA895B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1109,12 +1163,14 @@
 				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
+				B4859CA6273BA95700F49091 /* CTMediator+Second.m in Sources */,
 				1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */,
 				1D1EE34A26B2A3E9001BE780 /* XRPhotoBrowerNav.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
 				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
 				1D169D8A26A6650700933E1C /* BaseViewController.m in Sources */,
+				B4859C9D273BA90C00F49091 /* Target_second.m in Sources */,
 				1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */,
 				1D0FD7C426AFA9B900A61E96 /* KNPhotoBrowserVC.m in Sources */,
 				1D0FD7C726AFAB2800A61E96 /* KNPhotoBrowserItem.m in Sources */,
@@ -1134,10 +1190,12 @@
 				1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */,
 				1D0FD648269E72D300726555 /* RuntimeVC.m in Sources */,
 				1DD006A2265D27A900B805FE /* Person.m in Sources */,
+				B4859CA3273BA94700F49091 /* CTMediator+First.m in Sources */,
 				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
+				B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */,
 				1D169D9C26A6684300933E1C /* CViewController.m in Sources */,
 				1D0FD7B026AE998B00A61E96 /* BHLTListViewController.m in Sources */,
 				1D7301E82693FA5B00708655 /* RACCell.m in Sources */,
@@ -1147,7 +1205,9 @@
 				1D0FD7C026AEB28600A61E96 /* XRNetRequest.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
 				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
+				B4859CA0273BA91B00F49091 /* Target_first.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
+				B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */,
 				1D1EE34326B15A99001BE780 /* XRPhotoBrower.m in Sources */,
 				1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */,
 			);
@@ -1353,6 +1413,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCW/静态库",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = dev_profile;
@@ -1385,6 +1449,10 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OCW/静态库",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";

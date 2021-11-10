@@ -25,6 +25,8 @@ target 'OCW' do
   
   pod 'LTScrollView', '0.3.0'
   pod 'JXCategoryView', '1.5.9'
+  #组件化工具
+  pod 'CTMediator', '~> 46'
   
   #pod 'AMap3DMap'
   

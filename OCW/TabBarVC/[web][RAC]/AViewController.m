@@ -12,6 +12,7 @@
 #import "XRLocalSaveVC.h"
 #import "RACVC.h"
 #import "Person.h"
+#import "CTMediator+First.h"
 
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -81,8 +82,12 @@
     
     NSLog(@" - %d",self.DuoDuo.num);
     
-    NSMutableArray *array = @[@1,@2,@3,@4,@5,@6,@7,@8,@9,@10].mutableCopy;
+    NSMutableArray *array = @[@1,@2,@3,@4,@5,@6,@7,@11,@8,@-13,@9,@10].mutableCopy;
     NSArray *subA = [array subarrayWithRange:NSMakeRange(1, 4)];
+    [array sortUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
+        return [@(fabsf(obj1.floatValue)) compare:@(fabsf(obj2.floatValue))];
+    }];
+
     NSLog(@"%@\n%@",array,subA);
     
     
@@ -148,7 +153,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:[UITableViewCell className] forIndexPath:indexPath];
     NSString *a = self.dataArray[indexPath.row];
-    cell.textLabel.text = a;
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld.  %@",indexPath.row + 1,a];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -159,6 +164,9 @@
         [self.navigationController pushViewController:TZImagePickerVC.new animated:YES];
     }else if (indexPath.row == 2){
         [self.navigationController pushViewController:XRLocalSaveVC.new animated:YES];
+    }else if (indexPath.row == 3){
+        UIViewController *vc = [[CTMediator sharedInstance]CTMediator_viewControllerForFirst];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -181,7 +189,7 @@
 }
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"1. 图片浏览器-KNPhotoBrowser",@"2. 选取上传图片，保存到本地",@"3. 本地存储",@"4",@"5",@"6"].mutableCopy;
+        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"选取上传图片，保存到本地",@"本地存储",@"组件间通信CTMediator",@"组件间通信JLRoutes",@""].mutableCopy;
     }
     return _dataArray;
 }
