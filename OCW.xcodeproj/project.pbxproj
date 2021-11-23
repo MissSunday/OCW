@@ -98,6 +98,9 @@
 		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
 		B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */ = {isa = PBXBuildFile; fileRef = B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */; };
 		B42C463526FC6B1500785D93 /* directorie.png in Resources */ = {isa = PBXBuildFile; fileRef = B42C463426FC6B1500785D93 /* directorie.png */; };
+		B47FEE28274CD18200F3D00B /* MasonryTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE27274CD18200F3D00B /* MasonryTestVC.m */; };
+		B47FEE2C274CD26800F3D00B /* MasonryTestVC_Xib.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE2A274CD26800F3D00B /* MasonryTestVC_Xib.m */; };
+		B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */; };
 		B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */; };
 		B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */; };
 		B4859C9D273BA90C00F49091 /* Target_second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9C273BA90C00F49091 /* Target_second.m */; };
@@ -301,6 +304,11 @@
 		B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocalSaveVC.m; sourceTree = "<group>"; };
 		B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Markdown 语法使用说明.md"; sourceTree = "<group>"; };
 		B42C463426FC6B1500785D93 /* directorie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = directorie.png; sourceTree = "<group>"; };
+		B47FEE26274CD18200F3D00B /* MasonryTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTestVC.h; sourceTree = "<group>"; };
+		B47FEE27274CD18200F3D00B /* MasonryTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryTestVC.m; sourceTree = "<group>"; };
+		B47FEE29274CD26800F3D00B /* MasonryTestVC_Xib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTestVC_Xib.h; sourceTree = "<group>"; };
+		B47FEE2A274CD26800F3D00B /* MasonryTestVC_Xib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryTestVC_Xib.m; sourceTree = "<group>"; };
+		B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasonryTestVC_Xib.xib; sourceTree = "<group>"; };
 		B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFirstViewController.h; sourceTree = "<group>"; };
 		B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFirstViewController.m; sourceTree = "<group>"; };
 		B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSecondViewController.h; sourceTree = "<group>"; };
@@ -380,6 +388,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				B47FEE25274CD14500F3D00B /* Masonry示例 */,
 				B4859C92273BA86C00F49091 /* CTMediator组件间通信 */,
 				B42C462D26FC605000785D93 /* 本地存储 */,
 				1D0FD7C126AFA98A00A61E96 /* 图片浏览器KNPhotoBrowser */,
@@ -800,6 +809,18 @@
 			path = "文件";
 			sourceTree = "<group>";
 		};
+		B47FEE25274CD14500F3D00B /* Masonry示例 */ = {
+			isa = PBXGroup;
+			children = (
+				B47FEE26274CD18200F3D00B /* MasonryTestVC.h */,
+				B47FEE27274CD18200F3D00B /* MasonryTestVC.m */,
+				B47FEE29274CD26800F3D00B /* MasonryTestVC_Xib.h */,
+				B47FEE2A274CD26800F3D00B /* MasonryTestVC_Xib.m */,
+				B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */,
+			);
+			path = "Masonry示例";
+			sourceTree = "<group>";
+		};
 		B4859C92273BA86C00F49091 /* CTMediator组件间通信 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,6 +1034,7 @@
 				B42C463526FC6B1500785D93 /* directorie.png in Resources */,
 				1D0FD82626AFEAB700A61E96 /* aozima_18.jpeg in Resources */,
 				1D0FD83126AFEAB700A61E96 /* aozima_06.jpeg in Resources */,
+				B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */,
 				1D0FD82826AFEAB700A61E96 /* aozima_21.jpeg in Resources */,
 				1D0FD82926AFEAB700A61E96 /* aozima_01.jpeg in Resources */,
 				1D0FD82226AFEAB700A61E96 /* aozima_15.jpeg in Resources */,
@@ -1158,6 +1180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B47FEE2C274CD26800F3D00B /* MasonryTestVC_Xib.m in Sources */,
 				1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */,
 				B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */,
 				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
@@ -1208,6 +1231,7 @@
 				B4859CA0273BA91B00F49091 /* Target_first.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
 				B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */,
+				B47FEE28274CD18200F3D00B /* MasonryTestVC.m in Sources */,
 				1D1EE34326B15A99001BE780 /* XRPhotoBrower.m in Sources */,
 				1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */,
 			);

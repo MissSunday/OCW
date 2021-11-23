@@ -28,9 +28,10 @@ target 'OCW' do
   #组件化工具
   pod 'CTMediator', '~> 46'
   pod 'JLRoutes', '~> 2.1'
+  pod 'coobjc', '~> 1.2.0' #协程工具 类似于gcd
   #pod 'AMap3DMap'
   
-  pod 'XRToolSDK', '0.2.0'
+  #pod 'XRToolSDK', '0.2.0'
   
   #pod "A_Category", :path => "../A_Category"本地引用
   

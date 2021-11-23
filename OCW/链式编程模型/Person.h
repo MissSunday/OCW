@@ -34,25 +34,31 @@
 
 
 #import <Foundation/Foundation.h>
-
+@class Person;
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NSObject *_Nullable(^blockName)(int a);
+typedef Person *_Nullable(^blockName)(int a);
 
 @interface Person : NSObject
 
 @property(nonatomic,strong)NSString *title;
 
-@property(nonatomic,assign)int num;
+@property(nonatomic,assign)CGFloat money;
 
 -(void)run;
 
--(Person *(^)(int a))add;
+
+
+//发工资
+-(Person *(^)(CGFloat a))fgz;
+
+//交房租
+-(Person *(^)(CGFloat a))jfz;
+
+//吃饭
+-(Person *(^)(int a))eat;
 
 -(blockName)reduce;
-
--(Person *(^)(int a ,int b))chi;
-
 
 @end
 

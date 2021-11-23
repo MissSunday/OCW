@@ -13,6 +13,7 @@
 #import "RACVC.h"
 #import "Person.h"
 #import "CTMediator+First.h"
+#import "MasonryTestVC.h"
 
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -72,15 +73,11 @@
 //链式编程 练习
 -(void)func_chain{
     
-    self.DuoDuo = [Person new];
+    _DuoDuo = [Person new];
     
-    //[self.xiaoDuo.add(2).add(5).add(6) run];
+    _DuoDuo.fgz(20000).jfz(6500).eat(2000);
     
-    self.DuoDuo.chi(4,2).add(8);
-    
-    //[self.xiaoDuo add](5);
-    
-    NSLog(@" - %d",self.DuoDuo.num);
+    NSLog(@" 银行卡余额 ¥ %.2f",self.DuoDuo.money);
     
     NSMutableArray *array = @[@1,@2,@3,@4,@5,@6,@7,@11,@8,@-13,@9,@10].mutableCopy;
     NSArray *subA = [array subarrayWithRange:NSMakeRange(1, 4)];
@@ -167,6 +164,8 @@
     }else if (indexPath.row == 3){
         UIViewController *vc = [[CTMediator sharedInstance]CTMediator_viewControllerForFirst];
         [self.navigationController pushViewController:vc animated:YES];
+    }else if (indexPath.row == 5){
+        [self.navigationController pushViewController:[MasonryTestVC new] animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -189,7 +188,7 @@
 }
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"选取上传图片，保存到本地",@"本地存储",@"组件间通信CTMediator",@"组件间通信JLRoutes",@""].mutableCopy;
+        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"选取上传图片，保存到本地",@"本地存储",@"组件间通信CTMediator",@"组件间通信JLRoutes",@"Masonry示例"].mutableCopy;
     }
     return _dataArray;
 }

@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - cocore (1.2.6)
+  - coobjc (1.2.0):
+    - cocore (~> 1.2.0)
   - CTMediator (46)
   - FLEX (4.4.1)
   - JLRoutes (2.1)
@@ -29,7 +32,6 @@ PODS:
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
   - TZImagePickerController (3.6.0)
-  - XRToolSDK (0.2.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -45,6 +47,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 4.0.1)
+  - coobjc (~> 1.2.0)
   - CTMediator (~> 46)
   - FLEX (= 4.4.1)
   - JLRoutes (~> 2.1)
@@ -56,7 +59,6 @@ DEPENDENCIES:
   - Reachability (~> 3.2)
   - ReactiveObjC (= 3.1.1)
   - TZImagePickerController (= 3.6.0)
-  - XRToolSDK (= 0.2.0)
   - YYCategories (= 1.0.4)
   - YYModel (= 1.0.4)
   - YYText (= 1.0.7)
@@ -65,6 +67,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - cocore
+    - coobjc
     - CTMediator
     - FLEX
     - JLRoutes
@@ -77,7 +81,6 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - TZImagePickerController
-    - XRToolSDK
     - YYCache
     - YYCategories
     - YYImage
@@ -87,6 +90,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  cocore: d6abaa4dd8c15115290362b9accbb42cc2bce9a0
+  coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FLEX: 7ca2c8cd3a435ff501ff6d2f2141e9bdc934eaab
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
@@ -99,7 +104,6 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   TZImagePickerController: a37d7eec87c54436e896a67947033ad2178d498b
-  XRToolSDK: ca0b83089b7a4ecdafdef8ee670a9f7a12997273
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
@@ -107,6 +111,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: daff2f1ed73f86c379f2756143ba9ff6b99a3d43
+PODFILE CHECKSUM: 65ec4579cb424dfa63ed6a56819b1cfe390e32db
 
 COCOAPODS: 1.11.2

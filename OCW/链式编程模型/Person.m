@@ -19,32 +19,36 @@
 {
     self = [super init];
     if (self) {
-        _num = 0;
+        _money = 0;
     }
     return self;
 }
 - (void)run{
     NSLog(@"起飞");
 }
-- (Person * _Nonnull (^)(int))add{
-    return ^(int a){
-        self->_num += a;
-        return self;
-    };
-}
 - (blockName)reduce{
     return ^(int a){
-
-        return [NSObject new];
-    };
-}
-- (Person * _Nonnull (^)(int, int))chi{
-    
-    return ^(int a,int b){
-        
-        self->_num = a+b;
+        self->_money -= abs(a);
         return self;
     };
-    
+}
+
+- (Person * _Nonnull (^)(CGFloat))fgz{
+    return ^(CGFloat a){
+        self->_money +=a;
+        return self;
+    };
+}
+- (Person * _Nonnull (^)(CGFloat))jfz{
+    return ^(CGFloat a){
+        self->_money -= fabs(a);
+        return self;
+    };
+}
+- (Person * _Nonnull (^)(int))eat{
+    return ^(int a){
+        self->_money -= abs(a);
+        return self;
+    };
 }
 @end

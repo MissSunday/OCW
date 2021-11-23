@@ -10,7 +10,3 @@
 #endif
 #endif
 
-
-FOUNDATION_EXPORT double XRToolSDKVersionNumber;
-FOUNDATION_EXPORT const unsigned char XRToolSDKVersionString[];
-
