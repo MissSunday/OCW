@@ -26,31 +26,75 @@
 
 @implementation AViewController
 
+static const void * const AuthenticationChallengeErrorKey = &AuthenticationChallengeErrorKey;
+
+const int a = 5;/*a的值一直为5，不能被改变*/
+
+const int b; /* b = 10; b的值被赋值为10后，不能被改变*/
+
+const int *ptr; /* ptr为指向整型常量的指针，ptr的值可以修改，但不能修改其所指向的值*/
+
+int *const ptrr;/* ptrr为指向整型的常量指针，ptrr的值不能修改，但可以修改其所指向的值*/
+
+const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指向的值都不能修改*/
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"- %s -",__func__); NSLog(@"-- %p",pt);
     self.navigationItem.title = @"各种功能入口";
     [self UI];
     [self nav];
     [self block_text];
     [self func_chain];
-    test1 *t1 = [[test1 alloc]init];
-    [t1 show];
-    
+ 
 }
 //block 练习
 -(void)block_text{
     
+    /*
+                并发队列        串行队列        主队列
+      同步     没有开启新线程   没有开启新线程      死锁
+               串行执行任务     串行执行任务
+      异步      能开启新线程   有开启新线程(1条)  不开启新线程
+               并发执行任务     串行执行任务     串行执行任务
+    */
+    
+    //在函数内定义的静态局部变量，该变量存在内存的静态区
+    //所以即使该函数运行结束，静态变量的值不会被销毁，函数下次运行时能仍用到这个值。
+    for (int i = 0; i < 5; i++) {
+        static int a = 1;
+        NSLog(@"static静态变量 %d",a);
+        a+=1;
+    }
+    
+    
     //gcd测试
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"gcd - 0");
+        NSLog(@"gcd - 0 %@",[NSThread currentThread]);
         dispatch_sync(dispatch_get_global_queue(0, 0), ^{
-            NSLog(@"gcd - 1");
+            NSLog(@"gcd - 1 %@",[NSThread currentThread]);
         });
-        NSLog(@"gcd - 2");
+        NSLog(@"gcd - 2 %@",[NSThread currentThread]);
     });
-    NSLog(@"gcd - 3");
+    NSLog(@"gcd - 3 %@",[NSThread currentThread]);
     
+    dispatch_queue_t cxqueue = dispatch_queue_create("cx", DISPATCH_QUEUE_SERIAL);
     
+    dispatch_sync(cxqueue, ^{
+       //同步串行队列
+        NSLog(@"%@ 1",[NSThread currentThread]);
+        
+        NSLog(@"%@ 2",[NSThread currentThread]);
+        
+    });
+    dispatch_sync(cxqueue, ^{
+       //同步串行队列
+        NSLog(@"%@ 4",[NSThread currentThread]);
+        
+        NSLog(@"%@ 5",[NSThread currentThread]);
+        
+    });
+    NSLog(@"%@ 3",[NSThread currentThread]);
     
     
     static int a = 10;
@@ -73,7 +117,13 @@
 //链式编程 练习
 -(void)func_chain{
     
+ 
     _DuoDuo = [Person new];
+    
+    Person *running = [[_DuoDuo run]jump];
+    
+    
+    NSLog(@"- %@",running);
     
     _DuoDuo.fgz(20000).jfz(6500).eat(2000);
     
@@ -84,9 +134,9 @@
     [array sortUsingComparator:^NSComparisonResult(NSNumber *obj1, NSNumber *obj2) {
         return [@(fabsf(obj1.floatValue)) compare:@(fabsf(obj2.floatValue))];
     }];
-
-    NSLog(@"%@\n%@",array,subA);
     
+    NSLog(@"%@\n%@ hash - %ld",array,subA,array.hash);
+
     
 }
 
@@ -99,14 +149,24 @@
     NSLog(@"- %s -",__func__);
 }
 
+- (void)updateViewConstraints{
+    NSLog(@"- %s -",__func__);
+    // --- remake/update constraints here
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
+    //according to apple super should be called at end of method
+    [super updateViewConstraints];
+    
+}
 -(void)UI{
     [self.view addSubview:self.tableView];
     [self layout];
 }
 -(void)layout{
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    
     
 }
 -(void)nav{

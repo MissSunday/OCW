@@ -6,12 +6,11 @@
 //
 
 import Foundation
-
+import UIKit
 class test1: NSObject {
     
-   @objc func show() {
+   @objc func show() -> UIImage {
     print("swift类 %@",NSStringFromClass(self.classForCoder))
+    return UIImage(named: "directory")!.reImage(color: UIColor.red, size: 200)
     }
-    
-    
 }

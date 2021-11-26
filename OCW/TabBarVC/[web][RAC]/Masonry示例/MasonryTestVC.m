@@ -6,12 +6,12 @@
 //
 
 #import "MasonryTestVC.h"
-
+#import "UIImage+ReColor.h"
 @interface MasonryTestVC ()
 
 @property(nonatomic,strong)UIView *someView;
 
-@property(nonatomic,strong)UIView *otherView;
+@property(nonatomic,strong)UIImageView *otherView;
 @end
 
 @implementation MasonryTestVC
@@ -38,7 +38,18 @@
         make.height.mas_equalTo(150);
     }];
     
-    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [UIView animateWithDuration:1 animations:^{
+            [self.someView mas_updateConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.view).offset(300);
+            }];
+            [self.view layoutIfNeeded];
+            
+        }];
+        
+    });
+    NSLog(@"hello world !");
     
 }
 
@@ -51,12 +62,15 @@
     }
     return _someView;
 }
-- (UIView *)otherView{
+- (UIImageView *)otherView{
     if (!_otherView) {
-        _otherView = [[UIView alloc]init];
-        _otherView.backgroundColor = [UIColor randomColor];
+        _otherView = [[UIImageView alloc]init];
+        _otherView.backgroundColor = [UIColor cyanColor];
         _otherView.clipsToBounds = YES;
         _otherView.layer.cornerRadius = 15.f;
+        UIImage *img = [UIImage imageNamed:@"directory"];
+        _otherView.image = [img reColor:[UIColor orangeColor] size:img.size];
+
     }
     return _otherView;
 }

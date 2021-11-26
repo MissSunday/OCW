@@ -101,6 +101,8 @@
 		B47FEE28274CD18200F3D00B /* MasonryTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE27274CD18200F3D00B /* MasonryTestVC.m */; };
 		B47FEE2C274CD26800F3D00B /* MasonryTestVC_Xib.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE2A274CD26800F3D00B /* MasonryTestVC_Xib.m */; };
 		B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */; };
+		B47FEE39274E385000F3D00B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE38274E385000F3D00B /* UIImage+Extensions.swift */; };
+		B47FEE3C274E44A300F3D00B /* UIImage+ReColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */; };
 		B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */; };
 		B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */; };
 		B4859C9D273BA90C00F49091 /* Target_second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9C273BA90C00F49091 /* Target_second.m */; };
@@ -309,6 +311,9 @@
 		B47FEE29274CD26800F3D00B /* MasonryTestVC_Xib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasonryTestVC_Xib.h; sourceTree = "<group>"; };
 		B47FEE2A274CD26800F3D00B /* MasonryTestVC_Xib.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasonryTestVC_Xib.m; sourceTree = "<group>"; };
 		B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MasonryTestVC_Xib.xib; sourceTree = "<group>"; };
+		B47FEE38274E385000F3D00B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		B47FEE3A274E44A300F3D00B /* UIImage+ReColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ReColor.h"; sourceTree = "<group>"; };
+		B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ReColor.m"; sourceTree = "<group>"; };
 		B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFirstViewController.h; sourceTree = "<group>"; };
 		B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFirstViewController.m; sourceTree = "<group>"; };
 		B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSecondViewController.h; sourceTree = "<group>"; };
@@ -368,6 +373,9 @@
 			isa = PBXGroup;
 			children = (
 				1D0FD75926AAB41F00A61E96 /* swiftClass.swift */,
+				B47FEE38274E385000F3D00B /* UIImage+Extensions.swift */,
+				B47FEE3A274E44A300F3D00B /* UIImage+ReColor.h */,
+				B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */,
 				1D0FD75826AAB41E00A61E96 /* OCW-Bridging-Header.h */,
 			);
 			path = swift;
@@ -1217,6 +1225,7 @@
 				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
+				B47FEE39274E385000F3D00B /* UIImage+Extensions.swift in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
 				B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */,
 				1D169D9C26A6684300933E1C /* CViewController.m in Sources */,
@@ -1233,6 +1242,7 @@
 				B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */,
 				B47FEE28274CD18200F3D00B /* MasonryTestVC.m in Sources */,
 				1D1EE34326B15A99001BE780 /* XRPhotoBrower.m in Sources */,
+				B47FEE3C274E44A300F3D00B /* UIImage+ReColor.m in Sources */,
 				1D169D8D26A6652900933E1C /* BaseNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

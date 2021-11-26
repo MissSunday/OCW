@@ -23,8 +23,13 @@
     }
     return self;
 }
-- (void)run{
+- (Person *)run{
     NSLog(@"起飞");
+    return self;
+}
+- (Person *)jump{
+    NSLog(@"跳");
+    return self;
 }
 - (blockName)reduce{
     return ^(int a){
