@@ -47,8 +47,11 @@ typedef Person *_Nullable(^blockName)(int a);
 
 -(Person *)run;
 
+//实例方法
 -(Person *)jump;
 
+//类方法
++(void)tttt;
 
 //发工资
 -(Person *(^)(CGFloat a))fgz;

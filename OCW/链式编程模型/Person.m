@@ -50,7 +50,7 @@
         return self;
     };
 }
-- (Person * _Nonnull (^)(int))eat{
+- (Person * (^)(int))eat{
     return ^(int a){
         self->_money -= abs(a);
         return self;

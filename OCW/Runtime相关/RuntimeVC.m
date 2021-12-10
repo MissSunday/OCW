@@ -20,7 +20,7 @@
     Ivar num = class_getInstanceVariable([person class], "_num");
     object_setIvar(person, num, @100);
     
-    
+    [XRTool logPropertyOfClass:[UIButton class]];
 }
 
 

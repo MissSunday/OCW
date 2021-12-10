@@ -14,6 +14,9 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - AMap3DMap (8.0.0):
+    - AMapFoundation (~> 1.6.8)
+  - AMapFoundation (1.6.8)
   - cocore (1.2.6)
   - coobjc (1.2.0):
     - cocore (~> 1.2.0)
@@ -47,6 +50,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 4.0.1)
+  - AMap3DMap
   - coobjc (~> 1.2.0)
   - CTMediator (~> 46)
   - FLEX (= 4.4.1)
@@ -67,6 +71,8 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
+    - AMap3DMap
+    - AMapFoundation
     - cocore
     - coobjc
     - CTMediator
@@ -90,6 +96,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AMap3DMap: 89b82eaad00f9246f59d2a6103eff18be5b9dd4f
+  AMapFoundation: 32e9a0264ee62f5aa2aaf82bdafdda7985ce09c7
   cocore: d6abaa4dd8c15115290362b9accbb42cc2bce9a0
   coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
@@ -111,6 +119,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 65ec4579cb424dfa63ed6a56819b1cfe390e32db
+PODFILE CHECKSUM: c3ee95eb0856808a04176b3d0dcca8a524b996a5
 
 COCOAPODS: 1.11.2

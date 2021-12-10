@@ -116,7 +116,7 @@ extension UIImage {
     }
     
     @objc func reImage(color: UIColor, size: CGFloat) -> UIImage {
-        
+    
         return autoreleasepool { () -> UIImage in
             let size = CGSize(width: size, height: size)
             

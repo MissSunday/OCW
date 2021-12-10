@@ -46,7 +46,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     [self nav];
     [self block_text];
     [self func_chain];
- 
+    
 }
 //block 练习
 -(void)block_text{
@@ -122,7 +122,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     
     Person *running = [[_DuoDuo run]jump];
     
-    
+
     NSLog(@"- %@",running);
     
     _DuoDuo.fgz(20000).jfz(6500).eat(2000);
@@ -137,7 +137,6 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     
     NSLog(@"%@\n%@ hash - %ld",array,subA,array.hash);
 
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -226,6 +225,8 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
         [self.navigationController pushViewController:vc animated:YES];
     }else if (indexPath.row == 5){
         [self.navigationController pushViewController:[MasonryTestVC new] animated:YES];
+    }else if (indexPath.row == 6){
+        [self.navigationController pushViewController:[[SwiftStudyVC alloc]init] animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -248,7 +249,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
 }
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"选取上传图片，保存到本地",@"本地存储",@"组件间通信CTMediator",@"组件间通信JLRoutes",@"Masonry示例"].mutableCopy;
+        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"选取上传图片，保存到本地",@"本地存储",@"组件间通信CTMediator",@"组件间通信JLRoutes",@"Masonry示例",@"SwiftVC"].mutableCopy;
     }
     return _dataArray;
 }

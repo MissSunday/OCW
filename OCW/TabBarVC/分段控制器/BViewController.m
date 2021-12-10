@@ -11,6 +11,7 @@
 #import "SPPageMenu.h"
 #import "BHLTViewController.h"
 #import "BTOneViewController.h"
+#import "T.h"
 #define pageMenuH 50
 
 #define scrollViewHeight (kS_H-kNavHeight-kTabbarHeight-pageMenuH)
@@ -33,6 +34,8 @@
     self.navigationItem.title = @"分段控制器";
     [self nav];
     [self UI];
+    [XRTool logPropertyOfClass:[T class]];
+    [XRTool logMethodNamesOfClass:[T class]];
 }
 -(void)UI{
     self.titleArray = @[@"一手房",@"二手房",@"租房"];

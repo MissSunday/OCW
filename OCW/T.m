@@ -7,6 +7,10 @@
 
 #import "T.h"
 
+@interface T ()
+@property(nonatomic,copy)NSString *time;
+@end
+
 @implementation T
 //归档（序列化）
 -(void)encodeWithCoder:(NSCoder *)aCoder{

@@ -103,12 +103,15 @@
 		B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */; };
 		B47FEE39274E385000F3D00B /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE38274E385000F3D00B /* UIImage+Extensions.swift */; };
 		B47FEE3C274E44A300F3D00B /* UIImage+ReColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */; };
+		B47FEE3F2754AD3900F3D00B /* XRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE3D2754AD3800F3D00B /* XRTool.m */; };
+		B47FEE422754E6C800F3D00B /* XiaoMing.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE412754E6C800F3D00B /* XiaoMing.m */; };
 		B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */; };
 		B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */; };
 		B4859C9D273BA90C00F49091 /* Target_second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9C273BA90C00F49091 /* Target_second.m */; };
 		B4859CA0273BA91B00F49091 /* Target_first.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9F273BA91B00F49091 /* Target_first.m */; };
 		B4859CA3273BA94700F49091 /* CTMediator+First.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859CA2273BA94700F49091 /* CTMediator+First.m */; };
 		B4859CA6273BA95700F49091 /* CTMediator+Second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859CA5273BA95700F49091 /* CTMediator+Second.m */; };
+		B4DD4FD82762156400A4608F /* SwiftStudyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DD4FD72762156400A4608F /* SwiftStudyVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -314,6 +317,11 @@
 		B47FEE38274E385000F3D00B /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B47FEE3A274E44A300F3D00B /* UIImage+ReColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ReColor.h"; sourceTree = "<group>"; };
 		B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ReColor.m"; sourceTree = "<group>"; };
+		B47FEE3D2754AD3800F3D00B /* XRTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRTool.m; sourceTree = "<group>"; };
+		B47FEE3E2754AD3900F3D00B /* XRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRTool.h; sourceTree = "<group>"; };
+		B47FEE402754E6C800F3D00B /* XiaoMing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XiaoMing.h; sourceTree = "<group>"; };
+		B47FEE412754E6C800F3D00B /* XiaoMing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoMing.m; sourceTree = "<group>"; };
+		B47FEE432755C4BA00F3D00B /* NSObject+ty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ty.h"; sourceTree = "<group>"; };
 		B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFirstViewController.h; sourceTree = "<group>"; };
 		B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFirstViewController.m; sourceTree = "<group>"; };
 		B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSecondViewController.h; sourceTree = "<group>"; };
@@ -326,6 +334,7 @@
 		B4859CA2273BA94700F49091 /* CTMediator+First.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+First.m"; sourceTree = "<group>"; };
 		B4859CA4273BA95700F49091 /* CTMediator+Second.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CTMediator+Second.h"; sourceTree = "<group>"; };
 		B4859CA5273BA95700F49091 /* CTMediator+Second.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CTMediator+Second.m"; sourceTree = "<group>"; };
+		B4DD4FD72762156400A4608F /* SwiftStudyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftStudyVC.swift; sourceTree = "<group>"; };
 		BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F6B17FC109494DB9ACC11D /* Pods-OCW.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW.release.xcconfig"; path = "Target Support Files/Pods-OCW/Pods-OCW.release.xcconfig"; sourceTree = "<group>"; };
 		D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OCW_OCWUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,6 +383,7 @@
 			children = (
 				1D0FD75926AAB41F00A61E96 /* swiftClass.swift */,
 				B47FEE38274E385000F3D00B /* UIImage+Extensions.swift */,
+				B4DD4FD72762156400A4608F /* SwiftStudyVC.swift */,
 				B47FEE3A274E44A300F3D00B /* UIImage+ReColor.h */,
 				B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */,
 				1D0FD75826AAB41E00A61E96 /* OCW-Bridging-Header.h */,
@@ -563,6 +573,9 @@
 			children = (
 				1DD006A0265D27A900B805FE /* Person.h */,
 				1DD006A1265D27A900B805FE /* Person.m */,
+				B47FEE402754E6C800F3D00B /* XiaoMing.h */,
+				B47FEE412754E6C800F3D00B /* XiaoMing.m */,
+				B47FEE432755C4BA00F3D00B /* NSObject+ty.h */,
 			);
 			path = "链式编程模型";
 			sourceTree = "<group>";
@@ -718,6 +731,8 @@
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
+				B47FEE3E2754AD3900F3D00B /* XRTool.h */,
+				B47FEE3D2754AD3800F3D00B /* XRTool.m */,
 				B42C463126FC63BA00785D93 /* 文件 */,
 				1D1EE33E26B13F47001BE780 /* 壁纸 */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
@@ -903,6 +918,7 @@
 				0382A4E8773BEE39CC9F32EF /* [CP] Embed Pods Frameworks */,
 				1DE9871326CE56B50086731A /* Embed App Extensions */,
 				1DE2128D26D88F4B00D92C47 /* Embed Frameworks */,
+				55DA6F5FE7E3824F2A5EBFA8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -942,6 +958,7 @@
 				1D2BA8C526561C2F0089E899 /* Frameworks */,
 				1D2BA8C626561C2F0089E899 /* Resources */,
 				881EE2C8AAB08B44954BABF8 /* [CP] Embed Pods Frameworks */,
+				83C43991728B1DF1B9C500D3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1120,6 +1137,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		55DA6F5FE7E3824F2A5EBFA8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCW/Pods-OCW-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCW/Pods-OCW-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCW/Pods-OCW-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6D6E615EE6F3BA7FD4A0C048 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1140,6 +1174,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83C43991728B1DF1B9C500D3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		881EE2C8AAB08B44954BABF8 /* [CP] Embed Pods Frameworks */ = {
@@ -1213,7 +1264,9 @@
 				1D0FD7AB26AE5F8A00A61E96 /* BTOneViewController.m in Sources */,
 				1D0FD83E26B004D000A61E96 /* TZImagePickerItemModel.m in Sources */,
 				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,
+				B47FEE422754E6C800F3D00B /* XiaoMing.m in Sources */,
 				1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */,
+				B4DD4FD82762156400A4608F /* SwiftStudyVC.swift in Sources */,
 				1D1EE34626B15BCA001BE780 /* XRPhotoPreviewCell.m in Sources */,
 				1D0FD83526AFF24600A61E96 /* TZImagePickerVC.m in Sources */,
 				1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */,
@@ -1223,6 +1276,7 @@
 				1DD006A2265D27A900B805FE /* Person.m in Sources */,
 				B4859CA3273BA94700F49091 /* CTMediator+First.m in Sources */,
 				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
+				B47FEE3F2754AD3900F3D00B /* XRTool.m in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				B47FEE39274E385000F3D00B /* UIImage+Extensions.swift in Sources */,
