@@ -30,7 +30,7 @@ target 'OCW' do
   pod 'JLRoutes', '~> 2.1'
   pod 'coobjc', '~> 1.2.0' #协程工具 类似于gcd
   #pod 'Facebook-iOS-SDK/CoreKit', '~> 4.38.0'
-  pod 'AMap3DMap'
+  #pod 'AMap3DMap'
   
   #pod 'XRToolSDK', '0.2.0'
   
