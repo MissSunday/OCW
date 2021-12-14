@@ -14,6 +14,7 @@
 #import "Person.h"
 #import "CTMediator+First.h"
 #import "MasonryTestVC.h"
+#import "POPVC.h"
 
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -226,7 +227,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     }else if (indexPath.row == 5){
         [self.navigationController pushViewController:[MasonryTestVC new] animated:YES];
     }else if (indexPath.row == 6){
-        [self.navigationController pushViewController:[[SwiftStudyVC alloc]init] animated:YES];
+        [self.navigationController pushViewController:[[POPVC alloc]init] animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -249,7 +250,13 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
 }
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"图片浏览器-KNPhotoBrowser",@"选取上传图片，保存到本地",@"本地存储",@"组件间通信CTMediator",@"组件间通信JLRoutes",@"Masonry示例",@"SwiftVC"].mutableCopy;
+        _dataArray = @[@"图片浏览器-KNPhotoBrowser",
+                       @"选取上传图片，保存到本地",
+                       @"本地存储",
+                       @"组件间通信CTMediator",
+                       @"组件间通信JLRoutes",
+                       @"Masonry示例",
+                       @"面向协议编程"].mutableCopy;
     }
     return _dataArray;
 }
