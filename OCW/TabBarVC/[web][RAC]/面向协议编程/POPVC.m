@@ -8,6 +8,8 @@
 #import "POPVC.h"
 #import "XRRequest.h"
 #import "XRRequestParam.h"
+#import "Cat.h"
+#import "Dog.h"
 @interface POPVC ()
 
 @end
@@ -20,19 +22,21 @@
     XRRequestParam *param = [XRRequestParam postWithParam:@{@"token":@"gk"} url:@"666"];
     [[XRRequest shareManager]requestWithParam:param complete:^(NSDictionary * _Nonnull response) {
         NSLog(@"%@",response);
-        } failed:^(NSDictionary * _Nonnull error) {
-            NSLog(@"%@", error);
-        }];
+    } failed:^(NSDictionary * _Nonnull error) {
+        NSLog(@"%@", error);
+    }];
+    
+    Cat *cat = [Cat new];
+    Dog *dog = [Dog new];
+    
+    [cat run];
+    [dog run];
+    
+    [dog eat];
+    
+    [XRTool logMethodNamesOfClass:[Dog class]];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

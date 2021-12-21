@@ -80,6 +80,10 @@
 		1D2C2F14269ED91700EEA3EC /* QJCommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D2C2F11269ED91700EEA3EC /* QJCommonWebViewController.m */; };
 		1D7301E52692F6E600708655 /* RACVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7301E42692F6E600708655 /* RACVC.m */; };
 		1D7301E82693FA5B00708655 /* RACCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D7301E72693FA5B00708655 /* RACCell.m */; };
+		1DB3C883277172520068FEFA /* Animals.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB3C882277172520068FEFA /* Animals.m */; };
+		1DB3C8862771727E0068FEFA /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB3C8852771727E0068FEFA /* Cat.m */; };
+		1DB3C8892771728C0068FEFA /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB3C8882771728C0068FEFA /* Dog.m */; };
+		1DB3C88B2771798B0068FEFA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1DB3C88A2771798B0068FEFA /* README.md */; };
 		1DD006A2265D27A900B805FE /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD006A1265D27A900B805FE /* Person.m */; };
 		1DE9870726CE56B40086731A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE9870626CE56B40086731A /* WidgetKit.framework */; };
 		1DE9870926CE56B40086731A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE9870826CE56B40086731A /* SwiftUI.framework */; };
@@ -285,6 +289,13 @@
 		1D7301E42692F6E600708655 /* RACVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACVC.m; sourceTree = "<group>"; };
 		1D7301E62693FA5B00708655 /* RACCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACCell.h; sourceTree = "<group>"; };
 		1D7301E72693FA5B00708655 /* RACCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACCell.m; sourceTree = "<group>"; };
+		1DB3C881277172520068FEFA /* Animals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Animals.h; sourceTree = "<group>"; };
+		1DB3C882277172520068FEFA /* Animals.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animals.m; sourceTree = "<group>"; };
+		1DB3C8842771727E0068FEFA /* Cat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
+		1DB3C8852771727E0068FEFA /* Cat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
+		1DB3C8872771728C0068FEFA /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
+		1DB3C8882771728C0068FEFA /* Dog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		1DB3C88A2771798B0068FEFA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1DD006A0265D27A900B805FE /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		1DD006A1265D27A900B805FE /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		1DE9870526CE56B40086731A /* MainWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MainWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -782,6 +793,20 @@
 			path = WKWbView;
 			sourceTree = "<group>";
 		};
+		1DB3C880277172200068FEFA /* 面向对象封装继承多态 */ = {
+			isa = PBXGroup;
+			children = (
+				1DB3C88A2771798B0068FEFA /* README.md */,
+				1DB3C881277172520068FEFA /* Animals.h */,
+				1DB3C882277172520068FEFA /* Animals.m */,
+				1DB3C8842771727E0068FEFA /* Cat.h */,
+				1DB3C8852771727E0068FEFA /* Cat.m */,
+				1DB3C8872771728C0068FEFA /* Dog.h */,
+				1DB3C8882771728C0068FEFA /* Dog.m */,
+			);
+			path = "面向对象封装继承多态";
+			sourceTree = "<group>";
+		};
 		1DE2129026D891E000D92C47 /* 静态库 */ = {
 			isa = PBXGroup;
 			children = (
@@ -841,6 +866,7 @@
 		B4439569276752BB007FCC4B /* 面向协议编程 */ = {
 			isa = PBXGroup;
 			children = (
+				1DB3C880277172200068FEFA /* 面向对象封装继承多态 */,
 				B443956B27675459007FCC4B /* POPVC.h */,
 				B443956C27675459007FCC4B /* POPVC.m */,
 				B443956E276754C4007FCC4B /* XRRequestProtocol.h */,
@@ -1080,6 +1106,7 @@
 				1D0FD83126AFEAB700A61E96 /* aozima_06.jpeg in Resources */,
 				B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */,
 				1D0FD82826AFEAB700A61E96 /* aozima_21.jpeg in Resources */,
+				1DB3C88B2771798B0068FEFA /* README.md in Resources */,
 				1D0FD82926AFEAB700A61E96 /* aozima_01.jpeg in Resources */,
 				1D0FD82226AFEAB700A61E96 /* aozima_15.jpeg in Resources */,
 				B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */,
@@ -1225,6 +1252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B443956D27675459007FCC4B /* POPVC.m in Sources */,
+				1DB3C883277172520068FEFA /* Animals.m in Sources */,
 				B47FEE2C274CD26800F3D00B /* MasonryTestVC_Xib.m in Sources */,
 				1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */,
 				B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */,
@@ -1241,6 +1269,7 @@
 				B4859C9D273BA90C00F49091 /* Target_second.m in Sources */,
 				B44395742767560E007FCC4B /* XRRequestParam.m in Sources */,
 				1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */,
+				1DB3C8892771728C0068FEFA /* Dog.m in Sources */,
 				1D0FD7C426AFA9B900A61E96 /* KNPhotoBrowserVC.m in Sources */,
 				1D0FD7C726AFAB2800A61E96 /* KNPhotoBrowserItem.m in Sources */,
 				1D169DB726A7C81500933E1C /* BHViewController.m in Sources */,
@@ -1253,6 +1282,7 @@
 				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,
 				B47FEE422754E6C800F3D00B /* XiaoMing.m in Sources */,
 				1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */,
+				1DB3C8862771727E0068FEFA /* Cat.m in Sources */,
 				1D1EE34626B15BCA001BE780 /* XRPhotoPreviewCell.m in Sources */,
 				1D0FD83526AFF24600A61E96 /* TZImagePickerVC.m in Sources */,
 				1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */,

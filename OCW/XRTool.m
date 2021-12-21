@@ -61,6 +61,8 @@
     unsigned int count;
     objc_property_t *properties = class_copyPropertyList(cls, &count);
     
+    NSLog(@"%@ Property count %d",cls,count);
+    
     for (int i = 0; i < count; i++) {
         const char *property = property_getName(properties[i]);
         NSString *propertyString = [NSString stringWithCString:property encoding:[NSString defaultCStringEncoding]];
@@ -74,6 +76,8 @@
     unsigned int count;
     // 获得方法数组
     Method *methodList = class_copyMethodList(cls, &count);
+    
+    NSLog(@"%@ Method count %d",cls,count);
     // 遍历所有的方法
     for (int i = 0; i < count; i++) {
         // 获得方法
