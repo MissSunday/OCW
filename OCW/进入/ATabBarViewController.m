@@ -21,7 +21,15 @@
     [super viewDidLoad];
     self.delegate = self;
     self.view.backgroundColor = [UIColor mainColor];
+    self.tabBar.barTintColor = [UIColor whiteColor];
+    self.tabBar.translucent = NO;
     [self UI];
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    UIView *view = self.tabBar.subviews.firstObject;
+    view.backgroundColor = UIColor.whiteColor;
+    
 }
 -(void)UI{
     NSArray *array = @[@{@"title":@"A",@"img":@"tab_A_N",

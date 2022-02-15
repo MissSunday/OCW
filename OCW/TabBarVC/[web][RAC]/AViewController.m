@@ -15,6 +15,7 @@
 #import "CTMediator+First.h"
 #import "MasonryTestVC.h"
 #import "POPVC.h"
+#import "ThreadSafeVC.h"
 
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -228,6 +229,8 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
         [self.navigationController pushViewController:[MasonryTestVC new] animated:YES];
     }else if (indexPath.row == 6){
         [self.navigationController pushViewController:[[POPVC alloc]init] animated:YES];
+    }else if (indexPath.row == 7){
+        [self.navigationController pushViewController:[[ThreadSafeVC alloc]init] animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -256,7 +259,8 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
                        @"组件间通信CTMediator",
                        @"组件间通信JLRoutes",
                        @"Masonry示例",
-                       @"面向协议编程"].mutableCopy;
+                       @"面向协议编程",
+                       @"多线程编程和线程安全"].mutableCopy;
     }
     return _dataArray;
 }

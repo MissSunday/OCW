@@ -98,6 +98,7 @@
 		1DF9E4C226895A42008BCB38 /* SVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C126895A42008BCB38 /* SVC.m */; };
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
+		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
 		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
 		B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */ = {isa = PBXBuildFile; fileRef = B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */; };
@@ -110,7 +111,6 @@
 		B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = B47FEE2B274CD26800F3D00B /* MasonryTestVC_Xib.xib */; };
 		B47FEE3C274E44A300F3D00B /* UIImage+ReColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */; };
 		B47FEE3F2754AD3900F3D00B /* XRTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE3D2754AD3800F3D00B /* XRTool.m */; };
-		B47FEE422754E6C800F3D00B /* XiaoMing.m in Sources */ = {isa = PBXBuildFile; fileRef = B47FEE412754E6C800F3D00B /* XiaoMing.m */; };
 		B4859C97273BA8DF00F49091 /* ZJFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */; };
 		B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C99273BA8EC00F49091 /* ZJSecondViewController.m */; };
 		B4859C9D273BA90C00F49091 /* Target_second.m in Sources */ = {isa = PBXBuildFile; fileRef = B4859C9C273BA90C00F49091 /* Target_second.m */; };
@@ -317,6 +317,8 @@
 		5F1A1825B97DB3C1E70DAFD5 /* Pods-OCWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWTests.debug.xcconfig"; path = "Target Support Files/Pods-OCWTests/Pods-OCWTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760C1F4CB50F427A4FA1BBF4 /* Pods-OCW-OCWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.release.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.release.xcconfig"; sourceTree = "<group>"; };
 		786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.debug.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
+		9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeVC.m; sourceTree = "<group>"; };
 		B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocalSaveVC.h; sourceTree = "<group>"; };
 		B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocalSaveVC.m; sourceTree = "<group>"; };
 		B42C463226FC63D900785D93 /* Markdown 语法使用说明.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Markdown 语法使用说明.md"; sourceTree = "<group>"; };
@@ -338,9 +340,6 @@
 		B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ReColor.m"; sourceTree = "<group>"; };
 		B47FEE3D2754AD3800F3D00B /* XRTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRTool.m; sourceTree = "<group>"; };
 		B47FEE3E2754AD3900F3D00B /* XRTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRTool.h; sourceTree = "<group>"; };
-		B47FEE402754E6C800F3D00B /* XiaoMing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XiaoMing.h; sourceTree = "<group>"; };
-		B47FEE412754E6C800F3D00B /* XiaoMing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XiaoMing.m; sourceTree = "<group>"; };
-		B47FEE432755C4BA00F3D00B /* NSObject+ty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ty.h"; sourceTree = "<group>"; };
 		B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJFirstViewController.h; sourceTree = "<group>"; };
 		B4859C96273BA8DF00F49091 /* ZJFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZJFirstViewController.m; sourceTree = "<group>"; };
 		B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZJSecondViewController.h; sourceTree = "<group>"; };
@@ -420,6 +419,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */,
 				B4439569276752BB007FCC4B /* 面向协议编程 */,
 				B47FEE25274CD14500F3D00B /* Masonry示例 */,
 				B4859C92273BA86C00F49091 /* CTMediator组件间通信 */,
@@ -590,9 +590,6 @@
 			children = (
 				1DD006A0265D27A900B805FE /* Person.h */,
 				1DD006A1265D27A900B805FE /* Person.m */,
-				B47FEE402754E6C800F3D00B /* XiaoMing.h */,
-				B47FEE412754E6C800F3D00B /* XiaoMing.m */,
-				B47FEE432755C4BA00F3D00B /* NSObject+ty.h */,
 			);
 			path = "链式编程模型";
 			sourceTree = "<group>";
@@ -753,7 +750,6 @@
 				B42C463126FC63BA00785D93 /* 文件 */,
 				1D1EE33E26B13F47001BE780 /* 壁纸 */,
 				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
-				1DE2129026D891E000D92C47 /* 静态库 */,
 				1D2BA8B126561C2F0089E899 /* Assets.xcassets */,
 				1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */,
 				1D2BA8B626561C2F0089E899 /* Info.plist */,
@@ -807,13 +803,6 @@
 			path = "面向对象封装继承多态";
 			sourceTree = "<group>";
 		};
-		1DE2129026D891E000D92C47 /* 静态库 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "静态库";
-			sourceTree = "<group>";
-		};
 		1DE9870A26CE56B40086731A /* MainWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -843,6 +832,15 @@
 				1DE9872026CE5F310086731A /* MediumPlaceholder.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */ = {
+			isa = PBXGroup;
+			children = (
+				9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */,
+				9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */,
+			);
+			path = "多线程编程和线程安全";
 			sourceTree = "<group>";
 		};
 		B42C462D26FC605000785D93 /* 本地存储 */ = {
@@ -1280,7 +1278,6 @@
 				1D0FD7AB26AE5F8A00A61E96 /* BTOneViewController.m in Sources */,
 				1D0FD83E26B004D000A61E96 /* TZImagePickerItemModel.m in Sources */,
 				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,
-				B47FEE422754E6C800F3D00B /* XiaoMing.m in Sources */,
 				1D2BA8A726561C2E0089E899 /* AppDelegate.m in Sources */,
 				1DB3C8862771727E0068FEFA /* Cat.m in Sources */,
 				1D1EE34626B15BCA001BE780 /* XRPhotoPreviewCell.m in Sources */,
@@ -1293,6 +1290,7 @@
 				B4859CA3273BA94700F49091 /* CTMediator+First.m in Sources */,
 				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
 				B47FEE3F2754AD3900F3D00B /* XRTool.m in Sources */,
+				9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,

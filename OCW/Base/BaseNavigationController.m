@@ -6,7 +6,7 @@
 //
 
 #import "BaseNavigationController.h"
-
+#import "QJCommonWebViewController.h"
 @interface BaseNavigationController ()
 
 @end

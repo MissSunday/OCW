@@ -6,7 +6,6 @@
 //
 
 #import "BaseViewController.h"
-
 @interface BaseViewController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
 @end
@@ -48,8 +47,10 @@
     //去掉导航下划线
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     //导航的背景颜色
-    self.navigationController.navigationBar.barTintColor = [UIColor mainColor];
-   
+    self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
+    UIView *view = self.navigationController.navigationBar.subviews.firstObject;
+    view.backgroundColor = UIColor.orangeColor;
+    self.navigationController.navigationBar.translucent = NO;
 }
 -(void)updateNav{
     [self.navigationController setNavigationBarHidden:self.isHidenNav animated:YES];
