@@ -98,6 +98,7 @@
 		1DF9E4C226895A42008BCB38 /* SVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C126895A42008BCB38 /* SVC.m */; };
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
+		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
 		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
 		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
@@ -317,6 +318,8 @@
 		5F1A1825B97DB3C1E70DAFD5 /* Pods-OCWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWTests.debug.xcconfig"; path = "Target Support Files/Pods-OCWTests/Pods-OCWTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760C1F4CB50F427A4FA1BBF4 /* Pods-OCW-OCWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.release.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.release.xcconfig"; sourceTree = "<group>"; };
 		786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.debug.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadLockVC.h; sourceTree = "<group>"; };
+		9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadLockVC.m; sourceTree = "<group>"; };
 		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
 		9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeVC.m; sourceTree = "<group>"; };
 		B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocalSaveVC.h; sourceTree = "<group>"; };
@@ -839,6 +842,8 @@
 			children = (
 				9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */,
 				9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */,
+				9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */,
+				9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */,
 			);
 			path = "多线程编程和线程安全";
 			sourceTree = "<group>";
@@ -1284,6 +1289,7 @@
 				1D0FD83526AFF24600A61E96 /* TZImagePickerVC.m in Sources */,
 				1D169DC926A7C8F700933E1C /* GKBaseListViewController.m in Sources */,
 				1D0FD7B926AEA57700A61E96 /* BHLTMListViewController.m in Sources */,
+				9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */,
 				1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */,
 				1D0FD648269E72D300726555 /* RuntimeVC.m in Sources */,
 				1DD006A2265D27A900B805FE /* Person.m in Sources */,
@@ -1500,10 +1506,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MK55SWB3V5;
+				DEVELOPMENT_TEAM = WED6K5JJW6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OCW",
@@ -1519,9 +1525,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/OCW/静态库",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLifes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dev_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OCW/swift/OCW-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -1537,10 +1543,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = MK55SWB3V5;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/OCW",
@@ -1558,7 +1564,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = dev_profile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "OCW/swift/OCW-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1660,7 +1666,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife.MainWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLifes.MainWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1686,7 +1692,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLife.MainWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hopson.HeLifes.MainWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;

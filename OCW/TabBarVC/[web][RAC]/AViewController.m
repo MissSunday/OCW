@@ -71,6 +71,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     
     
     //gcd测试
+    NSLog(@"gcd - 4 %@",[NSThread currentThread]);
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
         NSLog(@"gcd - 0 %@",[NSThread currentThread]);
         dispatch_sync(dispatch_get_global_queue(0, 0), ^{
@@ -79,24 +80,6 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
         NSLog(@"gcd - 2 %@",[NSThread currentThread]);
     });
     NSLog(@"gcd - 3 %@",[NSThread currentThread]);
-    
-    dispatch_queue_t cxqueue = dispatch_queue_create("cx", DISPATCH_QUEUE_SERIAL);
-    
-    dispatch_sync(cxqueue, ^{
-       //同步串行队列
-        NSLog(@"%@ 1",[NSThread currentThread]);
-        
-        NSLog(@"%@ 2",[NSThread currentThread]);
-        
-    });
-    dispatch_sync(cxqueue, ^{
-       //同步串行队列
-        NSLog(@"%@ 4",[NSThread currentThread]);
-        
-        NSLog(@"%@ 5",[NSThread currentThread]);
-        
-    });
-    NSLog(@"%@ 3",[NSThread currentThread]);
     
     
     static int a = 10;

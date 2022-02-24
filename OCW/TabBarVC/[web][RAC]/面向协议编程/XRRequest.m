@@ -9,19 +9,26 @@
 static XRRequest *_instance = nil;
 
 @implementation XRRequest
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
+
+
++ (instancetype)shareManager{
+    
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        if (_instance == nil) {
-            _instance = [super allocWithZone:zone];
-        }
+        _instance = [[super allocWithZone:nil] init];
     });
     return _instance;
 }
-
-+ (instancetype)shareManager {
-    return [[self alloc] init];
++(id)allocWithZone:(NSZone *)zone{
+    return [self shareManager];
 }
+-(id)copyWithZone:(NSZone *)zone{
+    return [[self class] shareManager];
+}
+-(id)mutableCopyWithZone:(NSZone *)zone{
+    return [[self class] shareManager];
+}
+
 - (void)requestWithParam:(id<XRRequestParamProtocol>)param complete:(void (^)(NSDictionary * _Nonnull))complete failed:(void (^)(NSDictionary * _Nonnull))failed{
     
     NSLog(@"- %@ -%@ -%ld",param.param,param.url,param.requestType);
