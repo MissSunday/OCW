@@ -98,6 +98,9 @@
 		1DF9E4C226895A42008BCB38 /* SVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C126895A42008BCB38 /* SVC.m */; };
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
+		9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6127C764AE009993DE /* SDK_API_VC.m */; };
+		9C524A6527C7650A009993DE /* XXSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6427C7650A009993DE /* XXSDK.m */; };
+		9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6727C7709A009993DE /* XXSDKConfig.m */; };
 		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
 		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
@@ -318,6 +321,12 @@
 		5F1A1825B97DB3C1E70DAFD5 /* Pods-OCWTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWTests.debug.xcconfig"; path = "Target Support Files/Pods-OCWTests/Pods-OCWTests.debug.xcconfig"; sourceTree = "<group>"; };
 		760C1F4CB50F427A4FA1BBF4 /* Pods-OCW-OCWUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.release.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.release.xcconfig"; sourceTree = "<group>"; };
 		786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.debug.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C524A6027C764AE009993DE /* SDK_API_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDK_API_VC.h; sourceTree = "<group>"; };
+		9C524A6127C764AE009993DE /* SDK_API_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDK_API_VC.m; sourceTree = "<group>"; };
+		9C524A6327C7650A009993DE /* XXSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXSDK.h; sourceTree = "<group>"; };
+		9C524A6427C7650A009993DE /* XXSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXSDK.m; sourceTree = "<group>"; };
+		9C524A6627C7709A009993DE /* XXSDKConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXSDKConfig.h; sourceTree = "<group>"; };
+		9C524A6727C7709A009993DE /* XXSDKConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXSDKConfig.m; sourceTree = "<group>"; };
 		9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadLockVC.h; sourceTree = "<group>"; };
 		9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadLockVC.m; sourceTree = "<group>"; };
 		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
@@ -422,6 +431,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				9C524A5F27C76471009993DE /* SDK_API设计 */,
 				9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */,
 				B4439569276752BB007FCC4B /* 面向协议编程 */,
 				B47FEE25274CD14500F3D00B /* Masonry示例 */,
@@ -835,6 +845,19 @@
 				1DE9872026CE5F310086731A /* MediumPlaceholder.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		9C524A5F27C76471009993DE /* SDK_API设计 */ = {
+			isa = PBXGroup;
+			children = (
+				9C524A6027C764AE009993DE /* SDK_API_VC.h */,
+				9C524A6127C764AE009993DE /* SDK_API_VC.m */,
+				9C524A6327C7650A009993DE /* XXSDK.h */,
+				9C524A6427C7650A009993DE /* XXSDK.m */,
+				9C524A6627C7709A009993DE /* XXSDKConfig.h */,
+				9C524A6727C7709A009993DE /* XXSDKConfig.m */,
+			);
+			path = "SDK_API设计";
 			sourceTree = "<group>";
 		};
 		9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */ = {
@@ -1264,6 +1287,7 @@
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
 				B4859CA6273BA95700F49091 /* CTMediator+Second.m in Sources */,
 				1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */,
+				9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */,
 				1D1EE34A26B2A3E9001BE780 /* XRPhotoBrowerNav.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
@@ -1278,6 +1302,7 @@
 				1D169DB726A7C81500933E1C /* BHViewController.m in Sources */,
 				1D2C2F14269ED91700EEA3EC /* QJCommonWebViewController.m in Sources */,
 				1D0FD7BC26AEA63D00A61E96 /* BHLTMHeaderView.m in Sources */,
+				9C524A6527C7650A009993DE /* XXSDK.m in Sources */,
 				1D169D9F26A6684B00933E1C /* DViewController.m in Sources */,
 				1D169DA826A6B42B00933E1C /* RACKeyWordUseVC.m in Sources */,
 				1D0FD7AB26AE5F8A00A61E96 /* BTOneViewController.m in Sources */,
@@ -1300,6 +1325,7 @@
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
+				9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */,
 				B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */,
 				1D169D9C26A6684300933E1C /* CViewController.m in Sources */,
 				1D0FD7B026AE998B00A61E96 /* BHLTListViewController.m in Sources */,

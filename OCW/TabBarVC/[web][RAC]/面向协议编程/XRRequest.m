@@ -8,6 +8,12 @@
 #import "XRRequest.h"
 static XRRequest *_instance = nil;
 
+@interface XRRequest ()
+
+@property(nonatomic,strong)dispatch_queue_t queue;
+
+@end
+
 @implementation XRRequest
 
 
@@ -16,6 +22,7 @@ static XRRequest *_instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _instance = [[super allocWithZone:nil] init];
+        _instance.queue = dispatch_queue_create("requestQueue", DISPATCH_QUEUE_CONCURRENT);
     });
     return _instance;
 }
@@ -31,12 +38,20 @@ static XRRequest *_instance = nil;
 
 - (void)requestWithParam:(id<XRRequestParamProtocol>)param complete:(void (^)(NSDictionary * _Nonnull))complete failed:(void (^)(NSDictionary * _Nonnull))failed{
     
-    NSLog(@"- %@ -%@ -%ld",param.param,param.url,param.requestType);
-    
-    complete(@{@"key":@"成功"});
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        failed(@{@"error":@"超时了"});
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"请求内部 - %@",[NSThread currentThread]);
+        
+        
+        [NSThread sleepForTimeInterval:1];
+        
+       
+        complete(@{@"key":@"成功"});
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            failed(@{@"error":@"超时了"});
+        });
     });
+    
+   
     
     
 }

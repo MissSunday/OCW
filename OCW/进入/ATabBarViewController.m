@@ -22,7 +22,7 @@
     self.delegate = self;
     self.view.backgroundColor = [UIColor mainColor];
     self.tabBar.barTintColor = [UIColor whiteColor];
-    self.tabBar.translucent = NO;
+    //self.tabBar.translucent = NO;
     [self UI];
 }
 - (void)viewDidAppear:(BOOL)animated{
