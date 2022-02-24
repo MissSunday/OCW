@@ -13,6 +13,7 @@
 @interface XXSDK ()
 
 @property(nonatomic,strong)dispatch_semaphore_t semaphore;
+@property(nonatomic,strong)XXSDKConfig *config;
 
 @end
 

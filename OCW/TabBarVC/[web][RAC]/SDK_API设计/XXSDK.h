@@ -12,7 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XXSDK : NSObject
 
-@property(nonatomic,strong)XXSDKConfig *config;
 
 +(instancetype)sdk;
 
