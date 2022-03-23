@@ -56,4 +56,10 @@
         return self;
     };
 }
+//+(NSNumber *)add:(NSNumber *)a add:(NSNumber *)b add:(NSNumber *)c{
+//    
+//    NSLog(@"执行了这个方法");
+//    
+//    return @100;
+//}
 @end

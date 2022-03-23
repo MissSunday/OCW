@@ -20,7 +20,18 @@
 @end
 
 @implementation DViewController
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+   
+ 
+        NSArray *objs = [NSArray arrayWithObjects:@1, @1, @2, nil];
+        
+    
+    
+    NSNumber * a = [XRTool performSelectorWithClassName:@"Person" selectorName:@"add:add:add:" objects:objs];
+    
+    NSLog(@"- %@",a);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"多线程测试";

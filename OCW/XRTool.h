@@ -19,6 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)logPropertyOfClass:(Class)cls;
 +(void)logMethodNamesOfClass:(Class)cls;
+
+
++ (id)performSelectorWithClassName:(NSString *)className
+                      selectorName:(NSString *)selectorName
+                           objects:(NSArray *)objects;
+
 @end
 
 NS_ASSUME_NONNULL_END

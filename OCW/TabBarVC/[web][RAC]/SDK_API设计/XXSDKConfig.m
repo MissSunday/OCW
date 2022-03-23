@@ -15,6 +15,7 @@
     if (self) {
         _supportBingFa = YES;
         _backToMainThread = YES;
+        _isDebug = YES;
     }
     return self;
 }

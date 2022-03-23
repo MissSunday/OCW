@@ -43,12 +43,17 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    CGFloat a = [UIScreen mainScreen].scale;
+    NSLog(@"scale = %f %fx%f",a,kS_W*a,kS_H*a);
+    
     NSLog(@"- %s -",__func__); NSLog(@"-- %p",pt);
     self.navigationItem.title = @"各种功能入口";
     [self UI];
     [self nav];
     [self block_text];
     [self func_chain];
+    
     
 }
 //block 练习
