@@ -17,7 +17,8 @@
 #import "POPVC.h"
 #import "ThreadSafeVC.h"
 #import "SDK_API_VC.h"
-
+#import "RuntimeVC.h"
+#import "DataTypeVC.h"
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -222,6 +223,10 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
         [self.navigationController pushViewController:[[ThreadSafeVC alloc]init] animated:YES];
     }else if (indexPath.row == 8){
         [self.navigationController pushViewController:[[SDK_API_VC alloc]init] animated:YES];
+    }else if (indexPath.row == 9){
+        [self.navigationController pushViewController:[[RuntimeVC alloc]init] animated:YES];
+    }else if (indexPath.row == 10){
+        [self.navigationController pushViewController:[[DataTypeVC alloc]init] animated:YES];
     }
 }
 - (UITableView *)tableView{
@@ -252,7 +257,9 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
                        @"Masonry示例",
                        @"面向协议编程",
                        @"多线程编程和线程安全",
-                       @"SDK API 设计"].mutableCopy;
+                       @"SDK API 设计",
+                       @"runtime相关",
+                       @"数据类型"].mutableCopy;
     }
     return _dataArray;
 }

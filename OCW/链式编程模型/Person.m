@@ -20,6 +20,7 @@
     self = [super init];
     if (self) {
         _money = 0;
+        _num = @1;
     }
     return self;
 }

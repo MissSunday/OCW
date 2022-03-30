@@ -7,6 +7,7 @@
 
 #import "DViewController.h"
 #import "T.h"
+#import "co_queue.h"
 @interface DViewController (){
     dispatch_queue_t cxqueue;
     dispatch_semaphore_t semaphore;
@@ -22,15 +23,14 @@
 @implementation DViewController
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+ 
    
  
-        NSArray *objs = [NSArray arrayWithObjects:@1, @1, @2, nil];
-        
-    
-    
-    NSNumber * a = [XRTool performSelectorWithClassName:@"Person" selectorName:@"add:add:add:" objects:objs];
-    
-    NSLog(@"- %@",a);
+//    NSArray *objs = [NSArray arrayWithObjects:@1, @1, @2, nil];
+//
+//    NSNumber * a = [XRTool performSelectorWithClassName:@"Person" selectorName:@"add:add:add:" objects:objs];
+//
+//    NSLog(@"- %@",a);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -65,6 +65,7 @@
         
         for (int i = 1; i < 50; i++) {
             dispatch_async(queue, ^{
+                
                 //调用多次sdk接口
                 [self sdkFunc:^(NSString *s) {
                     
@@ -80,11 +81,14 @@
     
     [[self.btn2 rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
         @strongify(self);
+        [self ttt];
+        dispatch_queue_t qwe = dispatch_queue_create("ntQueue", DISPATCH_QUEUE_CONCURRENT);
         
-        dispatch_async(dispatch_queue_create("cq", DISPATCH_QUEUE_CONCURRENT), ^{
+        dispatch_async(qwe, ^{
+            
             NSLog(@"1-%@",[NSThread currentThread]);
         });
-        dispatch_async(dispatch_queue_create("ca", DISPATCH_QUEUE_CONCURRENT), ^{
+        dispatch_async(qwe, ^{
             NSLog(@"2-%@",[NSThread currentThread]);
         });
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -105,7 +109,7 @@
 -(void)sdkFunc:(void(^)(NSString *s))block{
     
    // [self.lock lock];
-  
+
     
     //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
 
@@ -201,7 +205,9 @@
         [self.lock unlock];
     });
 }
-
+-(void)ttt{
+    
+}
 
 - (UIButton *)btn{
     if (!_btn) {

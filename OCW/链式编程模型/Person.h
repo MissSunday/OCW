@@ -45,6 +45,8 @@ typedef Person *_Nullable(^blockName)(int a);
 
 @property(nonatomic,assign)CGFloat money;
 
+@property(nonatomic,strong)NSNumber *num;
+
 -(Person *)run;
 
 //实例方法
