@@ -103,6 +103,7 @@
 		9C524A6527C7650A009993DE /* XXSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6427C7650A009993DE /* XXSDK.m */; };
 		9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6727C7709A009993DE /* XXSDKConfig.m */; };
 		9C75423927F3F78700972781 /* DataTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C75423827F3F78700972781 /* DataTypeVC.m */; };
+		9C75423B27F4292B00972781 /* 32-64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C75423A27F4292B00972781 /* 32-64.jpg */; };
 		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
 		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
@@ -334,6 +335,7 @@
 		9C75423527F2E69200972781 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
 		9C75423727F3F78700972781 /* DataTypeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataTypeVC.h; sourceTree = "<group>"; };
 		9C75423827F3F78700972781 /* DataTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataTypeVC.m; sourceTree = "<group>"; };
+		9C75423A27F4292B00972781 /* 32-64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "32-64.jpg"; sourceTree = "<group>"; };
 		9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadLockVC.h; sourceTree = "<group>"; };
 		9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadLockVC.m; sourceTree = "<group>"; };
 		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
@@ -884,6 +886,7 @@
 			children = (
 				9C75423727F3F78700972781 /* DataTypeVC.h */,
 				9C75423827F3F78700972781 /* DataTypeVC.m */,
+				9C75423A27F4292B00972781 /* 32-64.jpg */,
 			);
 			path = "数据类型整理";
 			sourceTree = "<group>";
@@ -1155,6 +1158,7 @@
 				1D0FD82A26AFEAB700A61E96 /* aozima_17.jpeg in Resources */,
 				1D0FD81F26AFEAB700A61E96 /* aozima_12.jpeg in Resources */,
 				1D0FD82526AFEAB700A61E96 /* aozima_14.jpeg in Resources */,
+				9C75423B27F4292B00972781 /* 32-64.jpg in Resources */,
 				B42C463526FC6B1500785D93 /* directorie.png in Resources */,
 				1D0FD82626AFEAB700A61E96 /* aozima_18.jpeg in Resources */,
 				1D0FD83126AFEAB700A61E96 /* aozima_06.jpeg in Resources */,

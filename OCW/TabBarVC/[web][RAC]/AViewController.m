@@ -30,17 +30,7 @@
 
 @implementation AViewController
 
-static const void * const AuthenticationChallengeErrorKey = &AuthenticationChallengeErrorKey;
 
-const int a = 5;/*a的值一直为5，不能被改变*/
-
-const int b; /* b = 10; b的值被赋值为10后，不能被改变*/
-
-const int *ptr; /* ptr为指向整型常量的指针，ptr的值可以修改，但不能修改其所指向的值*/
-
-int *const ptrr;/* ptrr为指向整型的常量指针，ptrr的值不能修改，但可以修改其所指向的值*/
-
-const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指向的值都不能修改*/
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -48,7 +38,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     CGFloat a = [UIScreen mainScreen].scale;
     NSLog(@"scale = %f %fx%f",a,kS_W*a,kS_H*a);
     
-    NSLog(@"- %s -",__func__); NSLog(@"-- %p",pt);
+    
     self.navigationItem.title = @"各种功能入口";
     [self UI];
     [self nav];
