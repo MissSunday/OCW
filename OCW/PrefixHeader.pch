@@ -37,7 +37,7 @@
 
 //宏定义
 #define kStatuBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
-#define IS_IPHONEX (kStatuBarHeight > 20)
+#define IS_IPHONEX [XRTool tool].isIPhoneX
 #define kS_H [UIScreen mainScreen].bounds.size.height
 #define kS_W [UIScreen mainScreen].bounds.size.width
 #define kNavHeight (IS_IPHONEX ? (kStatuBarHeight + 44) : 64)

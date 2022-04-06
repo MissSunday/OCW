@@ -26,7 +26,12 @@ int *const ptrr;/* ptrr为指向整型的常量指针，ptrr的值不能修改�
 const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指向的值都不能修改*/
 
 @implementation DataTypeVC
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+//    NSString *m = [UIDevice currentDevice].model;
+    NSLog(@"---- %d",IS_IPHONEX);
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = NSStringFromClass(self.class);
