@@ -9,11 +9,11 @@
 #import "KNPhotoBrowserItem.h"
 
 //icon行间距
-#define itemSpace XR_SCALE(10)
+#define itemSpace XR_Scale(10)
 //collectionview 左右边距 距离父视图
-#define itemleftSpace XR_SCALE(10)
+#define itemleftSpace XR_Scale(10)
 //icon列间距
-#define itemLineSpace XR_SCALE(10)
+#define itemLineSpace XR_Scale(10)
 
 @interface KNPhotoBrowserVC ()
 <
@@ -75,7 +75,7 @@ KNPhotoBrowserDelegate
         UIImageView *imageV = [[UIImageView alloc]initWithFrame:CGRectMake(itemSpace, 10+i*(_itemH + itemSpace), _itemW, _itemH)];
         imageV.image = [UIImage imageNamed:name];
         imageV.clipsToBounds = YES;
-        imageV.layer.cornerRadius = XR_SCALE(15);
+        imageV.layer.cornerRadius = XR_Scale(15);
         imageV.userInteractionEnabled = YES;
         imageV.tag = i;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]init];

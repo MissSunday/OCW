@@ -30,10 +30,11 @@
 #import "XRNetRequest.h"
 #import "UIColor+someColor.h"
 #import "NSObject+Property.h"
+#import "UIFont+XRScale.h"
 #import "XRTool.h"
 //桥接文件
 #import "OCW-Bridging-Header.h"
-#import "OCW-Swift.h"
+//#import "OCW-Swift.h"
 
 //宏定义
 #define kStatuBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
@@ -45,7 +46,9 @@
 #define kBottomHeight (IS_IPHONEX ? 34 : 0)
 #define kBottomLittleHeiget (IS_IPHONEX ? 14 : 0)
 /** 屏幕适配比率 */
-#define XR_SCALE(a) (kS_W/375)*(a)
+static inline CGFloat XR_Scale(CGFloat a){
+    return (kS_W/375)*(a);
+}
 //weakSelf
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
@@ -55,6 +58,9 @@
 #else
 #define NSLog(format, ...)
 #endif
+
+
+
 
 
 

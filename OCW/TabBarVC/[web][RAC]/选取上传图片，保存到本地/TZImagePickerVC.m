@@ -40,7 +40,7 @@ UICollectionViewDataSource
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = NSStringFromClass(self.class);
-    _itemSpace = XR_SCALE(10);
+    _itemSpace = XR_Scale(10);
     _itemW = (kS_W - _itemSpace * 5)/4;
     _itemH = _itemW;
     
@@ -250,7 +250,7 @@ UICollectionViewDataSource
         //最小item间距（默认为10）
         flowLayout.minimumInteritemSpacing = _itemSpace;
         //设置senction的内边距
-        flowLayout.sectionInset = UIEdgeInsetsMake(_itemSpace, _itemSpace, _itemSpace, _itemSpace);
+        flowLayout.sectionInset = UIEdgeInsetsMake(_itemSpace, 0, _itemSpace, 0);
         //设置UICollectionView的滑动方向
         flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
         //sectionHeader的大小,如果是竖向滚动，只需设置Y值。如果是横向，只需设置X值。

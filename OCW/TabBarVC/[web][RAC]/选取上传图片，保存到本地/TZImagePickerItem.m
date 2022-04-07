@@ -29,9 +29,9 @@
         make.edges.equalTo(self.contentView);
     }];
     [self.deleteBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.mas_equalTo(XR_SCALE(20));
-        make.top.equalTo(self.contentView).offset(XR_SCALE(-10));
-        make.right.equalTo(self.contentView).offset(XR_SCALE(10));
+        make.width.height.mas_equalTo(XR_Scale(20));
+        make.top.equalTo(self.contentView).offset(XR_Scale(-10));
+        make.right.equalTo(self.contentView).offset(XR_Scale(10));
     }];
     @weakify(self);
     [[self.deleteBtn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {

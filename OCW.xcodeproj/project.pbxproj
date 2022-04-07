@@ -102,6 +102,7 @@
 		9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6127C764AE009993DE /* SDK_API_VC.m */; };
 		9C524A6527C7650A009993DE /* XXSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6427C7650A009993DE /* XXSDK.m */; };
 		9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6727C7709A009993DE /* XXSDKConfig.m */; };
+		9C5C041E27FEBE720059FCD8 /* UIFont+XRScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */; };
 		9C75423927F3F78700972781 /* DataTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C75423827F3F78700972781 /* DataTypeVC.m */; };
 		9C75423B27F4292B00972781 /* 32-64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C75423A27F4292B00972781 /* 32-64.jpg */; };
 		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
@@ -291,7 +292,6 @@
 		1D2C2F0F269ED91700EEA3EC /* QJCommonWebViewCustomNav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QJCommonWebViewCustomNav.h; sourceTree = "<group>"; };
 		1D2C2F10269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QJWeakWebViewScriptMessageDelegate.m; sourceTree = "<group>"; };
 		1D2C2F11269ED91700EEA3EC /* QJCommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QJCommonWebViewController.m; sourceTree = "<group>"; };
-		1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		1D7301E32692F6E600708655 /* RACVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACVC.h; sourceTree = "<group>"; };
 		1D7301E42692F6E600708655 /* RACVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACVC.m; sourceTree = "<group>"; };
 		1D7301E62693FA5B00708655 /* RACCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACCell.h; sourceTree = "<group>"; };
@@ -332,6 +332,9 @@
 		9C524A6427C7650A009993DE /* XXSDK.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXSDK.m; sourceTree = "<group>"; };
 		9C524A6627C7709A009993DE /* XXSDKConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXSDKConfig.h; sourceTree = "<group>"; };
 		9C524A6727C7709A009993DE /* XXSDKConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXSDKConfig.m; sourceTree = "<group>"; };
+		9C5C041C27FEBE720059FCD8 /* UIFont+XRScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+XRScale.h"; sourceTree = "<group>"; };
+		9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+XRScale.m"; sourceTree = "<group>"; };
+		9C5C041F27FEBE9F0059FCD8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		9C75423527F2E69200972781 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
 		9C75423727F3F78700972781 /* DataTypeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataTypeVC.h; sourceTree = "<group>"; };
 		9C75423827F3F78700972781 /* DataTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataTypeVC.m; sourceTree = "<group>"; };
@@ -603,6 +606,8 @@
 				1D169DA226A66BCC00933E1C /* UIColor+someColor.m */,
 				B47FEE3A274E44A300F3D00B /* UIImage+ReColor.h */,
 				B47FEE3B274E44A300F3D00B /* UIImage+ReColor.m */,
+				9C5C041C27FEBE720059FCD8 /* UIFont+XRScale.h */,
+				9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -775,10 +780,10 @@
 				B47FEE3D2754AD3800F3D00B /* XRTool.m */,
 				B42C463126FC63BA00785D93 /* 文件 */,
 				1D1EE33E26B13F47001BE780 /* 壁纸 */,
-				1D2C2F15269ED99500EEA3EC /* PrefixHeader.pch */,
 				1D2BA8B126561C2F0089E899 /* Assets.xcassets */,
 				1D2BA8B326561C2F0089E899 /* LaunchScreen.storyboard */,
 				1D2BA8B626561C2F0089E899 /* Info.plist */,
+				9C5C041F27FEBE9F0059FCD8 /* PrefixHeader.pch */,
 				1D2BA8B726561C2F0089E899 /* main.m */,
 			);
 			path = OCW;
@@ -1329,6 +1334,7 @@
 				B44395742767560E007FCC4B /* XRRequestParam.m in Sources */,
 				1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */,
 				1DB3C8892771728C0068FEFA /* Dog.m in Sources */,
+				9C5C041E27FEBE720059FCD8 /* UIFont+XRScale.m in Sources */,
 				1D0FD7C426AFA9B900A61E96 /* KNPhotoBrowserVC.m in Sources */,
 				1D0FD7C726AFAB2800A61E96 /* KNPhotoBrowserItem.m in Sources */,
 				1D169DB726A7C81500933E1C /* BHViewController.m in Sources */,
