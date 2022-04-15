@@ -55,6 +55,7 @@ static XXSDK *_sdk = nil;
         if (!self.config.supportBingFa) {
             dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
         }
+        //创建参数可以加锁 保证并发不会出现问题
         XRRequestParam *param = [XRRequestParam postWithParam:@{@"token":@"gk"} url:@"666"];
         [[XRRequest shareManager]requestWithParam:param complete:^(NSDictionary * _Nonnull response) {
             

@@ -6,30 +6,28 @@
 //
 
 #import "DataTypeVC.h"
-
+#import "XRDeviceInfo.h"
+#import "Modifier.h"
+#import "base62.h"
 @interface DataTypeVC ()
 
 @property(nonatomic,strong)UIImageView *imageV;
 
 @end
 
-static const void * const AuthenticationChallengeErrorKey = &AuthenticationChallengeErrorKey;
-
-const int a = 5;/*a的值一直为5，不能被改变*/
-
-const int b; /* b = 10; b的值被赋值为10后，不能被改变*/
-
-const int *ptr; /* ptr为指向整型常量的指针，ptr的值可以修改，但不能修改其所指向的值*/
-
-int *const ptrr;/* ptrr为指向整型的常量指针，ptrr的值不能修改，但可以修改其所指向的值*/
-
-const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指向的值都不能修改*/
 
 @implementation DataTypeVC
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
 //    NSString *m = [UIDevice currentDevice].model;
     NSLog(@"---- %d",IS_IPHONEX);
+    Modifier *model = [[Modifier alloc]init];
+    [model objectCopyOrMutableCopyTest];
+    [model containerTest];
+   
+    NSString *a = @"66nzJhLdvXu87Rhs5ycEDgvlWeENQPmCCVpzrDRsw5dJaWl6JHAifl9vpyswTTSDEWgltJr6AjuyqalT18AbEllHKpVICXRGkD3gEaoPlPoVMHD3bIIicwIwS4U1fTS7aGgJI1fl3ihKJBxBuXSFto6";
+ 
+    NSString *b = [[Base62Decoder decoder]decodeWithString:a key:1649837098503];
     
 }
 - (void)viewDidLoad {
@@ -40,13 +38,20 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
         make.top.left.right.equalTo(self.view);
         make.height.mas_equalTo(self.imageV.mas_width).multipliedBy(0.8);
     }];
-    NSLog(@"- %s -",__func__); NSLog(@"-- %p",pt);
+    
     
     [self dataType];
     
     [self enumFunc];
     
+    //NSDictionary *dic = [[XRDeviceInfo shareInstance]getAllDeviceInfo];
     
+    [[XRDeviceInfo shareInstance]registAppKey:@"" configBlock:nil];
+    [[XRDeviceInfo shareInstance]asyncGetAllDeviceInfo:^(NSDictionary * _Nullable dic) {
+        NSLog(@"手机信息 - \n%@",dic);
+    }];
+    
+    //NSLog(@"手机信息 - \n%@",dic);
     
     char abc = 0;
     
@@ -91,6 +96,7 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     printf("NSInteger 存储最大字节数 : %lu \n", sizeof(NSInteger));
     printf("CGFloat   存储最大字节数 : %lu \n", sizeof(CGFloat));
     printf("NSUInteger 存储最大字节数 : %lu \n", sizeof(NSUInteger));
+   
     
     
     // !!!: OC中基本数据类型、对象类型、id类型
@@ -105,9 +111,24 @@ const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指
     
     NSLog(@"value = %@",value);
     
+    dispatch_semaphore_t sem = dispatch_semaphore_create(1);
     
-    
-    
+    __block NSMutableArray *ar = @[].mutableCopy;
+    for (int i = 0; i < 100; i++) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            
+            dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+            
+            [ar addObject:@"tr"];
+            dispatch_semaphore_signal(sem);
+//            @synchronized (self) {
+//                //ar = [[NSMutableArray alloc] init];
+//                [ar addObject:@"tr"];
+//            }
+            
+            
+        });
+    }
 }
 
 

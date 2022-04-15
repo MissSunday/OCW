@@ -29,7 +29,6 @@
                 //这块注意
                 [weakSelf setValue:value forKey:key];
             }
-            MIN(2, 4);
         }];
     }
     return self;

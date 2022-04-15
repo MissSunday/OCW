@@ -105,6 +105,10 @@
 		9C5C041E27FEBE720059FCD8 /* UIFont+XRScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */; };
 		9C75423927F3F78700972781 /* DataTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C75423827F3F78700972781 /* DataTypeVC.m */; };
 		9C75423B27F4292B00972781 /* 32-64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C75423A27F4292B00972781 /* 32-64.jpg */; };
+		9C8CD6902804499400A52F06 /* XRDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD68F2804499400A52F06 /* XRDeviceInfo.m */; };
+		9C8CD694280509AC00A52F06 /* Modifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD693280509AC00A52F06 /* Modifier.m */; };
+		9C8CD6B12806AE3400A52F06 /* Base62Codec.java in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD6B02806AE3400A52F06 /* Base62Codec.java */; };
+		9C8CD6E928081C7D00A52F06 /* base62.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD6E828081C7D00A52F06 /* base62.m */; };
 		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
 		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
@@ -339,6 +343,13 @@
 		9C75423727F3F78700972781 /* DataTypeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataTypeVC.h; sourceTree = "<group>"; };
 		9C75423827F3F78700972781 /* DataTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataTypeVC.m; sourceTree = "<group>"; };
 		9C75423A27F4292B00972781 /* 32-64.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "32-64.jpg"; sourceTree = "<group>"; };
+		9C8CD68E2804499400A52F06 /* XRDeviceInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRDeviceInfo.h; sourceTree = "<group>"; };
+		9C8CD68F2804499400A52F06 /* XRDeviceInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRDeviceInfo.m; sourceTree = "<group>"; };
+		9C8CD692280509AC00A52F06 /* Modifier.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Modifier.h; sourceTree = "<group>"; };
+		9C8CD693280509AC00A52F06 /* Modifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Modifier.m; sourceTree = "<group>"; };
+		9C8CD6B02806AE3400A52F06 /* Base62Codec.java */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.java; path = Base62Codec.java; sourceTree = "<group>"; };
+		9C8CD6E728081C7D00A52F06 /* base62.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base62.h; sourceTree = "<group>"; };
+		9C8CD6E828081C7D00A52F06 /* base62.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = base62.m; sourceTree = "<group>"; };
 		9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadLockVC.h; sourceTree = "<group>"; };
 		9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadLockVC.m; sourceTree = "<group>"; };
 		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
@@ -772,6 +783,8 @@
 				1D0FD7BD26AEB22E00A61E96 /* 原生网络请求封装 */,
 				9C75423427F2E63F00972781 /* 宏定义用法 */,
 				9C75423627F3F74A00972781 /* 数据类型整理 */,
+				9C8CD68D2804495800A52F06 /* 信息采集整理 */,
+				9C8CD6912805095500A52F06 /* 修饰词用法 */,
 				1DF9E4C026895A42008BCB38 /* SVC.h */,
 				1DF9E4C126895A42008BCB38 /* SVC.m */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
@@ -891,9 +904,30 @@
 			children = (
 				9C75423727F3F78700972781 /* DataTypeVC.h */,
 				9C75423827F3F78700972781 /* DataTypeVC.m */,
+				9C8CD6E728081C7D00A52F06 /* base62.h */,
+				9C8CD6E828081C7D00A52F06 /* base62.m */,
+				9C8CD6B02806AE3400A52F06 /* Base62Codec.java */,
 				9C75423A27F4292B00972781 /* 32-64.jpg */,
 			);
 			path = "数据类型整理";
+			sourceTree = "<group>";
+		};
+		9C8CD68D2804495800A52F06 /* 信息采集整理 */ = {
+			isa = PBXGroup;
+			children = (
+				9C8CD68E2804499400A52F06 /* XRDeviceInfo.h */,
+				9C8CD68F2804499400A52F06 /* XRDeviceInfo.m */,
+			);
+			path = "信息采集整理";
+			sourceTree = "<group>";
+		};
+		9C8CD6912805095500A52F06 /* 修饰词用法 */ = {
+			isa = PBXGroup;
+			children = (
+				9C8CD692280509AC00A52F06 /* Modifier.h */,
+				9C8CD693280509AC00A52F06 /* Modifier.m */,
+			);
+			path = "修饰词用法";
 			sourceTree = "<group>";
 		};
 		9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */ = {
@@ -1330,11 +1364,13 @@
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
 				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
 				1D169D8A26A6650700933E1C /* BaseViewController.m in Sources */,
+				9C8CD6B12806AE3400A52F06 /* Base62Codec.java in Sources */,
 				B4859C9D273BA90C00F49091 /* Target_second.m in Sources */,
 				B44395742767560E007FCC4B /* XRRequestParam.m in Sources */,
 				1D169DCA26A7C8F700933E1C /* GKBaseTableViewController.m in Sources */,
 				1DB3C8892771728C0068FEFA /* Dog.m in Sources */,
 				9C5C041E27FEBE720059FCD8 /* UIFont+XRScale.m in Sources */,
+				9C8CD6902804499400A52F06 /* XRDeviceInfo.m in Sources */,
 				1D0FD7C426AFA9B900A61E96 /* KNPhotoBrowserVC.m in Sources */,
 				1D0FD7C726AFAB2800A61E96 /* KNPhotoBrowserItem.m in Sources */,
 				1D169DB726A7C81500933E1C /* BHViewController.m in Sources */,
@@ -1362,9 +1398,11 @@
 				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
 				B47FEE3F2754AD3900F3D00B /* XRTool.m in Sources */,
 				9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */,
+				9C8CD6E928081C7D00A52F06 /* base62.m in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
+				9C8CD694280509AC00A52F06 /* Modifier.m in Sources */,
 				9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */,
 				B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */,
 				1D169D9C26A6684300933E1C /* CViewController.m in Sources */,

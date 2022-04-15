@@ -35,4 +35,29 @@
         properties(key);
     }
 }
++(NSString *)base62Encode:(int)number {
+    NSArray *array = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n", @"o", @"p", @"q", @"r", @"s", @"t", @"u", @"v", @"w", @"x", @"y", @"z", @"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
+    NSString *base62 = [NSString stringWithFormat:@""];
+    do {
+        base62 = [[array objectAtIndex:number%62] stringByAppendingString:base62];
+        number /= 62;
+    } while (number >= 1);
+    
+    return base62;
+}
++(int)base62Decode:(NSString *)string {
+    if (string == nil || [string isEqualToString:@""]) {
+        return 0;
+        
+    }
+    NSArray *array = @[@"0", @"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9", @"a", @"b", @"c", @"d", @"e", @"f", @"g", @"h", @"i", @"j", @"k", @"l", @"m", @"n", @"o", @"p", @"q", @"r", @"s", @"t", @"u", @"v", @"w", @"x", @"y", @"z", @"A", @"B", @"C", @"D", @"E", @"F", @"G", @"H", @"I", @"J", @"K", @"L", @"M", @"N", @"O", @"P", @"Q", @"R", @"S", @"T", @"U", @"V", @"W", @"X", @"Y", @"Z"];
+    int base10 = 0;
+    int length = [string length];
+    for (int i = 0; i < length; i++) {
+        int number = [array indexOfObject:[string substringWithRange:NSMakeRange(i, 1)]];
+        base10 += number * powf(62, length-i-1);
+    }
+    return base10;
+    
+}
 @end
