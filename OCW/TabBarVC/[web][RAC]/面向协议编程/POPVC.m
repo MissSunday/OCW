@@ -35,6 +35,8 @@
     [dog eat];
     
     [XRTool logMethodNamesOfClass:[Dog class]];
+    
+    
 }
 
 
