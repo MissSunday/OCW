@@ -32,6 +32,7 @@ PODS:
     - SDWebImage/Core (= 5.12.2)
   - SDWebImage/Core (5.12.2)
   - TZImagePickerController (3.6.0)
+  - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -60,6 +61,7 @@ DEPENDENCIES:
   - Reachability (~> 3.2)
   - ReactiveObjC (= 3.1.1)
   - TZImagePickerController (= 3.6.0)
+  - YYAsyncLayer (~> 1.0)
   - YYCategories (= 1.0.4)
   - YYDispatchQueuePool (~> 1.0)
   - YYModel (= 1.0.4)
@@ -83,6 +85,7 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - TZImagePickerController
+    - YYAsyncLayer
     - YYCache
     - YYCategories
     - YYDispatchQueuePool
@@ -107,6 +110,7 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 240e5c12b592fb1268c1d03b8c90d90e8c2ffe82
   TZImagePickerController: a37d7eec87c54436e896a67947033ad2178d498b
+  YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYDispatchQueuePool: 3dfb2274bcc74207688dde8ac6f7bdd46871dd7b
@@ -115,6 +119,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: d0e459a9cc6ed34d5666dd7f553e8257c205ef3a
+PODFILE CHECKSUM: 9f457758a153d269a29adb8e71f231ab27b0b794
 
 COCOAPODS: 1.11.2

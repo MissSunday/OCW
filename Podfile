@@ -15,7 +15,7 @@ target 'OCW' do
   pod 'ReactiveObjC', '3.1.1'
   pod 'YYModel', '1.0.4'
   pod 'YYText', '1.0.7'
-  #pod 'YYImage', '1.0.4'
+  pod 'YYAsyncLayer', '~> 1.0'
   pod 'YYWebImage', '1.0.5'
   pod 'YYCategories', '1.0.4'
   pod 'YYDispatchQueuePool', '~> 1.0'
