@@ -20,6 +20,7 @@
 #import <YYCache/YYCache.h>
 #import <YYCategories/YYCategories.h>
 #import <YYModel/YYModel.h>
+#import <YYDispatchQueuePool/YYDispatchQueuePool.h>
 #import <MJRefresh/MJRefresh.h>
 #import <Reachability/Reachability.h>
 #import <KNPhotoBrowser/KNPhotoBrowser.h>

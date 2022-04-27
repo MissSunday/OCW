@@ -18,6 +18,7 @@ target 'OCW' do
   #pod 'YYImage', '1.0.4'
   pod 'YYWebImage', '1.0.5'
   pod 'YYCategories', '1.0.4'
+  pod 'YYDispatchQueuePool', '~> 1.0'
   pod 'MJRefresh'
   pod 'Reachability', '~> 3.2'
   pod 'KNPhotoBrowser', '2.5.3' #依赖SDWebImage ～> 5.0

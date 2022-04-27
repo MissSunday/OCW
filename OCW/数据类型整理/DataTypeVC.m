@@ -25,9 +25,20 @@
     [model objectCopyOrMutableCopyTest];
     [model containerTest];
    
-    NSString *a = @"1xOBZk6w2UChi3muwwfkBwMYOSNiXHJyiswm7OPR5YdeGtDfEhzdoZc3m2UjzqNyQlUiKB0qpXsDbz5VRple2aFkcPUAcG9gcM7581f6QykSWbG6UF1vEmIBpQTbeS8pxvNRaIsiG42pLWJ";
- 
-    NSString *b = [[Base62Decoder decoder]decodeWithString:a key:1650245101441];
+    for (int i = 0; i < 10; i++) {
+        
+        
+        
+        static NSString *a = @"1xOBZk6w2UChi3muwwfkBwMYOSNiXHJyiswm7OPR5YdeGtDfEhzdoZc3m2UjzqNyQlUiKB0qpXsDbz5VRple2aFkcPUAcG9gcM7581f6QykSWbG6UF1vEmIBpQTbeS8pxvNRaIsiG42pLWJ";
+        
+        NSString *b = [[Base62Decoder decoder]decodeWithString:a key:1650245101441];
+        
+        NSLog(@"- %@",b);
+        
+    }
+    
+    BOOL abc = [Modifier token:nil];
+    
     
 }
 - (void)viewDidLoad {
@@ -58,7 +69,38 @@
     char c = 'rqweqwe';
 
     char d[10] = "qweqweq";
-    //u_char *b 
+    //u_char *b
+    
+    Byte e[10] = {'a','f'};
+    
+    
+    YYDispatchQueuePool *pool = [[YYDispatchQueuePool alloc]initWithName:@"xrQueuePool" queueCount:4 qos:NSQualityOfServiceDefault];
+    //YYDispatchQueueGetForQOS(NSQualityOfServiceUtility);
+    
+    dispatch_semaphore_t semap = dispatch_semaphore_create(1);
+    for (int i = 0; i < 3; i++) {
+        dispatch_queue_t bfq = dispatch_queue_create("bfq", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(bfq, ^{
+            
+            for (int i = 0; i < 3; i++) {
+                dispatch_async([pool queue], ^{
+                    dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
+                    NSLog(@"- %@",[NSThread currentThread]);
+                    [NSThread sleepForTimeInterval:1];
+                    dispatch_semaphore_signal(semap);
+                    NSLog(@"6666");
+                });
+            }
+        });
+    }
+    
+    
+    
+   
+  
+    
+    
+    
 }
 // !!!: 数据类型
 -(void)dataType{

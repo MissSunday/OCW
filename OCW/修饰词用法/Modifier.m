@@ -67,7 +67,18 @@ int *const ptrr;/* ptrr为指向整型的常量指针，ptrr的值不能修改�
 
 const int *const pt = &a;/* pt为指向整型常量的常量指针，pt及其指向的值都不能修改*/
 
+NSString *getName(NSString *x,NSString *m){
+    return [NSString stringWithFormat:@"%@%@",x,m];
+}
+
 @implementation Modifier
++ (BOOL)token:(NSString *)token{
+    if (token && [token isKindOfClass:[NSString class]] && [token isEqualToString:@"666"]) {
+        return YES;
+    }else{
+        return NO;
+    }
+}
 
 - (instancetype)init
 {

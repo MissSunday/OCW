@@ -38,12 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) NSString *osVersion;
 ///型号
 @property (nonatomic, strong, readonly) NSString *p_model;
-///手机品牌
-@property (nonatomic, strong, readonly) NSString *p_brand;
-///设备
-@property (nonatomic, strong, readonly) NSString *p_device;
-///厂商
-@property (nonatomic, strong, readonly) NSString *p_manuf;
+
 
 
 

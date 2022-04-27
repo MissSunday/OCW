@@ -46,12 +46,6 @@
 @property (nonatomic, strong, readwrite) NSString *osVersion;
 ///型号
 @property (nonatomic, strong, readwrite) NSString *p_model;
-///手机品牌
-@property (nonatomic, strong, readwrite) NSString *p_brand;
-///设备
-@property (nonatomic, strong, readwrite) NSString *p_device;
-///厂商
-@property (nonatomic, strong, readwrite) NSString *p_manuf;
 
 
 
@@ -91,8 +85,7 @@ static XRDeviceInfo *_manager = nil;
 #pragma mark - get
 //操作系统
 - (NSString *)os {
-    _os = [UIDevice currentDevice].systemName;
-    return _os;
+    return [UIDevice currentDevice].systemName;
 }
 
 //操作系统版本
@@ -108,20 +101,6 @@ static XRDeviceInfo *_manager = nil;
     NSString *model = [NSString stringWithCString: systemInfo.machine encoding:NSASCIIStringEncoding];
     _p_model = model;
     return _p_model;
-}
-//手机品牌
-- (NSString *)p_brand {
-    return @"Apple";
-}
-
-//设备
-- (NSString *)p_device {
-    return @"iOS";
-}
-
-//厂商
-- (NSString *)p_manuf {
-    return @"Apple";
 }
 - (void)asyncGetAllDeviceInfo:(void (^)(NSDictionary * _Nullable))block{
     dispatch_async(_deviceInfoQueue, ^{

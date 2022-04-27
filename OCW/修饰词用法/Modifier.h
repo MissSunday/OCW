@@ -71,6 +71,9 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)objectCopyOrMutableCopyTest;
 -(void)containerTest;
 
++(BOOL)token:(NSString *)token;
+
+FOUNDATION_EXTERN NSString *getName(NSString *x,NSString *m);
 
 //对外可见的静态常量
 

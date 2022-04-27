@@ -56,6 +56,9 @@ static int TARGET_BASE = 62;
     if (!encodeStr) {
         return @"";
     }
+    if (![encodeStr isKindOfClass:[NSString class]]) {
+        return @"";
+    }
     if (!key) {
         return @"";
     }
