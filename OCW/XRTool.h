@@ -18,15 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 //单利
 +(instancetype)tool;
 
-
-
-// !!!: 判断是否是数组
-+(BOOL)isArray:(NSArray *)array;
-// !!!: 判断是否是字典
-+(BOOL)isDictionary:(NSDictionary *)dic;
-// !!!: 判断是否是字符串
-+(BOOL)isString:(NSString *)string;
-
 +(void)logPropertyOfClass:(Class)cls;
 +(void)logMethodNamesOfClass:(Class)cls;
 
@@ -35,7 +26,12 @@ NS_ASSUME_NONNULL_BEGIN
                       selectorName:(NSString *)selectorName
                            objects:(NSArray *)objects;
 
-
+// !!!: 判断是否是数组
+FOUNDATION_EXTERN BOOL isArray(id array);
+// !!!: 判断是否是字典
+FOUNDATION_EXTERN BOOL isDictionary(id dic);
+// !!!: 判断是否是字符串
+FOUNDATION_EXTERN BOOL isString(id string);
 
 
 

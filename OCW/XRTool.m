@@ -66,8 +66,7 @@ static XRTool *_tool = nil;
 
 #pragma mark -
 // !!!: 判断是否是数组
-+(BOOL)isArray:(NSArray *)array{
-    
+BOOL isArray(id array){
     if (array == nil) {
         return NO;
     }
@@ -77,11 +76,10 @@ static XRTool *_tool = nil;
     if (![array isKindOfClass:[NSArray class]]){
         return NO;
     }
-    return YES;
+    return YES; 
 }
 // !!!: 判断是否是字典
-+(BOOL)isDictionary:(NSDictionary *)dic{
-    
+BOOL isDictionary(id dic){
     if (dic == nil) {
         return NO;
     }
@@ -94,7 +92,7 @@ static XRTool *_tool = nil;
     return YES;
 }
 // !!!: 判断是否是字符串
-+(BOOL)isString:(NSString *)string{
+BOOL isString(id string){
     
     if (string == nil) {
         return NO;

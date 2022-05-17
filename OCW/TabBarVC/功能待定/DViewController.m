@@ -22,9 +22,21 @@
 
 @implementation DViewController
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    __block BOOL isInstalledCydia = NO;
     
- 
-   
+    if ([[NSThread currentThread]isMainThread]) {
+        isInstalledCydia = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]];
+        NSLog(@"123");
+    }else{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            isInstalledCydia = [[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"cydia://package/com.example.package"]];
+            NSLog(@"234");
+        });
+    }
+    NSLog(@"77777777777");
+
+    
+    NSLog(@"45645645646456");
  
 //    NSArray *objs = [NSArray arrayWithObjects:@1, @1, @2, nil];
 //
@@ -32,6 +44,7 @@
 //
 //    NSLog(@"- %@",a);
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"多线程测试";
