@@ -927,6 +927,17 @@
 			path = "修饰词用法";
 			sourceTree = "<group>";
 		};
+		9C97773028504BAE008095D3 /* 包装工具文件 */ = {
+			isa = PBXGroup;
+			children = (
+				B4859CA1273BA94700F49091 /* CTMediator+First.h */,
+				B4859CA2273BA94700F49091 /* CTMediator+First.m */,
+				B4859CA4273BA95700F49091 /* CTMediator+Second.h */,
+				B4859CA5273BA95700F49091 /* CTMediator+Second.m */,
+			);
+			path = "包装工具文件";
+			sourceTree = "<group>";
+		};
 		9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,6 +998,7 @@
 		B4859C92273BA86C00F49091 /* CTMediator组件间通信 */ = {
 			isa = PBXGroup;
 			children = (
+				9C97773028504BAE008095D3 /* 包装工具文件 */,
 				B4859C93273BA88900F49091 /* 组件1 */,
 				B4859C94273BA89400F49091 /* 组件2 */,
 			);
@@ -996,8 +1008,6 @@
 		B4859C93273BA88900F49091 /* 组件1 */ = {
 			isa = PBXGroup;
 			children = (
-				B4859CA1273BA94700F49091 /* CTMediator+First.h */,
-				B4859CA2273BA94700F49091 /* CTMediator+First.m */,
 				B4859C9E273BA91B00F49091 /* Target_first.h */,
 				B4859C9F273BA91B00F49091 /* Target_first.m */,
 				B4859C95273BA8DF00F49091 /* ZJFirstViewController.h */,
@@ -1009,8 +1019,6 @@
 		B4859C94273BA89400F49091 /* 组件2 */ = {
 			isa = PBXGroup;
 			children = (
-				B4859CA4273BA95700F49091 /* CTMediator+Second.h */,
-				B4859CA5273BA95700F49091 /* CTMediator+Second.m */,
 				B4859C9B273BA90C00F49091 /* Target_second.h */,
 				B4859C9C273BA90C00F49091 /* Target_second.m */,
 				B4859C98273BA8EC00F49091 /* ZJSecondViewController.h */,

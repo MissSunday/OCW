@@ -83,7 +83,7 @@ UIKIT_EXTERN  CGFloat const numOfPeople;
 
 FOUNDATION_EXTERN  NSString *const kNotificationSomeName;
 /*
- 
+ UIKIT_EXTERN 和 FOUNDATION_EXTERN
  这两个的作用基本一致 声明外部全局变量 不同的是两者的定义位置不同 FOUNDATION_EXTERN貌似是为了兼容C++定义的
  
  FOUNDATION_EXTERN 是在Foundation框架里面 NSObjCRuntime.h 中定义的。

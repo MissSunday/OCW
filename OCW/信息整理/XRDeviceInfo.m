@@ -129,15 +129,7 @@ static XRDeviceInfo *_manager = nil;
     for (int i=0;i<collectionAry.count;i++)
     {
         NSString *key = collectionAry[i];
-        NSString *value;
-        @try {
-            value = [self valueForKey:key];
-        } @catch (NSException *exception) {
-            //                NSLog(@"JDJR_Exception_%@属性不存在",key);
-        } @finally {
-            
-        }
-        //防止属性是非字符串的加入而无法json化，如semaphoreLock
+        NSString *value = [self valueForKey:key];
         if (value && [value isKindOfClass:[NSString class]])
         {
             [mDic setValue:value forKey:key];
@@ -145,5 +137,10 @@ static XRDeviceInfo *_manager = nil;
     }
     return mDic;
 }
+
+- (id)valueForUndefinedKey:(NSString *)key{
+    return nil;
+}
+
 
 @end

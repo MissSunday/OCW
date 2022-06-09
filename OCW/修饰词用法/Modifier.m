@@ -57,7 +57,7 @@ const用来修饰右边的基本变量或指针变量
 //结合使用 静态常量
 static const void * const AuthenticationChallengeErrorKey = &AuthenticationChallengeErrorKey;
 
-const int a = 5;/*a的值一直为5，不能被改变*/
+const int a = 5;/* a的值一直为5，不能被改变 */
 
 const int b; /* b = 10; b的值被赋值为10后，不能被改变*/ //等价于 int const b;
 

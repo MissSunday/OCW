@@ -19,27 +19,16 @@
 @implementation DataTypeVC
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-//    NSString *m = [UIDevice currentDevice].model;
-    NSLog(@"---- %d",IS_IPHONEX);
     Modifier *model = [[Modifier alloc]init];
     [model objectCopyOrMutableCopyTest];
     [model containerTest];
    
-    for (int i = 0; i < 10; i++) {
-        
-        
-        
-        static NSString *a = @"1xOBZk6w2UChi3muwwfkBwMYOSNiXHJyiswm7OPR5YdeGtDfEhzdoZc3m2UjzqNyQlUiKB0qpXsDbz5VRple2aFkcPUAcG9gcM7581f6QykSWbG6UF1vEmIBpQTbeS8pxvNRaIsiG42pLWJ";
-        
-        NSString *b = [[Base62Decoder decoder]decodeWithString:a key:1650245101441];
-        
-        NSLog(@"- %@",b);
-        
-    }
     
-    BOOL abc = [Modifier token:nil];
+    static NSString *a = @"1xOBZk6w2UChi3muwwfkBwMYOSNiXHJyiswm7OPR5YdeGtDfEhzdoZc3m2UjzqNyQlUiKB0qpXsDbz5VRple2aFkcPUAcG9gcM7581f6QykSWbG6UF1vEmIBpQTbeS8pxvNRaIsiG42pLWJ";
     
+    NSString *b = [[Base62Decoder decoder]decodeWithString:a key:1650245101441];
     
+    NSLog(@"- %@",b);
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -61,46 +50,7 @@
     [[XRDeviceInfo shareInstance]asyncGetAllDeviceInfo:^(NSDictionary * _Nullable dic) {
         NSLog(@"手机信息 - \n%@",dic);
     }];
-    
-    //NSLog(@"手机信息 - \n%@",dic);
-    
-    char abc = 0;
-    
-    char c = 'rqweqwe';
-
-    char d[10] = "qweqweq";
-    //u_char *b
-    
-    Byte e[10] = {'a','f'};
-    
-    
-    YYDispatchQueuePool *pool = [[YYDispatchQueuePool alloc]initWithName:@"xrQueuePool" queueCount:4 qos:NSQualityOfServiceDefault];
-    //YYDispatchQueueGetForQOS(NSQualityOfServiceUtility);
-    
-    dispatch_semaphore_t semap = dispatch_semaphore_create(1);
-    for (int i = 0; i < 3; i++) {
-        dispatch_queue_t bfq = dispatch_queue_create("bfq", DISPATCH_QUEUE_CONCURRENT);
-        dispatch_async(bfq, ^{
-            
-            for (int i = 0; i < 3; i++) {
-                dispatch_async([pool queue], ^{
-                    dispatch_semaphore_wait(semap, DISPATCH_TIME_FOREVER);
-                    NSLog(@"- %@",[NSThread currentThread]);
-                    [NSThread sleepForTimeInterval:1];
-                    dispatch_semaphore_signal(semap);
-                    NSLog(@"6666");
-                });
-            }
-        });
-    }
-    
-    
-    
-   
-  
-    
-    
-    
+       
 }
 // !!!: 数据类型
 -(void)dataType{
@@ -153,24 +103,7 @@
     
     NSLog(@"value = %@",value);
     
-    dispatch_semaphore_t sem = dispatch_semaphore_create(1);
-    
-    __block NSMutableArray *ar = @[].mutableCopy;
-    for (int i = 0; i < 100; i++) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            
-            dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
-            
-            [ar addObject:@"tr"];
-            dispatch_semaphore_signal(sem);
-//            @synchronized (self) {
-//                //ar = [[NSMutableArray alloc] init];
-//                [ar addObject:@"tr"];
-//            }
-            
-            
-        });
-    }
+  
 }
 
 
@@ -196,15 +129,7 @@
     self.myOption = _myOption & (~MyOption4);//1011 & (~1000) = 1011 & 0111 = 0011, 3
     
     //self.myOption &= ~MyOption4;
-    
-    
-    
-    
-    
-    
-    
-    
-    
+       
 }
 - (UIImageView *)imageV{
     if (!_imageV) {
