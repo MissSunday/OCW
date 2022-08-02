@@ -48,6 +48,16 @@
                ReferencedContainer = "container:OCW.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9CB3367828895851003E4C01"
+               BuildableName = "XRSDKTests.xctest"
+               BlueprintName = "XRSDKTests"
+               ReferencedContainer = "container:OCW.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -27,28 +27,30 @@
     //初始化 写在AppDelegate里
     [[XXSDK sdk]registAppKey:@"" configBlock:^(XXSDKConfig *config) {
         config.supportBingFa = NO;
-        //config.backToMainThread = NO;
+        config.backToMainThread = YES;
+        NSLog(@"参数设置完毕");
     }];
 
     for (int i = 0; i < 2; i ++) {
-        
-//        dispatch_queue_t queue = dispatch_queue_create("asd", DISPATCH_QUEUE_CONCURRENT);
-//        dispatch_async(queue, ^{
-//            //使用
-//            [[XXSDK sdk] getToken:^(id  _Nonnull object) {
-//
-//                NSLog(@"返回数据 - %@ %@",object,[NSThread currentThread]);
-//            }];
-//        });
+        dispatch_queue_t queue = dispatch_queue_create("asd", DISPATCH_QUEUE_CONCURRENT);
+        dispatch_async(queue, ^{
+            //使用
+            [[XXSDK sdk] getToken:^(id  _Nonnull object) {
+
+                NSLog(@"getTokenReturn - %@ %@",object,[NSThread currentThread]);
+            }];
+        });
       
     }
     
+    NSLog(@"----------------搞事");
+    
     [[XXSDK sdk] getToken:^(id  _Nonnull object) {
-                
-        NSLog(@"返回数据 - %@ %@",object,[NSThread currentThread]);
+
+        NSLog(@"666666666 - %@ %@",object,[NSThread currentThread]);
     }];
     
-    
+    NSLog(@"----------------搞事2");
 }
 /*
 #pragma mark - Navigation

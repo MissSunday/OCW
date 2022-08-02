@@ -53,16 +53,22 @@ static inline CGFloat XR_Scale(CGFloat a){
 //weakSelf
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
-#pragma mark NSLog
+//#pragma mark NSLog
+//#ifdef DEBUG
+//#define NSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+//#else
+//#define NSLog(format, ...)
+//#endif
+
+
 #ifdef DEBUG
-#define NSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#define DDLog(format, ...) printf("%s\n", [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
 #else
-#define NSLog(format, ...)
+#define DDLog(format, ...)
 #endif
 
 
-
-
+#define logdes [NSString stringWithFormat:@"[%s] %s [%d行]",__TIMESTAMP__,__func__,__LINE__]
 
 
 //APP对象 （单例对象）

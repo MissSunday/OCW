@@ -66,8 +66,7 @@
 }
 //测试3个方法 有依赖情况下 多线程并发  顺序调用
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    
-    
+
     dispatch_queue_t queue = dispatch_queue_create("bfQueue", DISPATCH_QUEUE_CONCURRENT);
     for (int i = 0; i < 2; i ++) {
 

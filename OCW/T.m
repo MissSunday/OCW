@@ -17,6 +17,7 @@
     [self enumerateProperties:^(id key) {
         id value = [self valueForKey:key];
         [aCoder encodeObject:value forKey:key];
+        
     }];
 }
 //解归档（反序列化）
