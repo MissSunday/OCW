@@ -15,6 +15,11 @@
 @property(nonatomic,strong)dispatch_semaphore_t semaphore;
 @property(nonatomic,strong)XXSDKConfig *config;
 
+typedef XXSDK *_Nonnull(^XXSDK_LogBlock)(id _Nullable obj);
+
+-(void)log:(id)description;
+//另一种用法
+-(XXSDK_LogBlock)log;
 @end
 
 static XXSDK *_sdk = nil;
@@ -50,7 +55,13 @@ static XXSDK *_sdk = nil;
     
     
 }
-- (void)getToken:(void (^)(id _Nonnull))success{
+- (void)getTokenSync:(void (^)(id _Nonnull))success{
+    dispatch_sync(self.apiQueue, ^{
+        sleep(1);
+        success(@77777);
+    });
+}
+- (void)getTokenAsync:(void (^)(id _Nonnull))success{
     dispatch_async(self.apiQueue, ^{
         if (!self.config.supportBingFa) {
             dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
@@ -58,6 +69,7 @@ static XXSDK *_sdk = nil;
         //创建参数可以加锁 保证并发不会出现问题
         XRRequestParam *param = [XRRequestParam postWithParam:@{@"token":@"gk"} url:@"666"];
         [[XRRequest shareManager]requestWithParam:param complete:^(NSDictionary * _Nonnull response) {
+            self.log(@"请求成功");
             [self back:response blcok:success];
         } failed:^(NSDictionary * _Nonnull error) {
             [self back:error blcok:success];
@@ -67,7 +79,7 @@ static XXSDK *_sdk = nil;
 }
 -(void)back:(id)info blcok:(void(^)(id))blcok{
     dispatch_async(self.config.backToMainThread ? dispatch_get_main_queue() : self.apiQueue, ^{
-        NSLog(@"请求返回 - %@",[NSThread currentThread]);
+        self.log(@"请求返回");
         blcok(info);
         if (!self.config.supportBingFa) {
             dispatch_semaphore_signal(self.semaphore);
@@ -77,5 +89,22 @@ static XXSDK *_sdk = nil;
 }
 
 
+
+
+#pragma mark - 输出
+// !!!: 仅供debug测试输出 上线前一定要关闭log，否则可能审核不过或影响性能
+- (void)log:(id)description{
+    @try {
+        if (self.config.needLog) {
+            NSLog(@"%@ %@",description,[NSThread currentThread]);
+        }
+    } @catch (NSException *exception) {} @finally {}
+}
+- (XXSDK_LogBlock)log{
+    return ^(id obj){
+        [self log:obj];
+        return self;
+    };
+}
 
 @end

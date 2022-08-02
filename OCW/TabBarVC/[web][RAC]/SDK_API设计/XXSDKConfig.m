@@ -27,8 +27,9 @@ static XXSDKConfig *_config = nil;
     self = [super init];
     if (self) {
         _supportBingFa = YES;
-        _backToMainThread = YES;
+        _backToMainThread = NO;
         _isDebug = YES;
+        _needLog = NO;
     }
     return self;
 }

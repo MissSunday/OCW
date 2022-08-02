@@ -13,12 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(instancetype)config;
 
-/** 是否支持并发调用  默认yes*/
+/** 是否支持并发调用  默认yes */
 @property(nonatomic,assign)BOOL supportBingFa;
-/** 返回主线程 默认yes*/
+/** 返回主线程 默认NO*/
 @property(nonatomic,assign)BOOL backToMainThread;
 
 @property(nonatomic,assign)BOOL isDebug;
+//是否输出日志，默认NO
+@property(nonatomic,assign)BOOL needLog;
 
 @end
 

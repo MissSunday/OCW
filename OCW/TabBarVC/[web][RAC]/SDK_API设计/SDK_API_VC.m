@@ -26,31 +26,27 @@
     
     //初始化 写在AppDelegate里
     [[XXSDK sdk]registAppKey:@"" configBlock:^(XXSDKConfig *config) {
-        config.supportBingFa = NO;
-        config.backToMainThread = YES;
+        config.supportBingFa = YES;
+        config.backToMainThread = NO;
+        config.isDebug = YES;
+        config.needLog = NO;
         NSLog(@"参数设置完毕");
     }];
-
-    for (int i = 0; i < 2; i ++) {
-        dispatch_queue_t queue = dispatch_queue_create("asd", DISPATCH_QUEUE_CONCURRENT);
-        dispatch_async(queue, ^{
-            //使用
-            [[XXSDK sdk] getToken:^(id  _Nonnull object) {
-
-                NSLog(@"getTokenReturn - %@ %@",object,[NSThread currentThread]);
-            }];
-        });
-      
-    }
     
-    NSLog(@"----------------搞事");
-    
-    [[XXSDK sdk] getToken:^(id  _Nonnull object) {
-
-        NSLog(@"666666666 - %@ %@",object,[NSThread currentThread]);
+    //同步 在当前队列执行 在当前队列返回 
+    __block id aaa = nil;
+    [[XXSDK sdk]getTokenSync:^(id  _Nonnull object) {
+        NSLog(@"同步 - %@ %@",object,[NSThread currentThread]);
+        aaa = object;
     }];
-    
-    NSLog(@"----------------搞事2");
+    NSLog(@"aaa = %@",aaa);
+
+    //异步
+    [[XXSDK sdk]getTokenAsync:^(id  _Nonnull object) {
+
+        NSLog(@"getTokenReturn - %@ %@",object,[NSThread currentThread]);
+    }];
+   
 }
 /*
 #pragma mark - Navigation
