@@ -18,8 +18,6 @@
     self.navigationItem.title = NSStringFromClass(self.class);
     self.view.backgroundColor = [UIColor whiteColor];
     
-    
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{

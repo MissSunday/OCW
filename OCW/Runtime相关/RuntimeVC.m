@@ -44,11 +44,7 @@
         
         //NSString *a = [NSString stringWithFormat:@"[%s] %s [%d行]",__TIMESTAMP__,__func__,__LINE__];
         
-    
-        [XRTool logPropertyOfClass:[UIDevice class]];
-        
-        id isSimulator =[[UIDevice currentDevice]valueForKeyPath:@"isJailbroken"];
-        
+
         
         //第一种 正常的
 //        NSObject *xrp = [[NSClassFromString(@"XRPerson") alloc]init];
@@ -71,13 +67,13 @@
 
 
         //第二种 单利
-//        Class cls = NSClassFromString(@"TYPerson");
-//        SEL sel = NSSelectorFromString(@"manager");
-//        __strong id  obj;
-//        if (cls && [cls respondsToSelector:sel])
-//        {
-//            obj = [cls performSelector:sel];
-//        }
+        Class cls = NSClassFromString(@"TYPerson");
+        SEL sel = NSSelectorFromString(@"manager");
+        id  obj;
+        if (cls && [cls respondsToSelector:sel])
+        {
+            obj = [cls performSelector:sel];
+        }
 
 //        if (obj && [obj respondsToSelector:@selector(name)]) {
 //            NSString *tyname = [obj performSelector:@selector(name)];
@@ -108,7 +104,7 @@
 //        }
         
         //修改
-       // [[TYPerson manager]updateAgree:NO];
+        [[TYPerson manager]updateAgree:YES];
 
         //特殊类型 仿照问题的写法
 //        if (obj && [obj respondsToSelector:@selector(isAgree)]) {
@@ -118,11 +114,12 @@
 //            if ([obj respondsToSelector:@selector(updateAgree:)]) {
 //                //[obj performSelector:@selector(updateAgree:) withObject:@2];
 //                //[obj performSelectorOnMainThread:@selector(updateAgree:) withObject:@10 waitUntilDone:YES];
-//               //objc_msgSend(obj,sel_registerName("updateAgree:"),YES);
+        objc_msgSend(obj,@selector(updateAgree:),NO);
 //                [obj setValue:@YES forKeyPath:@"isAgree"];
 //
-//                BOOL isAgree2 = [obj performSelector:@selector(isAgree)];
-//                NSLog(@"修改后typerson-isAgree = %d",isAgree2);
+                //BOOL isAgree2 = [obj performSelector:@selector(isAgree)];
+        id isAgree3 = [obj valueForKeyPath:@"isAgree"];
+        NSLog(@"修改后typerson-isAgree = %d",[isAgree3 boolValue]);
 //
 //            }
 //

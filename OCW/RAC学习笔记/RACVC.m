@@ -12,6 +12,7 @@
 #import "RACCell.h"
 #import <Masonry/Masonry.h>
 #import "RACKeyWordUseVC.h"
+#import <ReactiveObjC/RACReturnSignal.h>
 
 @interface RACVC ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -59,7 +60,8 @@
         make.edges.equalTo(self.view);
     }];
     [self nav];
-    
+   
+   
     //TODO:开始你的表演
     [self rac_RACSignal];
     [self rac_RACDisposable];
@@ -67,6 +69,7 @@
     [self rac_use];
     [self rac_liftSelector];
     [self racCommand];
+    [self rac_RACTuple_RACSequence];
 }
 #pragma mark RACSignal RACMulticastConnection
 -(void)rac_RACSignal{
@@ -261,6 +264,7 @@
                        @{@"title":@"rac_liftSelector"},
                        @{@"title":@"racCommand"}];
     self.dataArray = [[[array.rac_sequence map:^id _Nullable(NSDictionary *  _Nullable value) {
+        NSLog(@"--- %@",[NSThread currentThread]);
         return [Person yy_modelWithDictionary:value];
     }]array]mutableCopy];
     [self.tableView reloadData];
@@ -292,7 +296,7 @@
     }];
     //写在一起就是下面
     [array.rac_sequence.signal subscribeNext:^(id  _Nullable x) {
-        NSLog(@"--- %@",x);
+        NSLog(@"--- %@  ---- %@",x,[NSThread currentThread]);
         //遍历
     }];
     NSDictionary * dict = @{@"大吉大利":@"今晚吃鸡",
@@ -367,16 +371,22 @@
             
             NSLog(@"拿到命令信息 - %@",input);
             NSLog(@"开始搞事比如网络请求");
-            [subscriber sendNext:@"执行后结果"];
+            [subscriber sendNext:@{@"data":@[@{@"msg":@"66"},@{},@{}]}];
             [subscriber sendCompleted];
+                     
             return nil;
         }];
         return signal;
         
     }];
     [[command execute:@{@"token":@"RFssdg23GEEGF",@"id":@"6666"}]subscribeNext:^(id  _Nullable x) {
-        NSLog(@"执行完命令，带回来的数据是 - %@",x);
+        NSLog(@"执行完命令，带回来的数据是 - %@ - 线程=%@",x,[NSThread currentThread]);
+    } error:^(NSError * _Nullable error) {
+        
+    } completed:^{
+        NSLog(@"执行完毕 %@",[NSThread currentThread]);
     }];
+        
     
     
 }
@@ -396,8 +406,9 @@
     cell.model = self.dataArray[indexPath.row];
     cell.vc = self;
     [cell.btnClickSignal subscribeNext:^(RACTuple * _Nullable x) {
-        RACCell *currentCell = x.first;
-        Person *person = x.second;
+        RACTupleUnpack(RACCell *currentCell,Person *person) = x;
+        //RACCell *currentCell = x.first;
+        //Person *person = x.second;
         NSLog(@"- %@ %@",NSStringFromClass([currentCell class]),person.title);
     }];
     return cell;

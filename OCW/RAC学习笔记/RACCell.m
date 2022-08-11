@@ -118,6 +118,8 @@
     return _communicateBtn;
 }
 
-
+- (void)dealloc{
+    NSLog(@"cell释放了");
+}
 
 @end

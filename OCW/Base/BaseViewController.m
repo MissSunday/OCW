@@ -43,7 +43,7 @@
     //子类可以重写，以改变属性
     self.view.backgroundColor = [UIColor randomColor];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:nil action:nil];
-
+    self.navigationItem.title = NSStringFromClass([self class]);
     //去掉导航下划线
     [self.navigationController.navigationBar setShadowImage:[UIImage new]];
     //导航的背景颜色

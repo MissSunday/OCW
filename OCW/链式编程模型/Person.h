@@ -39,13 +39,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef Person *_Nullable(^blockName)(int a);
 
-@interface Person : NSObject
+//范型
+//__covariant     协变 子类可以转成父类
+//__contravariant 逆变 父类可以转成子类
+@interface Person<__covariant ocType>: NSObject
 
 @property(nonatomic,strong)NSString *title;
 
 @property(nonatomic,assign)CGFloat money;
 
 @property(nonatomic,strong)NSNumber *num;
+
+@property(nonatomic,strong)ocType ppp;
 
 -(Person *)run;
 

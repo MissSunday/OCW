@@ -117,6 +117,7 @@
 		9CB3368628895851003E4C01 /* XRSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB3367028895851003E4C01 /* XRSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9CB3368F28895911003E4C01 /* XRPerson.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CB3368D28895911003E4C01 /* XRPerson.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CB3369028895911003E4C01 /* XRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3368E28895911003E4C01 /* XRPerson.m */; };
+		9CB336C4289A954D003E4C01 /* DynamicAnimatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB336C3289A954D003E4C01 /* DynamicAnimatorVC.m */; };
 		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
 		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
@@ -388,6 +389,8 @@
 		9CB3368028895851003E4C01 /* XRSDKTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRSDKTests.m; sourceTree = "<group>"; };
 		9CB3368D28895911003E4C01 /* XRPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRPerson.h; sourceTree = "<group>"; };
 		9CB3368E28895911003E4C01 /* XRPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRPerson.m; sourceTree = "<group>"; };
+		9CB336C2289A954D003E4C01 /* DynamicAnimatorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicAnimatorVC.h; sourceTree = "<group>"; };
+		9CB336C3289A954D003E4C01 /* DynamicAnimatorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicAnimatorVC.m; sourceTree = "<group>"; };
 		9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadLockVC.h; sourceTree = "<group>"; };
 		9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadLockVC.m; sourceTree = "<group>"; };
 		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
@@ -525,8 +528,6 @@
 			children = (
 				1D169D9A26A6684300933E1C /* CViewController.h */,
 				1D169D9B26A6684300933E1C /* CViewController.m */,
-				1D169D9D26A6684B00933E1C /* DViewController.h */,
-				1D169D9E26A6684B00933E1C /* DViewController.m */,
 			);
 			path = "功能待定";
 			sourceTree = "<group>";
@@ -646,6 +647,7 @@
 				1D0FD7AC26AE697A00A61E96 /* [web][RAC] */,
 				1D169DAF26A7C22400933E1C /* 分段控制器 */,
 				1D0FD7AD26AE69D200A61E96 /* 功能待定 */,
+				9CB336BF289A8821003E4C01 /* 框架学习 */,
 			);
 			path = TabBarVC;
 			sourceTree = "<group>";
@@ -1017,6 +1019,17 @@
 				9CB3368028895851003E4C01 /* XRSDKTests.m */,
 			);
 			path = XRSDKTests;
+			sourceTree = "<group>";
+		};
+		9CB336BF289A8821003E4C01 /* 框架学习 */ = {
+			isa = PBXGroup;
+			children = (
+				1D169D9D26A6684B00933E1C /* DViewController.h */,
+				1D169D9E26A6684B00933E1C /* DViewController.m */,
+				9CB336C2289A954D003E4C01 /* DynamicAnimatorVC.h */,
+				9CB336C3289A954D003E4C01 /* DynamicAnimatorVC.m */,
+			);
+			path = "框架学习";
 			sourceTree = "<group>";
 		};
 		9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */ = {
@@ -1511,6 +1524,7 @@
 				1DB3C883277172520068FEFA /* Animals.m in Sources */,
 				B47FEE2C274CD26800F3D00B /* MasonryTestVC_Xib.m in Sources */,
 				1D0FD7B626AEA54C00A61E96 /* BHLTMViewController.m in Sources */,
+				9CB336C4289A954D003E4C01 /* DynamicAnimatorVC.m in Sources */,
 				B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */,
 				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,

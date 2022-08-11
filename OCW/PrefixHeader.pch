@@ -14,6 +14,7 @@
 //三方工具
 #import <Masonry/Masonry.h>
 #import <ReactiveObjC.h>
+#import <ReactiveObjC/RACReturnSignal.h>
 #import <YYModel.h>
 #import <YYImage/YYImage.h>
 #import <YYWebImage/YYWebImage.h>
