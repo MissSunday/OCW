@@ -52,6 +52,8 @@ typedef Person *_Nullable(^blockName)(int a);
 
 @property(nonatomic,strong)ocType ppp;
 
+@property(nonatomic,strong)NSString *name;
+
 -(Person *)run;
 
 //实例方法

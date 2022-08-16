@@ -106,6 +106,12 @@ BOOL isString(id string){
     if ([string isEqualToString:@"null"]) {
         return NO;
     }
+    if ([string isEqualToString:@"(null)"]) {
+        return NO;
+    }
+    if ([string isEqualToString:@"（null）"]) {
+        return NO;
+    }
     if ([string isEqualToString:@"<null>"]) {
         return NO;
     }

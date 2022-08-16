@@ -56,9 +56,12 @@
 
     NSString *title = self.dataArray[indexPath.row];
     NSArray *array = [title componentsSeparatedByString:@"|"];
-    NSString *className = array[1];
-    Class class = NSClassFromString(className);
-    [self.navigationController pushViewController:[[class alloc]init] animated:YES];
+    if (array.count > 1) {
+        NSString *className = array[1];
+        Class class = NSClassFromString(className);
+        [self.navigationController pushViewController:[[class alloc]init] animated:YES];
+    }
+    
     
     
     

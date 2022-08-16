@@ -34,6 +34,25 @@
 
 @implementation ThreadSafeVC
 
+static dispatch_queue_t url_session_manager_processing_queue() {
+    static dispatch_queue_t af_url_session_manager_processing_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        af_url_session_manager_processing_queue = dispatch_queue_create("com.alamofire.networking.session.manager.processing", DISPATCH_QUEUE_CONCURRENT);
+    });
+
+    return af_url_session_manager_processing_queue;
+}
+
+static dispatch_group_t url_session_manager_completion_group() {
+    static dispatch_group_t af_url_session_manager_completion_group;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        af_url_session_manager_completion_group = dispatch_group_create();
+    });
+
+    return af_url_session_manager_completion_group;
+}
 @synthesize ticketNumber = _ticketNumber;
 
 - (NSMutableArray *)dataArray{
@@ -63,6 +82,74 @@
         make.edges.equalTo(self.view);
     }];
     [self nav];
+    
+    
+    dispatch_async(url_session_manager_processing_queue(), ^{
+
+        NSLog(@"12345 -> [%@]",[NSThread currentThread]);
+        
+        
+        dispatch_group_async(url_session_manager_completion_group(), dispatch_get_main_queue(), ^{
+
+            NSLog(@"AAAAAAA -> [%@]",[NSThread currentThread]);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+
+                NSLog(@"BBBBB -> [%@]",[NSThread currentThread]);
+               
+            });
+        });
+
+    
+
+    });
+   
+//    RACSignal *s1 = [self netNumber:1];
+//    RACSignal *s2 = [s1 then:^RACSignal * _Nonnull{
+//        return [self netNumber:2];
+//    }];
+//    RACSignal *s3 = [s2 then:^RACSignal * _Nonnull{
+//        return [self netNumber:3];
+//    }];
+//    [s1 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+//    [s2 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+//    [s3 subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+//
+//    RACCommand *com = [[RACCommand alloc]initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+//        return [self netNumber:[input[@"key"]intValue]];
+//    }];
+//    [[com execute:@{@"key":@10}]subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+}
+-(RACSignal *)netNumber:(int)i{
+    RACSignal * signal1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        dispatch_async(self.readWriteQueue, ^{
+            NSString *str = @"http://www.jianshu.com/p/6930f335adba";
+            NSURL *url = [NSURL URLWithString:str];
+            NSURLRequest *request = [NSURLRequest requestWithURL:url];
+            NSURLSession *session = [NSURLSession sharedSession];
+            
+            
+            NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                [NSThread sleepForTimeInterval:2];
+                [subscriber sendNext:[NSString stringWithFormat:@"网络完成 %d",i]];
+                [subscriber sendCompleted];
+            }];
+            
+            [task resume];
+
+            
+        });
+        return nil;
+    }];
+    return signal1;
 }
 -(void)nav{
     @weakify(self);
@@ -339,25 +426,25 @@
 }
 
 //setGet内加锁 只能保证同一时间只有一个线程访问资源，但是没法保证连续
-//- (void)setTicketNumber:(NSInteger)ticketNumber{
-//
-//    dispatch_barrier_sync(self.readWriteQueue, ^{
-//        //sleep(time);
-//        //[NSThread sleepForTimeInterval:0.5];
-//        _ticketNumber = ticketNumber;
-//        //NSLog(@"%@ - %ld",[NSThread currentThread],self->_ticketNumber);
-//    });
-//    //_ticketNumber = ticketNumber;
-//}
-//- (NSInteger)ticketNumber{
-//
-//
-//    //return _ticketNumber;
-//    __block NSInteger result;
-//    dispatch_sync(self.readWriteQueue, ^{
-//        result = _ticketNumber;
-//    });
-//    return result;
-//}
+- (void)setTicketNumber:(NSInteger)ticketNumber{
+
+    dispatch_barrier_sync(self.readWriteQueue, ^{
+        //sleep(time);
+        //[NSThread sleepForTimeInterval:0.5];
+        _ticketNumber = ticketNumber;
+        //NSLog(@"%@ - %ld",[NSThread currentThread],self->_ticketNumber);
+    });
+    //_ticketNumber = ticketNumber;
+}
+- (NSInteger)ticketNumber{
+
+
+    //return _ticketNumber;
+    __block NSInteger result;
+    dispatch_sync(self.readWriteQueue, ^{
+        result = _ticketNumber;
+    });
+    return result;
+}
 
 @end

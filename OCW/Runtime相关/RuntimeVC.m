@@ -16,6 +16,7 @@
 
 @implementation RuntimeVC
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -24,6 +25,11 @@
     NSObject *person = [[NSClassFromString(@"Person") alloc]init];
     
     [person addObserver:self forKeyPath:@"num" options:NSKeyValueObservingOptionNew context:nil];
+    
+
+ 
+    
+    
     
     
     
@@ -35,6 +41,7 @@
        
     
 }
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     
     NSLog(@"123");

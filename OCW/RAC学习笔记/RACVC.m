@@ -333,7 +333,7 @@
         [subscriber sendNext:@"第一次获取到的网络数据"];
         return nil;
     }];
-    
+
     RACSignal *secondSignal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         
         NSLog(@"模拟第二个网络请求");
@@ -379,7 +379,7 @@
         return signal;
         
     }];
-    [[command execute:@{@"token":@"RFssdg23GEEGF",@"id":@"6666"}]subscribeNext:^(id  _Nullable x) {
+    [[command execute:@{@"token":@"RFssdg23GEEGF",@"id":@"6666"}] subscribeNext:^(id  _Nullable x) {
         NSLog(@"执行完命令，带回来的数据是 - %@ - 线程=%@",x,[NSThread currentThread]);
     } error:^(NSError * _Nullable error) {
         
@@ -387,7 +387,7 @@
         NSLog(@"执行完毕 %@",[NSThread currentThread]);
     }];
         
-    
+   
     
 }
 
