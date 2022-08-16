@@ -83,26 +83,26 @@ static dispatch_group_t url_session_manager_completion_group() {
     }];
     [self nav];
     
-    
-    dispatch_async(url_session_manager_processing_queue(), ^{
-
-        NSLog(@"12345 -> [%@]",[NSThread currentThread]);
-        
-        
-        dispatch_group_async(url_session_manager_completion_group(), dispatch_get_main_queue(), ^{
-
-            NSLog(@"AAAAAAA -> [%@]",[NSThread currentThread]);
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-
-                NSLog(@"BBBBB -> [%@]",[NSThread currentThread]);
-               
-            });
-        });
-
-    
-
-    });
+//
+//    dispatch_async(url_session_manager_processing_queue(), ^{
+//
+//        NSLog(@"12345 -> [%@]",[NSThread currentThread]);
+//
+//
+//        dispatch_group_async(url_session_manager_completion_group(), dispatch_get_main_queue(), ^{
+//
+//            NSLog(@"AAAAAAA -> [%@]",[NSThread currentThread]);
+//
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//
+//                NSLog(@"BBBBB -> [%@]",[NSThread currentThread]);
+//
+//            });
+//        });
+//
+//
+//
+//    });
    
 //    RACSignal *s1 = [self netNumber:1];
 //    RACSignal *s2 = [s1 then:^RACSignal * _Nonnull{
@@ -127,7 +127,52 @@ static dispatch_group_t url_session_manager_completion_group() {
 //    [[com execute:@{@"key":@10}]subscribeNext:^(id  _Nullable x) {
 //        NSLog(@"%@",x);
 //    }];
+    
+    
+    dispatch_semaphore_t sem = dispatch_semaphore_create(1);
+    for (int i = 0; i < 10; i++) {
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
+            NSCondition *condition =[[NSCondition alloc] init];
+            //NSConditionLock *conditionLock = [[NSConditionLock alloc] initWithCondition:3];
+            //dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+            ///!!!: 在当前作用域内顺序执行的3种方案
+            NSLog(@"开始 %d",i);
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                //模拟异步耗时操作
+                [NSThread sleepForTimeInterval:0.2];
+                NSLog(@"结束 %d",i);
+                [condition signal];
+                [condition unlock];
+                //[conditionLock unlockWithCondition:1];
+                //dispatch_semaphore_signal(semaphore);
+                dispatch_semaphore_signal(sem);
+            });
+            [condition wait];
+            //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            //[conditionLock lockWhenCondition:1];//条件不满足，等待
+            //[conditionLock unlock];
+            //要求这里等待异步操作执行完毕后再执行
+            NSLog(@"最后 %d",i);
+        });
+    }
+
+      
+    
+    
+   
 }
+
+-(void)test:(void(^)(int a))block{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NSThread sleepForTimeInterval:0.3];
+        block(1);
+    });
+}
+
+
+
 -(RACSignal *)netNumber:(int)i{
     RACSignal * signal1 = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
         dispatch_async(self.readWriteQueue, ^{

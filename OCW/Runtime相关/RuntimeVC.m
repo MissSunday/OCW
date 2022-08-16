@@ -121,12 +121,12 @@
 //            if ([obj respondsToSelector:@selector(updateAgree:)]) {
 //                //[obj performSelector:@selector(updateAgree:) withObject:@2];
 //                //[obj performSelectorOnMainThread:@selector(updateAgree:) withObject:@10 waitUntilDone:YES];
-        objc_msgSend(obj,@selector(updateAgree:),NO);
+ //       objc_msgSend(obj,@selector(updateAgree:),NO);
 //                [obj setValue:@YES forKeyPath:@"isAgree"];
 //
                 //BOOL isAgree2 = [obj performSelector:@selector(isAgree)];
-        id isAgree3 = [obj valueForKeyPath:@"isAgree"];
-        NSLog(@"修改后typerson-isAgree = %d",[isAgree3 boolValue]);
+    //    id isAgree3 = [obj valueForKeyPath:@"isAgree"];
+     //   NSLog(@"修改后typerson-isAgree = %d",[isAgree3 boolValue]);
 //
 //            }
 //
