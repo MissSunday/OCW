@@ -20,6 +20,7 @@
 #import "RuntimeVC.h"
 #import "DataTypeVC.h"
 #import "GitCommandVC.h"
+#import "LinuxCommandVC.h"
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -220,6 +221,8 @@
         [self.navigationController pushViewController:[[DataTypeVC alloc]init] animated:YES];
     }else if (indexPath.row == 11){
         [self.navigationController pushViewController:[[GitCommandVC alloc]init] animated:YES];
+    }else if (indexPath.row == 12){
+        [self.navigationController pushViewController:[[LinuxCommandVC alloc]init] animated:YES];
     }
     
     
@@ -255,7 +258,8 @@
                        @"SDK API 设计",
                        @"runtime相关",
                        @"数据类型",
-                       @"git 命令"].mutableCopy;
+                       @"git 命令",
+                       @"Linux 命令"].mutableCopy;
     }
     return _dataArray;
 }
