@@ -181,7 +181,7 @@
     
     YYTextContainer *container = [YYTextContainer new];
     
-    container.size = CGSizeMake(kS_W, CGFLOAT_MAX);
+    container.size = CGSizeMake(kS_W-30, CGFLOAT_MAX);
     //container.insets = UIEdgeInsetsMake(15, 15, 15 , 10);
     YYTextLayout *textLayout = [YYTextLayout layoutWithContainer:container text:title];
     return textLayout;
