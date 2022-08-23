@@ -1,18 +1,19 @@
 //
-//  GitCommandVC.m
+//  LinuxCommandVC.m
 //  OCW
 //
-//  Created by ext.wangxiaoran3 on 2022/8/22.
+//  Created by ext.wangxiaoran3 on 2022/8/23.
 //
 
-#import "GitCommandVC.h"
+#import "LinuxCommandVC.h"
 
-@interface GitCommandVC ()<UITableViewDelegate,UITableViewDataSource>
+@interface LinuxCommandVC ()<UITableViewDelegate,UITableViewDataSource>
+@property(nonatomic,strong)UITableView         *tableView;
 @property(nonatomic,strong)GitCommandViewModel *viewModel;
-@property(nonatomic,strong)UITableView *tableView;
+
 @end
 
-@implementation GitCommandVC
+@implementation LinuxCommandVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,6 +29,7 @@
             [self.tableView reloadData];
         });
     }]; 
+
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.viewModel.modelArray.count;
@@ -58,8 +60,11 @@
     }
     return _tableView;
 }
-@end
+- (void)updateDataArray:(NSArray *)dataArray{
+    [self.viewModel updateDataArray:dataArray];
+}
 
+@end
 @interface GitCommandCell ()
 @property(nonatomic,strong)YYLabel *contentLabel;
 @end
@@ -77,7 +82,7 @@
     }
     return self;
 }
-- (void)setModel:(gitCellModel *)model{
+- (void)setModel:(commandCellModel *)model{
     _model = model;
     self.contentLabel.textLayout = model.textLayout;
     [self.contentLabel mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -92,10 +97,10 @@
 }
 @end
 
-@implementation gitModel
+@implementation commandModel
 
 @end
-@implementation gitCellModel
+@implementation commandCellModel
 //映射字段
 + (NSDictionary *)modelCustomPropertyMapper {
     return @{@"name"  : @"n",
@@ -105,7 +110,7 @@
 }
 //映射类
 + (NSDictionary *)modelContainerPropertyGenericClass {
-    return @{@"content" : [gitModel class]};
+    return @{@"content" : [commandModel class]};
 }
 
 @end
@@ -120,7 +125,7 @@
 {
     self = [super init];
     if (self) {
-        self.gitViewModelQueue = dispatch_queue_create("gitViewModelQueue", DISPATCH_QUEUE_CONCURRENT);
+        self.gitViewModelQueue = dispatch_queue_create("gitViewModelQueue", DISPATCH_QUEUE_SERIAL);
         [self analyseData];
     }
     return self;
@@ -129,7 +134,7 @@
     dispatch_async(self.gitViewModelQueue, ^{
         NSMutableArray *array = [[NSMutableArray alloc]init];
         for (NSDictionary *temp in self.dataArray) {
-            gitCellModel *model = [gitCellModel yy_modelWithDictionary:temp];
+            commandCellModel *model = [commandCellModel yy_modelWithDictionary:temp];
             
             model.textLayout = [self calculateTextLayoutWithModle:model];
             
@@ -140,7 +145,7 @@
         self.modelArray = array;
     });
 }
--(YYTextLayout *)calculateTextLayoutWithModle:(gitCellModel *)model{
+-(YYTextLayout *)calculateTextLayoutWithModle:(commandCellModel *)model{
     
     NSMutableAttributedString *title = [[NSMutableAttributedString alloc]initWithString:model.title];
     
@@ -151,7 +156,7 @@
     [title appendAttributedString:[[NSMutableAttributedString alloc]initWithString:@"\n"]];
     
     for (int i = 0; i< model.content.count; i++) {
-        gitModel *gm = model.content[i];
+        commandModel *gm = model.content[i];
         NSString *ori = [NSString stringWithFormat:@" %@ ",gm.command];
         
         NSMutableAttributedString *command = [[NSMutableAttributedString alloc]initWithString:ori];
@@ -185,16 +190,19 @@
     YYTextLayout *textLayout = [YYTextLayout layoutWithContainer:container text:title];
     return textLayout;
 }
--(CGFloat)calculateCellHeightWithModle:(gitCellModel *)model{
+-(CGFloat)calculateCellHeightWithModle:(commandCellModel *)model{
     
     return model.textLayout.textBoundingRect.size.height+15;
     
 }
-
+- (void)updateDataArray:(NSArray *)dataArray{
+    self.dataArray = dataArray;
+    [self analyseData];
+}
 - (NSArray *)dataArray{
     if (!_dataArray) {
         _dataArray =   @[
-            @{@"title":@"一、基本的linux命令",
+            @{@"title":@"常用linux命令",
               @"content":@[
                   @{@"command":@"cd",
                     @"des"    :@"进入某个目录"},
@@ -203,7 +211,9 @@
                   @{@"command":@"ls",
                     @"des"    :@"列出当前目录的文件"},
                   @{@"command":@"ls -l",
-                    @"des"    :@"列出详细信息"},
+                    @"des"    :@"使用较长格式列出信息"},
+                  @{@"command":@"ls -A",
+                    @"des"    :@"列出除了“.”及 “..”以外的任何项目"},
                   @{@"command":@"touch",
                     @"des"    :@"新建一个文件"},
                   @{@"command":@"rm",
@@ -218,48 +228,7 @@
                     @"des"    :@"显示文件内容"}
               ]
             },
-            @{@"title":@"二、git常用命令",
-              @"content":@[
-                  @{@"command":@"git init",
-                    @"des"    :@"在当前目录新建一个仓库"},
-                  @{@"command":@"git init [project-name]",
-                    @"des"    :@"在一个目录下新建本地仓库"},
-                  @{@"command":@"git clone [url]",
-                    @"des"    :@"克隆一个远程仓库"},
-                  @{@"command":@"git status [file-name]",
-                    @"des"    :@" 查看指定文件状态"},
-                  @{@"command":@"git status",
-                    @"des"    :@"查看所有文件状态"},
-                  @{@"command":@"git add [file-name1] [file-name2] ...",
-                    @"des"    :@"从工作区添加指定文件到暂存区"},
-                  @{@"command":@"git add .",
-                    @"des"    :@"将被修改的文件和新增的文件提交到暂存区，不包括被删除的文件"},
-                  @{@"command":@"git add -u .",
-                    @"des"    :@"u指update，将工作区的被修改的文件和被删除的文件提交到暂存区，不包括新增的文件"},
-                  @{@"command":@"git add -A .",
-                    @"des"    :@"A指all，将工作区被修改、被删除、新增的文件都提交到暂存区"},
-                  @{@"command":@"git commit -m [massage]",
-                    @"des"    :@"将暂存区所有文件添加到本地仓库"},
-                  @{@"command":@"git commit [file-name-1] [file-name-2] -m [massage]",
-                    @"des"    :@"将暂存区指定文件添加到本地仓库"},
-                  @{@"command":@"git commit -am [massage]",
-                    @"des"    :@"将工作区的内容直接加入本地仓库"},
-                  @{@"command":@"git commit --amend",
-                    @"des"    :@"快速将当前文件修改合并到最新的commit，不会产生新的commit"},
-                  @{@"command":@"git clean -df",
-                    @"des"    :@"加-d是指包含目录，加-f是指强制，删除所有未跟踪的文件"},
-                  @{@"command":@"git log",
-                    @"des"    :@"显示所有commit日志"},
-                  @{@"command":@"git log --pretty=oneline",
-                    @"des"    :@"将日志缩写为单行显示"},
-                  @{@"command":@"git log --graph --pretty=oneline --abbrev-commit",
-                    @"des"    :@"查看分支合并情况"},
-                  @{@"command":@"git log --oneline --decorate --graph --all",
-                    @"des"    :@"查看分叉历史，包括：提交历史、各个分支的指向以及项目的分支分叉情况"},
-                  @{@"command":@"git log -3",
-                    @"des"    :@"查看最新3条commit日志数据"},
-              ]
-            }
+            
         ];
     }
     return _dataArray;

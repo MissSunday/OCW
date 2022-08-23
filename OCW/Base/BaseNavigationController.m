@@ -28,6 +28,9 @@
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     navigationBar.backIndicatorImage = image;
     navigationBar.backIndicatorTransitionMaskImage = image;
+    UIView *view = self.navigationBar.subviews.firstObject;
+    view.backgroundColor = UIColor.orangeColor;
+
 }
 /**
  设置push隐藏tabbar

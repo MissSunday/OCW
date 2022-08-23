@@ -99,6 +99,7 @@
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
 		9C00F7B028B3707000E8FC90 /* GitCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */; };
+		9C00F7B328B47F0800E8FC90 /* LinuxCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */; };
 		9C3480D227EB015C00F9C585 /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3480D127EB015C00F9C585 /* RunLoopVC.m */; };
 		9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6127C764AE009993DE /* SDK_API_VC.m */; };
 		9C524A6527C7650A009993DE /* XXSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6427C7650A009993DE /* XXSDK.m */; };
@@ -362,6 +363,8 @@
 		786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCW-OCWUITests.debug.xcconfig"; path = "Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C00F7AE28B3707000E8FC90 /* GitCommandVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GitCommandVC.h; sourceTree = "<group>"; };
 		9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitCommandVC.m; sourceTree = "<group>"; };
+		9C00F7B128B47F0700E8FC90 /* LinuxCommandVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinuxCommandVC.h; sourceTree = "<group>"; };
+		9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinuxCommandVC.m; sourceTree = "<group>"; };
 		9C3480D027EB015C00F9C585 /* RunLoopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopVC.h; sourceTree = "<group>"; };
 		9C3480D127EB015C00F9C585 /* RunLoopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopVC.m; sourceTree = "<group>"; };
 		9C524A6027C764AE009993DE /* SDK_API_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDK_API_VC.h; sourceTree = "<group>"; };
@@ -514,8 +517,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
-				9C00F7AE28B3707000E8FC90 /* GitCommandVC.h */,
-				9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */,
+				9C00F7B428B4823700E8FC90 /* 命令行 */,
 				9C524A5F27C76471009993DE /* SDK_API设计 */,
 				9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */,
 				B4439569276752BB007FCC4B /* 面向协议编程 */,
@@ -943,6 +945,17 @@
 				1DE9872026CE5F310086731A /* MediumPlaceholder.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		9C00F7B428B4823700E8FC90 /* 命令行 */ = {
+			isa = PBXGroup;
+			children = (
+				9C00F7B128B47F0700E8FC90 /* LinuxCommandVC.h */,
+				9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */,
+				9C00F7AE28B3707000E8FC90 /* GitCommandVC.h */,
+				9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */,
+			);
+			path = "命令行";
 			sourceTree = "<group>";
 		};
 		9C524A5F27C76471009993DE /* SDK_API设计 */ = {
@@ -1559,6 +1572,7 @@
 				1D169D9F26A6684B00933E1C /* DViewController.m in Sources */,
 				1D169DA826A6B42B00933E1C /* RACKeyWordUseVC.m in Sources */,
 				1D0FD7AB26AE5F8A00A61E96 /* BTOneViewController.m in Sources */,
+				9C00F7B328B47F0800E8FC90 /* LinuxCommandVC.m in Sources */,
 				1D0FD83E26B004D000A61E96 /* TZImagePickerItemModel.m in Sources */,
 				9C3480D227EB015C00F9C585 /* RunLoopVC.m in Sources */,
 				1D169DC626A7C8F700933E1C /* GKPageListContainerView.m in Sources */,

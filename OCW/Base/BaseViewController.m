@@ -50,6 +50,12 @@
     self.navigationController.navigationBar.barTintColor = [UIColor orangeColor];
     UIView *view = self.navigationController.navigationBar.subviews.firstObject;
     view.backgroundColor = UIColor.orangeColor;
+    
+    for (id view in self.navigationController.navigationBar.subviews) {
+        NSLog(@"----- %@",view);
+    }
+    
+    
     self.navigationController.navigationBar.translucent = NO;
 }
 -(void)updateNav{
