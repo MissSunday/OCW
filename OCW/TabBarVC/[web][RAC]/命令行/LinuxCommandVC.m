@@ -98,7 +98,12 @@
 @end
 
 @implementation commandModel
-
+//映射字段
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"command" : @"co",
+             @"des"     : @"de"
+            };
+}
 @end
 @implementation commandCellModel
 //映射字段
@@ -204,28 +209,28 @@
         _dataArray =   @[
             @{@"title":@"常用linux命令",
               @"content":@[
-                  @{@"command":@"cd",
-                    @"des"    :@"进入某个目录"},
-                  @{@"command":@"pwd",
-                    @"des"    :@"显示当前目录路径"},
-                  @{@"command":@"ls",
-                    @"des"    :@"列出当前目录的文件"},
-                  @{@"command":@"ls -l",
-                    @"des"    :@"使用较长格式列出信息"},
-                  @{@"command":@"ls -A",
-                    @"des"    :@"列出除了“.”及 “..”以外的任何项目"},
-                  @{@"command":@"touch",
-                    @"des"    :@"新建一个文件"},
-                  @{@"command":@"rm",
-                    @"des"    :@"删除文件"},
-                  @{@"command":@"-rf",
-                    @"des"    :@"强制删除目录"},
-                  @{@"command":@"mkdir",
-                    @"des"    :@"新建一个目录"},
-                  @{@"command":@"mv",
-                    @"des"    :@"移动文件"},
-                  @{@"command":@"cat",
-                    @"des"    :@"显示文件内容"}
+                  @{@"co":@"cd",
+                    @"de":@"进入某个目录"},
+                  @{@"co":@"pwd",
+                    @"de":@"显示当前目录路径"},
+                  @{@"co":@"ls",
+                    @"de":@"列出当前目录的文件"},
+                  @{@"co":@"ls -l",
+                    @"de":@"使用较长格式列出信息"},
+                  @{@"co":@"ls -A",
+                    @"de":@"列出除了“.”及 “..”以外的任何项目"},
+                  @{@"co":@"touch",
+                    @"de":@"新建一个文件"},
+                  @{@"co":@"rm",
+                    @"de":@"删除文件"},
+                  @{@"co":@"-rf",
+                    @"de":@"强制删除目录"},
+                  @{@"co":@"mkdir",
+                    @"de":@"新建一个目录"},
+                  @{@"co":@"mv",
+                    @"de":@"移动文件"},
+                  @{@"co":@"cat",
+                    @"de":@"显示文件内容"}
               ]
             },
             

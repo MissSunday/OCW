@@ -32,9 +32,12 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSLog(@"SandBoxPath--->%@",documentDirectory);
-    
+
+     
+   
     // 拼接一个文件名
     NSString *dataPath = [documentDirectory stringByAppendingPathComponent:@"face.model"];
+    
     // 拿到本地文件 转化成data
     NSData *data = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"KM_August_Face_Gray" ofType:@"model"]];
     // 存
@@ -72,9 +75,22 @@
     //支持NSString，NSData，NSDate，NSNumber，NSArray，NSDictionary
     //存
     //获取一个路径
-    NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+    //NSString *cachePath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
     //创建文件路径
-    NSString *filePath = [cachePath stringByAppendingPathComponent:@"set.plist"];
+    //NSString *filePath = [cachePath stringByAppendingPathComponent:@"set.plist"];
+   
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    
+    NSString *path1 = [documentDirectory stringByAppendingPathComponent:@"sam"];
+  
+    if (![[NSFileManager defaultManager] fileExistsAtPath:path1]) {
+         [[NSFileManager defaultManager] createDirectoryAtPath:path1 withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    NSString *filePath = [path1 stringByAppendingPathComponent:@"set.plist"];
+    
+    
     NSDictionary *setDic = @{@"name":@"666",@"age":@"100"};
     [setDic writeToFile:filePath atomically:YES];
     
@@ -158,6 +174,7 @@
     [super viewDidLoad];
     self.navigationItem.title = NSStringFromClass(self.class);
     [self UI];
+    //[self userDefaultSave];
 }
 -(void)UI{
     [self.view addSubview:self.tableView];
