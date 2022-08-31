@@ -43,7 +43,15 @@ static dispatch_queue_t url_session_manager_processing_queue() {
 
     return af_url_session_manager_processing_queue;
 }
+static dispatch_queue_t seq_queue() {
+    static dispatch_queue_t seq_queue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        seq_queue = dispatch_queue_create("com.alamofire.networking.session.manager.get", DISPATCH_QUEUE_SERIAL);
+    });
 
+    return seq_queue;
+}
 static dispatch_group_t url_session_manager_completion_group() {
     static dispatch_group_t af_url_session_manager_completion_group;
     static dispatch_once_t onceToken;
@@ -127,34 +135,36 @@ static dispatch_group_t url_session_manager_completion_group() {
 //    [[com execute:@{@"key":@10}]subscribeNext:^(id  _Nullable x) {
 //        NSLog(@"%@",x);
 //    }];
+
     
-    
-    dispatch_semaphore_t sem = dispatch_semaphore_create(1);
+   
     for (int i = 0; i < 10; i++) {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            dispatch_semaphore_wait(sem, DISPATCH_TIME_FOREVER);
-            NSCondition *condition =[[NSCondition alloc] init];
-            //NSConditionLock *conditionLock = [[NSConditionLock alloc] initWithCondition:3];
-            //dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-            ///!!!: 在当前作用域内顺序执行的3种方案
-            NSLog(@"开始 %d",i);
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                //模拟异步耗时操作
-                [NSThread sleepForTimeInterval:0.2];
-                NSLog(@"结束 %d",i);
-                [condition signal];
-                [condition unlock];
-                //[conditionLock unlockWithCondition:1];
-                //dispatch_semaphore_signal(semaphore);
-                dispatch_semaphore_signal(sem);
+            
+            dispatch_async(seq_queue(), ^{
+                //NSCondition *condition =[[NSCondition alloc] init];
+                //NSConditionLock *conditionLock = [[NSConditionLock alloc] initWithCondition:3];
+                dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+                ///!!!: 在当前作用域内顺序执行的3种方案
+                NSLog(@"开始 %d %@",i,[NSThread currentThread]);
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    //模拟异步耗时操作
+                    [NSThread sleepForTimeInterval:0.2];
+                    NSLog(@"结束 %d",i);
+                    //[condition signal];
+                    //[condition unlock];
+                    //[conditionLock unlockWithCondition:1];
+                    dispatch_semaphore_signal(semaphore);
+                   
+                });
+                //[condition wait];
+                dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+                //[conditionLock lockWhenCondition:1];//条件不满足，等待
+                //[conditionLock unlock];
+                //要求这里等待异步操作执行完毕后再执行
+                NSLog(@"最后 %d",i);
             });
-            [condition wait];
-            //dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            //[conditionLock lockWhenCondition:1];//条件不满足，等待
-            //[conditionLock unlock];
-            //要求这里等待异步操作执行完毕后再执行
-            NSLog(@"最后 %d",i);
         });
     }
 

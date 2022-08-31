@@ -31,20 +31,17 @@
         NSLog(@"参数设置完毕");
     }];
     
-    //同步 在当前队列执行 在当前队列返回 
-    __block id aaa = nil;
-    [[XXSDK sdk]getTokenSync:^(id  _Nonnull object) {
-        NSLog(@"同步 - %@ %@",object,[NSThread currentThread]);
-        aaa = object;
-    }];
+    //同步  在当前队列返回 
+    id aaa = [[XXSDK sdk]getTokenSync];
     NSLog(@"aaa = %@",aaa);
 
+    NSLog(@"1234");
     //异步
     [[XXSDK sdk]getTokenAsync:^(id  _Nonnull object) {
 
         NSLog(@"getTokenReturn - %@ %@",object,[NSThread currentThread]);
     }];
-   
+    NSLog(@"5678");
 }
 /*
 #pragma mark - Navigation

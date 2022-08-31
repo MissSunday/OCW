@@ -14,14 +14,18 @@
 @end
 
 @implementation LinuxCommandVC
-
+- (GitCommandViewModel *)viewModel{
+    if (!_viewModel) {
+        _viewModel = [[GitCommandViewModel alloc]init];
+    }
+    return _viewModel;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-    self.viewModel = [[GitCommandViewModel alloc]init];
     @weakify(self);
     [RACObserve(self.viewModel, modelArray)subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -29,7 +33,7 @@
             [self.tableView reloadData];
         });
     }]; 
-
+    
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.viewModel.modelArray.count;

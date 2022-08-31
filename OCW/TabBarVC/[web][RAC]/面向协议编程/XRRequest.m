@@ -38,6 +38,10 @@ static XRRequest *_instance = nil;
 
 - (void)requestWithParam:(id<XRRequestParamProtocol>)param complete:(void (^)(NSDictionary * _Nonnull))complete failed:(void (^)(NSDictionary * _Nonnull))failed{
     
+    NSLog(@"=== %@",param);
+    
+    
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"请求内部 - %@",[NSThread currentThread]);
         

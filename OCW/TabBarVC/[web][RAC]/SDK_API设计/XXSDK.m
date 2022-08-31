@@ -55,11 +55,28 @@ static XXSDK *_sdk = nil;
     
     
 }
-- (void)getTokenSync:(void (^)(id _Nonnull))success{
-    dispatch_sync(self.apiQueue, ^{
-        sleep(1);
-        success(@77777);
-    });
+//最好还是别弄同步还耗时的操作了，卡主线程不合适
+- (id)getTokenSync{
+    
+    //在当前线程进行同步操作，一旦出现问题，锁解不开，就会卡死当前线程，所以一定要保证锁的开启，尤其是异步耗时操作后，不管成功失败，都要解开锁，一定要有超时的判断；
+    
+    __block id token = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    XRRequestParam *param = [XRRequestParam postWithParam:@{@"token":@"gk"} url:@"666"];
+    [[XRRequest shareManager]requestWithParam:param complete:^(NSDictionary * _Nonnull response) {
+        self.log(@"请求成功");
+        token = @"成功";
+        dispatch_semaphore_signal(semaphore);
+        
+    } failed:^(NSDictionary * _Nonnull error) {
+        token = nil;
+        dispatch_semaphore_signal(semaphore);
+    }];
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    
+    
+    return token;
+    
 }
 - (void)getTokenAsync:(void (^)(id _Nonnull))success{
     dispatch_async(self.apiQueue, ^{

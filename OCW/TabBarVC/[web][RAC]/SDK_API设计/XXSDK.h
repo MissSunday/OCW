@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)getTokenAsync:(void(^)(id object))success;
 
 //同步 在当前队列执行 在当前队列返回 不会开辟新的线程
--(void)getTokenSync:(void(^)(id object))success;
+-(id)getTokenSync;
 @end
 
 NS_ASSUME_NONNULL_END
