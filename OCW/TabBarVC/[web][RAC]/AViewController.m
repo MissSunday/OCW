@@ -41,7 +41,7 @@
     NSLog(@"scale = %f %fx%f",a,kS_W*a,kS_H*a);
     
     
-    self.navigationItem.title = @"各种功能入口";
+    self.navigationItem.title = @"😘😘";
     [self UI];
     [self nav];
     [self block_text];

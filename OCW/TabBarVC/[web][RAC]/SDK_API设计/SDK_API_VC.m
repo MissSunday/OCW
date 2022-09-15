@@ -7,6 +7,7 @@
 
 #import "SDK_API_VC.h"
 #import "XXSDK.h"
+
 @interface SDK_API_VC ()
 
 @end
@@ -17,7 +18,6 @@
     [super viewDidLoad];
     self.navigationItem.title = NSStringFromClass(self.class);
     self.view.backgroundColor = [UIColor whiteColor];
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -30,6 +30,7 @@
         config.needLog = NO;
         NSLog(@"参数设置完毕");
     }];
+    
     
     //同步  在当前队列返回 
     id aaa = [[XXSDK sdk]getTokenSync];
