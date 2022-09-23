@@ -26,11 +26,12 @@ PODS:
   - LTScrollView (0.3.0)
   - Masonry (1.1.0)
   - MJRefresh (3.7.5)
+  - QSDispatchQueue (1.0.1)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.12.2):
-    - SDWebImage/Core (= 5.12.2)
-  - SDWebImage/Core (5.12.2)
+  - SDWebImage (5.13.3):
+    - SDWebImage/Core (= 5.13.3)
+  - SDWebImage/Core (5.13.3)
   - TZImagePickerController (3.6.0)
   - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
@@ -58,6 +59,7 @@ DEPENDENCIES:
   - LTScrollView (= 0.3.0)
   - Masonry (= 1.1.0)
   - MJRefresh
+  - QSDispatchQueue (~> 1.0.1)
   - Reachability (~> 3.2)
   - ReactiveObjC (= 3.1.1)
   - TZImagePickerController (= 3.6.0)
@@ -69,7 +71,7 @@ DEPENDENCIES:
   - YYWebImage (= 1.0.5)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - cocore
     - coobjc
@@ -81,6 +83,7 @@ SPEC REPOS:
     - LTScrollView
     - Masonry
     - MJRefresh
+    - QSDispatchQueue
     - Reachability
     - ReactiveObjC
     - SDWebImage
@@ -106,9 +109,10 @@ SPEC CHECKSUMS:
   LTScrollView: 46029b501f34d31e33e33392935cb240eb1d1ed0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  QSDispatchQueue: 3981828538f605d115001ab033e60465a359951a
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: 240e5c12b592fb1268c1d03b8c90d90e8c2ffe82
+  SDWebImage: af5bbffef2cde09f148d826f9733dcde1a9414cd
   TZImagePickerController: a37d7eec87c54436e896a67947033ad2178d498b
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
@@ -119,6 +123,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 9f457758a153d269a29adb8e71f231ab27b0b794
+PODFILE CHECKSUM: 40ea9da897713236f746aa21becdce7742bf93a9
 
 COCOAPODS: 1.11.2

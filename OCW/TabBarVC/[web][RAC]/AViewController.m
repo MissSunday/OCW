@@ -21,82 +21,119 @@
 #import "DataTypeVC.h"
 #import "GitCommandVC.h"
 #import "LinuxCommandVC.h"
+
+@interface AHeadView ()
+@property(nonatomic,strong)AViewModel *viewModel;
+@end
+
+@implementation AHeadView
+
+-(instancetype)initWithModel:(AViewModel *)viewModel{
+    
+    self = [super initWithFrame:CGRectZero];
+    if (self) {
+        self.viewModel = viewModel;
+        [self UI];
+    }
+    return self;
+    
+}
+-(void)UI{
+    
+    self.backgroundColor = UIColor.whiteColor;
+    @weakify(self);
+
+    int l = 3;
+    
+    CGFloat space = 15;
+    
+    CGFloat w = ((kS_W-(l+1)*space)/l);
+    
+    CGFloat h = (kS_H/4 - l*space)/2;
+    
+    int a = (int)self.viewModel.btnArray.count / l;
+    
+    int b = (int)self.viewModel.btnArray.count % l;
+    
+    int c = b > 0 ? a + 1 : a;
+    
+    CGFloat headH = (c+1)*space + c*h;
+    
+    for (int i = 0; i < self.viewModel.btnArray.count ; i++) {
+    
+        CGFloat x = ( i % l ) * ( w + space ) + space;
+        CGFloat y = ( i / l ) * ( h + space ) + space;
+        
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.backgroundColor = [self randomColor];
+        [btn setTitle:self.viewModel.btnArray[i][@"title"] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateHighlighted];
+        btn.titleLabel.font = [UIFont boldSystemFontOfSize:20];
+        btn.clipsToBounds = YES;
+        btn.layer.cornerRadius = 10;
+        btn.tag = i;
+        [self addSubview:btn];
+        btn.frame = CGRectMake(x, y, w, h);
+        [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self);
+            NSString *vcName = self.viewModel.btnArray[btn.tag][@"vc"];
+            Class cls = NSClassFromString(vcName);
+            if (cls) {
+                UIViewController *vc = [[cls alloc]init];
+                [self.viewModel.vc.navigationController pushViewController:vc animated:YES];
+            }
+        }];
+    }
+    self.viewModel.headHeight = headH;
+}
+- (UIColor *)randomColor{
+    return [UIColor colorWithRed:(arc4random() % 150+100)/255.0 green:(arc4random() % 150+100)/255.0 blue:(arc4random() % 150+100)/255.0 alpha:1];
+}
+@end
+@implementation AViewModel
+
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        _headHeight = 0;
+        _btnArray = @[
+            @{@"title":@"数据类型",    @"vc":@"DataTypeVC"},
+            @{@"title":@"runtime",    @"vc":@"RuntimeVC"},
+            @{@"title":@"本地存储",     @"vc":@"XRLocalSaveVC"},
+            @{@"title":@"Masonry",    @"vc":@"MasonryTestVC"},
+            @{@"title":@"图片浏览器",   @"vc":@"KNPhotoBrowserVC"},
+            @{@"title":@"选取上传图片", @"vc":@"TZImagePickerVC"},
+            @{@"title":@"多线程",      @"vc":@"ThreadSafeVC"},
+            @{@"title":@"面向协议",    @"vc":@"POPVC"},
+            @{@"title":@"SDK设计",    @"vc":@"SDK_API_VC"},
+            @{@"title":@"git命令",    @"vc":@"GitCommandVC"},
+            @{@"title":@"Linux命令",  @"vc":@"LinuxCommandVC"},
+        ];
+    }
+    return self;
+}
+@end
+
 @interface AViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
+//head数据
+@property(nonatomic,strong)AViewModel *viewModel;
 
+@property(nonatomic,strong)AHeadView *headView;
+//cell数据
 @property(nonatomic,strong)NSMutableArray *dataArray;
 
 @property (nonatomic,strong)Person *DuoDuo;
 @end
 
 @implementation AViewController
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    CGFloat a = [UIScreen mainScreen].scale;
-    NSLog(@"scale = %f %fx%f",a,kS_W*a,kS_H*a);
-    
-    
-    self.navigationItem.title = @"😘😘";
     [self UI];
     [self nav];
-    [self block_text];
     [self func_chain];
-    
-    
-}
-//block 练习
--(void)block_text{
-    
-    /*
-                并发队列        串行队列        主队列
-      同步     没有开启新线程   没有开启新线程      死锁
-               串行执行任务     串行执行任务
-      异步      能开启新线程   有开启新线程(1条)  不开启新线程
-               并发执行任务     串行执行任务     串行执行任务
-    */
-    
-    //在函数内定义的静态局部变量，该变量存在内存的静态区
-    //所以即使该函数运行结束，静态变量的值不会被销毁，函数下次运行时能仍用到这个值。
-    for (int i = 0; i < 5; i++) {
-        static int a = 1;
-        NSLog(@"static静态变量 %d",a);
-        a+=1;
-    }
-    
-    
-    //gcd测试
-    NSLog(@"gcd - 4 %@",[NSThread currentThread]);
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"gcd - 0 %@",[NSThread currentThread]);
-        dispatch_sync(dispatch_get_global_queue(0, 0), ^{
-            NSLog(@"gcd - 1 %@",[NSThread currentThread]);
-        });
-        NSLog(@"gcd - 2 %@",[NSThread currentThread]);
-    });
-    NSLog(@"gcd - 3 %@",[NSThread currentThread]);
-    
-    
-    static int a = 10;
-    void(^block)(void) = ^{
-        
-        NSLog(@"- %d",a);
-        //20
-    };
-    a = 20;
-    block();
-    
-    //作用域测试
-    __weak id tmp = nil;
-    {
-    NSObject *obj = [NSObject new];
-    tmp = obj;
-    }
-    NSLog(@"--- %@",tmp); //出了作用域 就消失了
 }
 //链式编程 练习
 -(void)func_chain{
@@ -153,6 +190,7 @@
     
 }
 -(void)nav{
+    self.navigationItem.title = @"😘😘";
     @weakify(self);
     self.navigationItem.rightBarButtonItem = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -182,6 +220,13 @@
         UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
         item;
     });
+    [[RACObserve(self.viewModel, headHeight)skip:0]subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.headView.frame = CGRectMake(0, 0, kS_W, self.viewModel.headHeight);
+            [self.tableView reloadData];
+        });
+    }];
     
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -199,33 +244,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
-        [self.navigationController pushViewController:KNPhotoBrowserVC.new animated:YES];
-    }else if (indexPath.row == 1){
-        [self.navigationController pushViewController:TZImagePickerVC.new animated:YES];
-    }else if (indexPath.row == 2){
-        [self.navigationController pushViewController:XRLocalSaveVC.new animated:YES];
-    }else if (indexPath.row == 3){
         UIViewController *vc = [[CTMediator sharedInstance]CTMediator_viewControllerForFirst];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 5){
-        [self.navigationController pushViewController:[MasonryTestVC new] animated:YES];
-    }else if (indexPath.row == 6){
-        [self.navigationController pushViewController:[[POPVC alloc]init] animated:YES];
-    }else if (indexPath.row == 7){
-        [self.navigationController pushViewController:[[ThreadSafeVC alloc]init] animated:YES];
-    }else if (indexPath.row == 8){
-        [self.navigationController pushViewController:[[SDK_API_VC alloc]init] animated:YES];
-    }else if (indexPath.row == 9){
-        [self.navigationController pushViewController:[[RuntimeVC alloc]init] animated:YES];
-    }else if (indexPath.row == 10){
-        [self.navigationController pushViewController:[[DataTypeVC alloc]init] animated:YES];
-    }else if (indexPath.row == 11){
-        [self.navigationController pushViewController:[[GitCommandVC alloc]init] animated:YES];
-    }else if (indexPath.row == 12){
-        [self.navigationController pushViewController:[[LinuxCommandVC alloc]init] animated:YES];
     }
-    
-    
 }
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -235,31 +256,28 @@
         _tableView.estimatedRowHeight = 50;
         _tableView.estimatedSectionFooterHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
-        //_tableView.bounces = NO;
         //_tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.showsVerticalScrollIndicator = NO;
         [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:[UITableViewCell className]];
         _tableView.tableFooterView = [UIView new];
-        
+        _headView = [[AHeadView alloc]initWithModel:self.viewModel];
+        _tableView.tableHeaderView = _headView;
     }
     return _tableView;
 }
+- (AViewModel *)viewModel{
+    if (!_viewModel) {
+        _viewModel = [[AViewModel alloc]init];
+        _viewModel.vc = self;
+    }
+    return _viewModel;
+}
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
-        _dataArray = @[@"图片浏览器-KNPhotoBrowser",
-                       @"选取上传图片，保存到本地",
-                       @"本地存储",
+        _dataArray = @[
                        @"组件间通信CTMediator",
-                       @"组件间通信JLRoutes",
-                       @"Masonry示例",
-                       @"面向协议编程",
-                       @"多线程编程和线程安全",
-                       @"SDK API 设计",
-                       @"runtime相关",
-                       @"数据类型",
-                       @"git 命令",
-                       @"Linux 命令"].mutableCopy;
+                       @"组件间通信JLRoutes",].mutableCopy;
     }
     return _dataArray;
 }
