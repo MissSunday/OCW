@@ -7,20 +7,9 @@
 
 #import "AViewController.h"
 #import "QJCommonWebViewController.h"
-#import "KNPhotoBrowserVC.h"
-#import "TZImagePickerVC.h"
-#import "XRLocalSaveVC.h"
-#import "RACVC.h"
 #import "Person.h"
 #import "CTMediator+First.h"
-#import "MasonryTestVC.h"
-#import "POPVC.h"
-#import "ThreadSafeVC.h"
-#import "SDK_API_VC.h"
-#import "RuntimeVC.h"
-#import "DataTypeVC.h"
-#import "GitCommandVC.h"
-#import "LinuxCommandVC.h"
+#import <FLEX/FLEX.h>
 
 @interface AHeadView ()
 @property(nonatomic,strong)AViewModel *viewModel;
@@ -105,10 +94,12 @@
             @{@"title":@"图片浏览器",   @"vc":@"KNPhotoBrowserVC"},
             @{@"title":@"选取上传图片", @"vc":@"TZImagePickerVC"},
             @{@"title":@"多线程",      @"vc":@"ThreadSafeVC"},
-            @{@"title":@"面向协议",    @"vc":@"POPVC"},
-            @{@"title":@"SDK设计",    @"vc":@"SDK_API_VC"},
-            @{@"title":@"git命令",    @"vc":@"GitCommandVC"},
-            @{@"title":@"Linux命令",  @"vc":@"LinuxCommandVC"},
+            @{@"title":@"面向协议",     @"vc":@"POPVC"},
+            @{@"title":@"SDK设计",     @"vc":@"SDK_API_VC"},
+            @{@"title":@"git命令",     @"vc":@"GitCommandVC"},
+            @{@"title":@"Linux命令",   @"vc":@"LinuxCommandVC"},
+            @{@"title":@"RAC",        @"vc":@"RACVC"},
+            
         ];
     }
     return self;
@@ -194,13 +185,13 @@
     @weakify(self);
     self.navigationItem.rightBarButtonItem = ({
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setTitle:@"RAC" forState:UIControlStateNormal];
+        [btn setTitle:@"调试" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor orangeColor] forState:(UIControlStateHighlighted)];
         [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
         btn.titleLabel.font = [UIFont systemFontOfSize:16];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [self.navigationController pushViewController:RACVC.new animated:YES];
+            [[FLEXManager sharedManager]showExplorer];
         }];
         UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
         item;
