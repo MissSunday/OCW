@@ -106,6 +106,7 @@
 		9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6727C7709A009993DE /* XXSDKConfig.m */; };
 		9C55797328DDC60700717A46 /* NSOperationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C55797228DDC60700717A46 /* NSOperationVC.m */; };
 		9C5C041E27FEBE720059FCD8 /* UIFont+XRScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */; };
+		9C5FC14028E42FB90002CC3D /* NSOperationQueue.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FC13F28E42FB90002CC3D /* NSOperationQueue.md */; };
 		9C75423927F3F78700972781 /* DataTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C75423827F3F78700972781 /* DataTypeVC.m */; };
 		9C75423B27F4292B00972781 /* 32-64.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9C75423A27F4292B00972781 /* 32-64.jpg */; };
 		9C8CD6902804499400A52F06 /* XRDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD68F2804499400A52F06 /* XRDeviceInfo.m */; };
@@ -379,6 +380,7 @@
 		9C5C041C27FEBE720059FCD8 /* UIFont+XRScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+XRScale.h"; sourceTree = "<group>"; };
 		9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+XRScale.m"; sourceTree = "<group>"; };
 		9C5C041F27FEBE9F0059FCD8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9C5FC13F28E42FB90002CC3D /* NSOperationQueue.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = NSOperationQueue.md; sourceTree = "<group>"; };
 		9C75423527F2E69200972781 /* DefineHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineHeader.h; sourceTree = "<group>"; };
 		9C75423727F3F78700972781 /* DataTypeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataTypeVC.h; sourceTree = "<group>"; };
 		9C75423827F3F78700972781 /* DataTypeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataTypeVC.m; sourceTree = "<group>"; };
@@ -1062,6 +1064,7 @@
 				9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */,
 				9C55797128DDC60700717A46 /* NSOperationVC.h */,
 				9C55797228DDC60700717A46 /* NSOperationVC.m */,
+				9C5FC13F28E42FB90002CC3D /* NSOperationQueue.md */,
 			);
 			path = "多线程编程和线程安全";
 			sourceTree = "<group>";
@@ -1366,6 +1369,7 @@
 				1D0FD81D26AFEAB700A61E96 /* aozima_24.jpeg in Resources */,
 				1D0FD82126AFEAB700A61E96 /* aozima_19.jpeg in Resources */,
 				1D0FD81B26AFEAB700A61E96 /* aozima_09.jpeg in Resources */,
+				9C5FC14028E42FB90002CC3D /* NSOperationQueue.md in Resources */,
 				1D0FD82326AFEAB700A61E96 /* aozima_03.jpeg in Resources */,
 				1D0FD81926AFEAB700A61E96 /* aozima_13.jpeg in Resources */,
 				1D0FD81C26AFEAB700A61E96 /* aozima_08.jpeg in Resources */,

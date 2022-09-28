@@ -7,7 +7,7 @@
 
 #import "ThreadSafeVC.h"
 #import "ThreadLockVC.h"
-
+#import "NSOperationVC.h"
 @interface ThreadSafeVC ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -69,7 +69,7 @@ static dispatch_group_t url_session_manager_completion_group() {
                        @"并行",
                        @"串行",
                        @"线程安全",
-                       @"Operation",
+                       @"NSOperationQueue",
                        @"读写锁",
                        @"死锁"].mutableCopy;
     }
@@ -402,9 +402,7 @@ static dispatch_group_t url_session_manager_completion_group() {
     }else if (indexPath.row == 3){
         
     }else if (indexPath.row == 4){
-        NSInvocationOperation *op = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(inv_op) object:nil];
-        [op start];
-        //在当前线程执行同步操作(队列肯定不是主队列)
+        [self.navigationController pushViewController:NSOperationVC.new animated:YES];
     }else if (indexPath.row == 5){
         
         dispatch_queue_t queue = dispatch_queue_create("bfQueue", DISPATCH_QUEUE_CONCURRENT);
@@ -438,11 +436,6 @@ static dispatch_group_t url_session_manager_completion_group() {
             NSLog(@"567");
         });
     }
-}
-
--(void)inv_op{
-    
-    NSLog(@" - %@",[NSThread currentThread]);
 }
 - (UITableView *)tableView{
     if (!_tableView) {

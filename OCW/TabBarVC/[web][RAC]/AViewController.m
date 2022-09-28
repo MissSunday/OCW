@@ -31,7 +31,7 @@
     
     self.backgroundColor = UIColor.whiteColor;
     @weakify(self);
-
+    
     int l = 3;
     
     CGFloat space = 15;
@@ -49,7 +49,7 @@
     CGFloat headH = (c+1)*space + c*h;
     
     for (int i = 0; i < self.viewModel.btnArray.count ; i++) {
-    
+        
         CGFloat x = ( i % l ) * ( w + space ) + space;
         CGFloat y = ( i / l ) * ( h + space ) + space;
         
@@ -129,12 +129,12 @@
 //链式编程 练习
 -(void)func_chain{
     
- 
+    
     _DuoDuo = [Person new];
     
     Person *running = [[_DuoDuo run]jump];
     
-
+    
     NSLog(@"- %@",running);
     
     _DuoDuo.fgz(20000).jfz(6500).eat(2000);
@@ -148,7 +148,7 @@
     }];
     
     NSLog(@"%@\n%@ hash - %ld",array,subA,array.hash);
-
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -267,8 +267,8 @@
 - (NSMutableArray *)dataArray{
     if (!_dataArray) {
         _dataArray = @[
-                       @"组件间通信CTMediator",
-                       @"组件间通信JLRoutes",].mutableCopy;
+            @"组件间通信CTMediator",
+            @"组件间通信JLRoutes",].mutableCopy;
     }
     return _dataArray;
 }
