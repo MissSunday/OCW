@@ -28,6 +28,8 @@
 
 @property(nonatomic,assign)BOOL isSafe;
 
+@property(nonatomic,strong)ThreadModel *threadModel;
+
 @end
 
 
@@ -89,6 +91,7 @@ static dispatch_group_t url_session_manager_completion_group() {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    self.threadModel = [[ThreadModel alloc]init];
     [self nav];
     
 //
@@ -216,7 +219,14 @@ static dispatch_group_t url_session_manager_completion_group() {
         btn.titleLabel.font = [UIFont systemFontOfSize:16];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            [self.navigationController pushViewController:ThreadLockVC.new animated:YES];
+            //[self.navigationController pushViewController:ThreadLockVC.new animated:YES];
+            dispatch_queue_t q = dispatch_queue_create("bfQ", DISPATCH_QUEUE_CONCURRENT);
+            for (int i = 0; i < 20; i++) {
+                dispatch_async(q, ^{
+                    [self.threadModel addData];
+                    [self.threadModel removeData];
+                });
+            }
         }];
         UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
         item;
@@ -493,6 +503,55 @@ static dispatch_group_t url_session_manager_completion_group() {
         result = _ticketNumber;
     });
     return result;
+}
+
+@end
+
+@interface ThreadModel ()
+@property(nonatomic,strong)dispatch_queue_t seaQueue;
+
+@property(nonatomic,strong)NSMutableArray *dataArray;
+
+@end
+
+@implementation ThreadModel
+- (NSMutableArray *)dataArray{
+    if (!_dataArray) {
+        _dataArray = @[@1,@2,@3,@4,@5].mutableCopy;
+    }
+    return _dataArray;
+}
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.seaQueue = dispatch_queue_create("gasdf", DISPATCH_QUEUE_SERIAL);
+        //self.dataArray = @[@1,@2,@3,@4,@5].mutableCopy;
+    }
+    return self;
+}
+- (void)addData{
+    dispatch_async(self.seaQueue, ^{
+        
+        int a =  arc4random()%30;
+        
+        NSNumber *b = [NSNumber numberWithInt:a];
+        
+        [self.dataArray addObject:b];
+        
+        NSLog(@"数组 = %@",self.dataArray);
+        
+    });
+}
+- (void)removeData{
+    dispatch_async(self.seaQueue, ^{
+        
+        [self.dataArray removeFirstObject];
+        
+        NSLog(@"数组 = %@",self.dataArray);
+        
+    });
+
 }
 
 @end

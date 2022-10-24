@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 -(void)registAppKey:(NSString *)key configBlock:(void(^_Nullable)(XRDeviceInfoConfig *config))configBlock;
 
+-(void)test;
 
 /*  deviceInfo  */
 

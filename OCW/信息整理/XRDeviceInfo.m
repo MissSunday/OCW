@@ -18,6 +18,7 @@
 #import <sys/utsname.h>
 
 
+
 @implementation XRDeviceInfoConfig
 - (instancetype)init{
     self = [super init];
@@ -100,8 +101,74 @@ static XRDeviceInfo *_manager = nil;
     uname(&systemInfo);
     NSString *model = [NSString stringWithCString: systemInfo.machine encoding:NSASCIIStringEncoding];
     _p_model = model;
+    
+    
+    
+    //1
+    NSString *a = [NSString stringWithCString: systemInfo.version encoding:NSASCIIStringEncoding];
+    //0
+    NSString *b = [NSString stringWithCString: systemInfo.release encoding:NSASCIIStringEncoding];
+    //0
+    NSString *c = [NSString stringWithCString: systemInfo.nodename encoding:NSASCIIStringEncoding];
+    //0
+    NSString *d = [NSString stringWithCString: systemInfo.sysname encoding:NSASCIIStringEncoding];
+    
+    //Darwin Kernel Version 21.2.0: Sun Nov 28 20:43:38 PST 2021; root:xnu-8019.62.2~1/RELEASE_ARM64_T8101
+    //21.2.0
+    //iPhone
+    //Darwin
+    
+    NSLog(@"\n--- %@\n--- %@\n--- %@\n--- %@",a,b,c,d);
+    
     return _p_model;
 }
+
+
+
+
+
+
+
+
+-(void)test{
+    NSArray *names = @[//@"hw.machine",
+                       @"hw.memsize",
+                        //@"hw.ncpu",
+                        //@"hw.activecpu",
+                        //@"hw.physicalcpu",
+                        //@"hw.physicalcpu_max",
+                        //@"hw.logicalcpu",
+                        //@"hw.logicalcpu_max",
+                        //@"hw.tbfrequency"
+    ];
+    for (NSString *name in names) {
+        
+        const char * n = [name cStringUsingEncoding:NSUTF8StringEncoding];
+        
+        size_t size;
+        // 获取machine name的长度
+        sysctlbyname(n, NULL, &size, NULL, 0);
+        // 获取machine name
+        char *machine = malloc(size);
+        sysctlbyname(n, machine, &size, NULL, 0);
+        // 设备硬件类型
+        NSString *platform = [NSString stringWithFormat:@"%s", machine];
+        free(machine);
+        
+        NSLog(@"%@---- %@",name,platform);
+        
+    }
+    
+    
+    
+    
+    
+    
+}
+
+
+
+
 - (void)asyncGetAllDeviceInfo:(void (^)(NSDictionary * _Nullable))block{
     dispatch_async(_deviceInfoQueue, ^{
         NSArray *allProsAry = [self getProperties:[self class]];

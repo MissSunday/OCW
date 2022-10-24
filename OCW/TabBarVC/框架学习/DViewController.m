@@ -6,6 +6,7 @@
 //
 
 #import "DViewController.h"
+#import "XRDeviceInfo.h"
 @interface DViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic,strong)UITableView *tableView;
@@ -60,6 +61,9 @@
         NSString *className = array[1];
         Class class = NSClassFromString(className);
         [self.navigationController pushViewController:[[class alloc]init] animated:YES];
+    }else{
+        NSLog(@"%@",[[XRDeviceInfo shareInstance]getAllDeviceInfo]);
+        [[XRDeviceInfo shareInstance]test];
     }
     
     

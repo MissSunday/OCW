@@ -38,7 +38,7 @@ KNPhotoBrowserDelegate
     if (!_images) {
         NSMutableArray *array = [NSMutableArray new];
         for (int i = 0; i < 25; i++) {
-            NSString *name = [NSString stringWithFormat:@"aozima_%02d.jpeg",i];
+            NSString *name = @"bizhi_01.jpg";
             NSLog(@"- - - -%@",name);
             [array addObject:name];
         }
