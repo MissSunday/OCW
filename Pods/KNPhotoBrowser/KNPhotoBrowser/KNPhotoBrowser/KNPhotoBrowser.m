@@ -41,6 +41,7 @@
     NSInteger                   _page; // current page
     BOOL                        _isShowed; // is showed?
     BOOL                        _statusBarHidden;// record original status bar is hidden or not
+    BOOL                        _isDismissed; // when photoBrowser will dismiss , it will be true, default is false
 }
 
 @property (nonatomic, strong) NSArray *tempArr;
@@ -74,6 +75,7 @@
         
         self.animatedMode  = UIViewContentModeScaleToFill;
         self.presentedMode = UIViewContentModeScaleAspectFit;
+        self.isSoloAmbient = true;
     }
     return self;
 }
@@ -231,6 +233,11 @@
 /* init PageControl */
 - (void)initPageControl{
     UIPageControl *pageControl = [[UIPageControl alloc] init];
+    pageControl.userInteractionEnabled = false;
+    if (_isNeedPageControlTarget == true) {
+        pageControl.userInteractionEnabled = true;
+        [pageControl addTarget:self action:@selector(pageControlValueChange:) forControlEvents:UIControlEventValueChanged];        
+    } 
     [pageControl setCurrentPage:_currentIndex];
     [pageControl setNumberOfPages:_itemsArr.count];
     [pageControl setHidden:!_isNeedPageControl];
@@ -267,12 +274,19 @@
 
 /* init right top Btn */
 - (void)initOperationView{
+    
+    NSBundle *bundle = [NSBundle bundleForClass:NSClassFromString(@"KNPhotoBrowser")];
+    
     UIButton *operationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     [operationBtn.layer setCornerRadius:3];
-    [operationBtn.layer setMasksToBounds:true];
+    [operationBtn setClipsToBounds:true];
     [operationBtn setBackgroundColor:[UIColor blackColor]];
     [operationBtn setAlpha:0.4];
-    [operationBtn setBackgroundImage:[UIImage imageNamed:@"KNPhotoBrowser.bundle/more_tap@2x.png"] forState:UIControlStateNormal];
+    if(UIScreen.mainScreen.scale < 3) {
+        [operationBtn setBackgroundImage:[UIImage imageNamed:@"KNPhotoBrowser.bundle/more_tap@2x.png" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    }else {
+        [operationBtn setBackgroundImage:[UIImage imageNamed:@"KNPhotoBrowser.bundle/more_tap@3x.png" inBundle:bundle compatibleWithTraitCollection:nil] forState:UIControlStateNormal];
+    }
     [operationBtn addTarget:self action:@selector(operationBtnIBAction) forControlEvents:UIControlEventTouchUpInside];
     [operationBtn setHidden:!_isNeedRightTopBtn];
     _operationBtn = operationBtn;
@@ -306,7 +320,13 @@
     KNPhotoItems *item = self.itemsArr[indexPath.row];
     UIImageView *tempView = [self tempViewFromSourceViewWithCurrentIndex:indexPath.row];
     if (item.isVideo) {
+        
+        if (_isDismissed == true) {
+            return;
+        }
+        
         KNPhotoVideoCell *videoCell = (KNPhotoVideoCell *)cell;
+        videoCell.isSoloAmbient = _isSoloAmbient;
         
         if (_isNeedOnlinePlay) {
             [videoCell playerOnLinePhotoItems:item placeHolder:tempView.image];
@@ -421,16 +441,18 @@
                 if (_isNeedOnlinePlay) {
                     _startFrame = [(KNPhotoAVPlayerView *)playerView playerBgView].frame;
                     [(KNPhotoAVPlayerView *)playerView setIsNeedVideoPlaceHolder:![(KNPhotoAVPlayerView *)playerView isBeginPlayed]];
+                    [[(KNPhotoAVPlayerView *)playerView playerView] setBackgroundColor:UIColor.clearColor];
                 }else {
                     _startFrame = [(KNPhotoLocateAVPlayerView *)playerView playerBgView].frame;
                     [(KNPhotoLocateAVPlayerView *)playerView setIsNeedVideoPlaceHolder:![(KNPhotoLocateAVPlayerView *)playerView isBeginPlayed]];
+                    [[(KNPhotoLocateAVPlayerView *)playerView playerView] setBackgroundColor:UIColor.clearColor];
                 }
-                
                 [playerView playerWillSwipe];
             }else{
                 _startFrame = imageView.imageView.frame;
             }
             [self customViewSubViewsWillDismiss];
+            [playerView setIsNeedVideoPlaceHolder:false];
         }
             break;
         case UIGestureRecognizerStateChanged:{
@@ -479,12 +501,17 @@
                     [self cancelVideoDownload];
                     [playerView setIsNeedVideoPlaceHolder:true];
                     [self dismiss];
+                    [[(KNPhotoLocateAVPlayerView *)playerView playerView] setBackgroundColor:UIColor.clearColor];
                 }else{
                     // cancel
                     [self cancelVideoAnimation:playerView];
                     [self customViewSubViewsWillShow];
-                    [playerView setIsNeedVideoPlaceHolder:true];
                     [playerView playerWillSwipeCancel];
+                    
+                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PhotoBrowserAnimateTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                        [[(KNPhotoLocateAVPlayerView *)playerView playerView] setBackgroundColor:UIColor.blackColor];
+                        [playerView setIsNeedVideoPlaceHolder:true];
+                    });
                 }
             }else {
                 if(fabs(point.y) > 200 || fabs(velocity.y) > 500){
@@ -613,24 +640,24 @@
     CGFloat height = tempView.image.size.height;
     
     if(isPortrait == true){
-        if (width/height >= ScreenWidth / ScreenHeight) {
-            tempRectSize = (CGSize){ScreenWidth,(height * ScreenWidth / width) > ScreenHeight?ScreenHeight:(height * ScreenWidth / width)};
+        if (width/height >= PBViewWidth / PBViewHeight) {
+            tempRectSize = (CGSize){PBViewWidth,(height * PBViewWidth / width) > PBViewHeight?PBViewHeight:(height * PBViewWidth / width)};
         }else {
             if (items.isVideo == true) {
-                tempRectSize = (CGSize){width * ScreenHeight / height,ScreenHeight};
+                tempRectSize = (CGSize){width * PBViewHeight / height,PBViewHeight};
             }else {
-                tempRectSize = (CGSize){ScreenWidth,(height * ScreenWidth / width) > ScreenHeight?ScreenHeight:(height * ScreenWidth / width)};
+                tempRectSize = (CGSize){PBViewWidth,(height * PBViewWidth / width) > PBViewHeight?PBViewHeight:(height * PBViewWidth / width)};
             }
         }
     }else{
         if(width > height){
-            if(width / height > ScreenWidth / ScreenHeight){
-                tempRectSize = (CGSize){ScreenWidth,height * ScreenWidth / width};
+            if(width / height > PBViewWidth / PBViewHeight){
+                tempRectSize = (CGSize){PBViewWidth,height * PBViewWidth / width};
             }else{
-                tempRectSize = (CGSize){ScreenHeight * width / height,ScreenHeight};
+                tempRectSize = (CGSize){PBViewHeight * width / height,PBViewHeight};
             }
         }else{
-            tempRectSize = (CGSize){(width * ScreenHeight) / height,ScreenHeight};
+            tempRectSize = (CGSize){(width * PBViewHeight) / height,PBViewHeight};
         }
     }
     [_collectionView setHidden:true];
@@ -684,13 +711,13 @@
                     if([[[[items.url lastPathComponent] pathExtension] lowercaseString] isEqualToString:@"gif"]){ // gif image
                         NSData *data = UIImageJPEGRepresentation([cache imageFromCacheForKey:items.url], 1.f);
                         if(data){
-                            tempView.image = [self imageFromGifFirstImage:data];
+                            tempView.image = [weakself imageFromGifFirstImage:data];
                         }
                     }else{ // normal image
                         tempView.image = [cache imageFromCacheForKey:items.url];
                     }
                 }else{
-                    tempView.image = [[self tempViewFromSourceViewWithCurrentIndex:weakself.currentIndex] image];
+                    tempView.image = [[weakself tempViewFromSourceViewWithCurrentIndex:weakself.currentIndex] image];
                 }
                 [self photoBrowserWillDismissWithAnimated:tempView items:items];
             }];
@@ -702,37 +729,28 @@
 }
 
 - (void)createCustomViewArrOnTopView:(NSArray<UIView *> *)customViewArr
-                            animated:(BOOL)animated{
-    
-    if ([self isEmptyArray:customViewArr]) {
-        return;
-    }
-    
-    if (animated == false) {
-        _customArr = [NSArray arrayWithArray:customViewArr];
-    }else{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PhotoBrowserAnimateTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            for (UIView *view in customViewArr) {
-                [self.view addSubview:view];
-            }
-        });
-    }
-}
-- (void)createCustomViewArrOnTopView:(NSArray<UIView *> *)customViewArr
                             animated:(BOOL)animated
-                      followAnimated:(BOOL)followAnimated{
-    if ([self isEmptyArray:customViewArr]) {
+                      followAnimated:(BOOL)followAnimated {
+    [self createOverlayViewArrOnTopView:customViewArr
+                               animated:animated
+                         followAnimated:followAnimated];
+}
+
+- (void)createOverlayViewArrOnTopView:(NSArray<UIView *> *)overlayViewArr
+                             animated:(BOOL)animated
+                       followAnimated:(BOOL)followAnimated{
+    if ([self isEmptyArray:overlayViewArr]) {
         return;
     }
     if (followAnimated == true) {
-        [self.followArr addObjectsFromArray:customViewArr];
+        [self.followArr addObjectsFromArray:overlayViewArr];
     }
     
     if (animated == false) {
-        _customArr = [NSArray arrayWithArray:customViewArr];
+        _customArr = [NSArray arrayWithArray:overlayViewArr];
     }else{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(PhotoBrowserAnimateTime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            for (UIView *view in customViewArr) {
+            for (UIView *view in overlayViewArr) {
                 [self.view addSubview:view];
             }
         });
@@ -776,6 +794,7 @@
     
     if(tempView.image == nil){
         
+        _isDismissed = true;
         [self loadScreenPortrait];
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -808,6 +827,7 @@
                 [self dismissViewControllerAnimated:true completion:nil];
             }];
         }else{
+            _isDismissed = true;
             [self loadScreenPortrait];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -825,15 +845,21 @@
         
         CGFloat width  = tempView.image.size.width;
         CGFloat height = tempView.image.size.height;
-        CGSize tempRectSize = (CGSize){ScreenWidth,(height * ScreenWidth / width) > ScreenHeight ? ScreenHeight:(height * ScreenWidth / width)};
+        CGSize tempRectSize = (CGSize){PBViewWidth,(height * PBViewWidth / width) > PBViewHeight ? PBViewHeight:(height * PBViewWidth / width)};
         
         if(isPortrait == true){
             [tempView setBounds:(CGRect){CGPointZero,{tempRectSize.width,tempRectSize.height}}];
             [tempView setCenter:[self.view center]];
+            
             if(!CGRectEqualToRect(self.startFrame, CGRectZero)){
-                tempView.frame = self.startFrame;
+                if(items.isVideo == true) {
+                    tempView.frame = CGRectMake(self.startFrame.origin.x, self.startFrame.origin.y, tempRectSize.width, tempRectSize.height);
+                }else {
+                    tempView.frame = self.startFrame;
+                }
             }
             [window addSubview:tempView];
+            
             self->_startFrame = CGRectZero;
             [self dismissViewControllerAnimated:false completion:nil];
             
@@ -848,7 +874,7 @@
                 }];
             }];
         }else{
-            
+            _isDismissed = true;
             [self loadScreenPortrait];
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -895,6 +921,7 @@
     return false;
 }
 
+/// let screen to portrait
 - (void)loadScreenPortrait{
     if(isPortrait) return;
     NSNumber *resetOrientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
@@ -913,19 +940,19 @@
 
 - (void)layoutCollectionViewAndLayout{
     
-    [_layout setItemSize:(CGSize){self.view.bounds.size.width + 20,self.view.bounds.size.height}];
+    [_layout setItemSize:(CGSize){PBViewWidth + 20,PBViewHeight}];
     _layout.minimumInteritemSpacing = 0;
     _layout.minimumLineSpacing = 0;
     
-    [_collectionView setFrame:(CGRect){{-10,0},{self.view.bounds.size.width + 20,self.view.bounds.size.height}}];
+    [_collectionView setFrame:(CGRect){{-10,0},{PBViewWidth + 20,PBViewHeight}}];
     [_collectionView setCollectionViewLayout:_layout];
     
-    _imageView.frame = (CGRect){{-10,0},{self.view.bounds.size.width + 20,self.view.bounds.size.height}};
+    _imageView.frame = (CGRect){{-10,0},{PBViewWidth + 20,PBViewHeight}};
     _progressHUD.center = self.view.center;
     
     CGFloat y = 25;
     CGFloat x = 0;
-    if(iPhoneX || iPhoneXR || iPhoneXs_Max || iPhone12 || iPhone12_Pro_Max){
+    if(PBDeviceHasBang){
         y = 45;
     }
     
@@ -934,9 +961,9 @@
         x = 35;
     }
     
-    [_numView setFrame:(CGRect){{0,y},{ScreenWidth,25}}];
-    [_pageControl setFrame:(CGRect){{0,self.view.bounds.size.height - 50},{ScreenWidth,30}}];
-    [_operationBtn setFrame:(CGRect){{ScreenWidth - 35 - 15 - x,y},{35,20}}];
+    [_numView setFrame:(CGRect){{0,y},{PBViewWidth,25}}];
+    [_pageControl setFrame:(CGRect){{0,PBViewHeight - 50},{PBViewWidth,30}}];
+    [_operationBtn setFrame:(CGRect){{PBViewWidth - 35 - 15 - x,y},{35,20}}];
     
     if(_offsetPageIndex){
         [_collectionView setContentOffset:(CGPoint){_layout.itemSize.width * _offsetPageIndex,0} animated:false];
@@ -1314,18 +1341,18 @@
  */
 - (BOOL)isEmptyArray:(NSArray *)array{
     if(array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0){
-        return YES;
+        return true;
     }
-    return NO;
+    return false;
 }
 
 /// judge string is empty or null or nil
 /// @param string isEmpty string
 - (BOOL)isEmptyString:(NSString *)string{
     if(string == nil || string == NULL || [string isKindOfClass:[NSNull class]] || [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length]==0){
-        return YES;
+        return true;
     }
-    return NO;
+    return false;
 }
 
 /**
@@ -1390,22 +1417,32 @@
         if (items.isVideo == false) {
             if (items.url) {
                 UIColor *imageColor = self.placeHolderColor ? self.placeHolderColor : UIColor.clearColor;
-                CGSize size = CGSizeMake(ScreenWidth, ScreenWidth);
+                CGSize size = CGSizeMake(PBViewWidth, PBViewWidth);
                 imageView.image = [self createImageWithUIColor: imageColor size: size];
             }else {
-                imageView.image = [self createImageWithUIColor: UIColor.clearColor size: CGSizeMake(ScreenWidth, ScreenWidth)];
+                imageView.image = [self createImageWithUIColor: UIColor.clearColor size: CGSizeMake(PBViewWidth, PBViewWidth)];
             }
         }else {
             if (items.videoPlaceHolderImageUrl) {
                 UIColor *imageColor = self.placeHolderColor ? self.placeHolderColor : UIColor.clearColor;
-                CGSize size = CGSizeMake(ScreenWidth, ScreenWidth);
+                CGSize size = CGSizeMake(PBViewWidth, PBViewWidth);
                 imageView.image = [self createImageWithUIColor: imageColor size: size];
             }else {
-                imageView.image = [self createImageWithUIColor: UIColor.clearColor size: CGSizeMake(ScreenWidth, ScreenWidth)];
+                imageView.image = [self createImageWithUIColor: UIColor.clearColor size: CGSizeMake(PBViewWidth, PBViewWidth)];
             }
         }
     }
     return imageView;
+}
+
+
+/// pageCotrol did be selected by click 
+/// @param pageControl pageControl
+- (void)pageControlValueChange:(UIPageControl *)pageControl {
+#ifdef DEBUG
+     NSLog(@"currentPage ===> %zd", pageControl.currentPage);
+#endif
+     [_collectionView setContentOffset:(CGPoint){pageControl.currentPage * _layout.itemSize.width,0} animated: true];
 }
 
 @end

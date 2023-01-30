@@ -10,7 +10,7 @@ target 'OCW' do
   
   # Pods for OCW
   pod 'AFNetworking', '4.0.1'
-  pod 'FLEX', '4.4.1'
+  pod 'FLEX','4.4.1'
   pod 'Masonry', '1.1.0'
   pod 'ReactiveObjC', '3.1.1'
   pod 'YYModel', '1.0.4'
@@ -21,10 +21,10 @@ target 'OCW' do
   pod 'YYDispatchQueuePool', '~> 1.0'
   pod 'MJRefresh'
   pod 'Reachability', '~> 3.2'
-  pod 'KNPhotoBrowser', '2.5.3' #依赖SDWebImage ～> 5.0
-  pod 'TZImagePickerController', '3.6.0'
-  pod 'QSDispatchQueue', '~> 1.0.1'
+  pod 'KNPhotoBrowser', '2.6.2' #依赖SDWebImage ～> 5.0
+  pod 'TZImagePickerController', '3.8.3'
   
+  pod 'FSLineChart', '~> 0.1.7'
   pod 'LTScrollView', '0.3.0'
   pod 'JXCategoryView', '1.5.9'
   #组件化工具
@@ -37,6 +37,9 @@ target 'OCW' do
   #pod 'XRToolSDK', '0.2.0'
   
   #pod "A_Category", :path => "../A_Category"本地引用
+  #pod 'QSDispatchQueue', '~> 1.0.1'
+  #pod 'LookinServer', :configurations => ['Debug'] #类似FLEX调试工具
+  
   
   target 'OCWTests' do
     inherit! :search_paths

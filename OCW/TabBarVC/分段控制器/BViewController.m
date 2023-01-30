@@ -34,8 +34,8 @@
     self.navigationItem.title = @"分段控制器";
     [self nav];
     [self UI];
-    [XRTool logPropertyOfClass:[T class]];
-    [XRTool logMethodNamesOfClass:[T class]];
+    [XRRoute logPropertyOfClass:[T class]];
+    [XRRoute logMethodNamesOfClass:[T class]];
 }
 -(void)UI{
     self.titleArray = @[@"一手房",@"二手房",@"租房"];

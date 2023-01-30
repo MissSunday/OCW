@@ -94,6 +94,9 @@ static dispatch_group_t url_session_manager_completion_group() {
     self.threadModel = [[ThreadModel alloc]init];
     [self nav];
     
+    
+   
+    
 //
 //    dispatch_async(url_session_manager_processing_queue(), ^{
 //
@@ -219,14 +222,15 @@ static dispatch_group_t url_session_manager_completion_group() {
         btn.titleLabel.font = [UIFont systemFontOfSize:16];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside]subscribeNext:^(__kindof UIControl * _Nullable x) {
             @strongify(self);
-            //[self.navigationController pushViewController:ThreadLockVC.new animated:YES];
-            dispatch_queue_t q = dispatch_queue_create("bfQ", DISPATCH_QUEUE_CONCURRENT);
-            for (int i = 0; i < 20; i++) {
-                dispatch_async(q, ^{
-                    [self.threadModel addData];
-                    [self.threadModel removeData];
-                });
-            }
+            [self.navigationController pushViewController:ThreadLockVC.new animated:YES];
+//            dispatch_queue_t q = dispatch_queue_create("bfQ", DISPATCH_QUEUE_CONCURRENT);
+//            for (int i = 0; i < 20; i++) {
+//                dispatch_async(q, ^{
+//                    [self.threadModel addData];
+//                    sleep(0.1);
+//                    [self.threadModel removeData];
+//                });
+//            }
         }];
         UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:btn];
         item;
@@ -540,6 +544,7 @@ static dispatch_group_t url_session_manager_completion_group() {
         [self.dataArray addObject:b];
         
         NSLog(@"数组 = %@",self.dataArray);
+        NSLog(@"--%ld",self->_dataArray.count);
         
     });
 }
@@ -549,6 +554,7 @@ static dispatch_group_t url_session_manager_completion_group() {
         [self.dataArray removeFirstObject];
         
         NSLog(@"数组 = %@",self.dataArray);
+        NSLog(@"--%ld",self->_dataArray.count);
         
     });
 

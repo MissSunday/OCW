@@ -8,6 +8,7 @@
 #import <XCTest/XCTest.h>
 #import "Modifier.h"
 #import "base62.h"
+#import "XRDeviceInfo.h"
 @interface OCWTests : XCTestCase
 
 @end
@@ -24,8 +25,9 @@
 
 - (void)testExample {
     
-    Modifier *model = [[Modifier alloc]init];
+    //Modifier *model = [[Modifier alloc]init];
   
+    
     
     
     

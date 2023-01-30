@@ -51,7 +51,7 @@
     static dispatch_once_t onceToken;
     static KNActionSheet *share;
     dispatch_once(&onceToken, ^{
-        share = [[self alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        share = [[self alloc] init];
     });
     return share;
 }
@@ -135,7 +135,8 @@
                                                object:nil];
     
     [self setBackgroundColor:[UIColor clearColor]];
-    [self setFrame:[UIScreen mainScreen].bounds];
+    
+    [self setFrame:[UIApplication sharedApplication].windows.lastObject.bounds];
     
     UIView *coverView = [[UIView alloc] initWithFrame:self.bounds];
     [coverView setBackgroundColor:kKNActionCoverBackgroundColor];
@@ -240,15 +241,15 @@
 
 - (BOOL)isEmptyString:(NSString *)string{
     if(string == nil || string == NULL || [string isKindOfClass:[NSNull class]] || [[string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] length] == 0){
-        return YES;
+        return true;
     }
-    return NO;
+    return false;
 }
 - (BOOL)isEmptyArray:(NSArray *)array{
     if(array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0){
-        return YES;
+        return true;
     }
-    return NO;
+    return false;
 }
 
 - (void)layoutSubviews{

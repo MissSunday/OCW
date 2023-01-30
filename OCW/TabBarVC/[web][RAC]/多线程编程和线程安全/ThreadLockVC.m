@@ -67,28 +67,20 @@
 //测试3个方法 有依赖情况下 多线程并发  顺序调用
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
 
-    dispatch_queue_t queue = dispatch_queue_create("bfQueue", DISPATCH_QUEUE_CONCURRENT);
-    for (int i = 0; i < 2; i ++) {
-
-        //异步并发
-//        dispatch_async(queue, ^{
-//
-//            [self func1];
-////            [self func2:^(BOOL a) {
-////
-////            }];
-//        });
-        dispatch_async(queue, ^{
-            [self func1];
-//            [self func2:^(BOOL a) {
-//
-//            }];
-        });
-       
-
-    }
-    //[self func1];
-   
+    __weak  typeof(self) weakS = self;
+       void (^block1)(void) = ^{
+           NSLog(@" -- %@ --",weakS);
+           //__strong typeof(weakS) strongS = weakS;
+           //BVC * vc = weakS; 这种形式和__strong typeof(weakS)相同
+           //strongS其实只是个局部变量的强指针，它在作用域内不会被释放
+     
+           //这里模拟一个dispatch_async,dispatch_after其实就是异步的
+           dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+               NSLog(@" == %@ ==",self);
+           });
+       };
+       //_v.block1 = block1;
+    block1();
 }
 
 

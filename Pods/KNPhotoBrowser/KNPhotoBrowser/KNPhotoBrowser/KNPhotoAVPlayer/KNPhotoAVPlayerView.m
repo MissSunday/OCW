@@ -29,6 +29,7 @@
 @property (nonatomic,assign) BOOL isDragging;
 @property (nonatomic,assign) BOOL isEnterBackground;
 @property (nonatomic,assign) BOOL isAddObserver;
+@property (nonatomic,assign) BOOL videoIsSwiping; // current video player is swiping?
 
 @end
 
@@ -64,7 +65,7 @@
 - (UIView *)playerView{
     if (!_playerView) {
         _playerView = [[UIView alloc] init];
-        _playerView.backgroundColor = UIColor.clearColor;
+        _playerView.backgroundColor = UIColor.blackColor;
     }
     return _playerView;
 }
@@ -78,7 +79,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        
         self.player = [AVPlayer playerWithPlayerItem:_item];
         self.playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
         [self.playerView.layer addSublayer:_playerLayer];
@@ -131,7 +131,11 @@
     // AudioSession setting
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setActive:true error:nil];
-    [session setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    if(_isSoloAmbient == true) {
+        [session setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    }else {
+        [session setCategory:AVAudioSessionCategoryAmbient error:nil];
+    }
     
     // Notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive) name:UIApplicationWillResignActiveNotification object:nil];
@@ -146,16 +150,20 @@
 /// remove item observer
 - (void)removePlayerItemObserver{
     if (_item && _isAddObserver) {
-        [_item removeObserver:self forKeyPath:@"status" context:nil];
-        [_item removeObserver:self forKeyPath:@"loadedTimeRanges" context:nil];
+        [_item removeObserver:self forKeyPath:@"status"                 context:nil];
+        [_item removeObserver:self forKeyPath:@"loadedTimeRanges"       context:nil];
+        [_item removeObserver:self forKeyPath:@"playbackBufferEmpty"    context:nil];
+        [_item removeObserver:self forKeyPath:@"playbackLikelyToKeepUp" context:nil];
         _isAddObserver = false;
     }
 }
 /// add item observer
 - (void)addPlayerItemObserver{
     if (_item) {
-        [_item addObserver:self forKeyPath:@"status"           options:NSKeyValueObservingOptionNew context:nil];
-        [_item addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:nil];
+        [_item addObserver:self forKeyPath:@"status"                 options:NSKeyValueObservingOptionNew context:nil];
+        [_item addObserver:self forKeyPath:@"loadedTimeRanges"       options:NSKeyValueObservingOptionNew context:nil];
+        [_item addObserver:self forKeyPath:@"playbackBufferEmpty"    options:NSKeyValueObservingOptionNew context:nil];
+        [_item addObserver:self forKeyPath:@"playbackLikelyToKeepUp" options:NSKeyValueObservingOptionNew context:nil];
         _isAddObserver = true;
     }
     
@@ -169,11 +177,9 @@
             }
             strongself.actionBar.currentTime = 0;
         }else{
-            if (strongself.isDragging == true) {
-                strongself.isDragging = false;
-                return;
+            if (strongself.isDragging == false) {
+                strongself.actionBar.currentTime = CMTimeGetSeconds(time);
             }
-            strongself.actionBar.currentTime = CMTimeGetSeconds(time);
         }
     }];
     
@@ -181,7 +187,6 @@
                                              selector:@selector(videoDidPlayToEndTime)
                                                  name:AVPlayerItemDidPlayToEndTimeNotification
                                                object:nil];
-    
 }
 
 /// remove time observer
@@ -208,6 +213,7 @@
                     weakself.actionBar.currentTime = 0;
                     weakself.actionBar.isPlaying = false;
                     weakself.actionView.isPlaying = false;
+                    [weakself.actionView avplayerActionViewNeedHidden:weakself.videoIsSwiping];
                 }
             }];
         }
@@ -229,6 +235,13 @@
             _isGetAllPlayItem = true;
             _actionBar.allDuration = CMTimeGetSeconds(_player.currentItem.duration);
         }
+    }else if ([keyPath isEqualToString:@"playbackBufferEmpty"]) { // empty
+        _actionView.isBuffering = true;
+    }else if ([keyPath isEqualToString:@"playbackLikelyToKeepUp"]) { // full
+        _actionView.isBuffering = false;
+        if (_isPlaying == true) {
+            [_player play];
+        }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
@@ -244,10 +257,14 @@
 - (void)playerWillSwipe{
     [_actionView avplayerActionViewNeedHidden:true];
     _actionBar.hidden = true;
+    _videoIsSwiping = true;
 }
 
 - (void)playerWillSwipeCancel {
-    
+    _videoIsSwiping = false;
+    if (_actionBar.currentTime == 0) {
+        [_actionView avplayerActionViewNeedHidden:false];
+    }
 }
 
 - (void)playerRate:(CGFloat)rate{
@@ -295,7 +312,6 @@
         _actionView.isPlaying = false;
         _actionBar.isPlaying = false;
     }
-    
     _isPlaying = !_isPlaying;
 }
 - (void)photoAVPlayerActionViewDismiss{
@@ -319,10 +335,17 @@
         _isPlaying = false;
     }
 }
-- (void)photoAVPlayerActionBarChangeValue:(float)value{
+- (void)photoAVPlayerActionBarBeginChange{
     _isDragging = true;
-    [_player seekToTime:CMTimeMake(value, 1) completionHandler:^(BOOL finished) {
-        
+}
+- (void)photoAVPlayerActionBarChangeValue:(float)value{
+    __weak typeof(self) weakself = self;
+    [_player seekToTime:CMTimeMake(value, 1) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
+        if (finished == true) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                weakself.isDragging = false;
+            });
+        }
     }];
 }
 
@@ -335,7 +358,7 @@
     self.actionView.frame   = self.playerBgView.frame;
     self.placeHolderImgView.frame  = self.playerBgView.bounds;
     
-    if (iPhoneX || iPhoneXR || iPhoneXs_Max || iPhone12 || iPhone12_Pro_Max) {
+    if (PBDeviceHasBang) {
         self.actionBar.frame    = CGRectMake(15, self.frame.size.height - 70, self.frame.size.width - 30, 40);
     }else {
         self.actionBar.frame    = CGRectMake(15, self.frame.size.height - 50, self.frame.size.width - 30, 40);

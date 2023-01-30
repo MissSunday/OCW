@@ -75,11 +75,20 @@
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
 		9C00F7B028B3707000E8FC90 /* GitCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */; };
 		9C00F7B328B47F0800E8FC90 /* LinuxCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */; };
+		9C230E122987B52000961334 /* XRRouteTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C230E112987B52000961334 /* XRRouteTestVC.m */; };
+		9C343907291A2D4B00B74050 /* XRRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343906291A2D4B00B74050 /* XRRoute.m */; };
+		9C34390A291A48DD00B74050 /* XRRouteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343909291A48DD00B74050 /* XRRouteTest.m */; };
 		9C3480D227EB015C00F9C585 /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3480D127EB015C00F9C585 /* RunLoopVC.m */; };
 		9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6127C764AE009993DE /* SDK_API_VC.m */; };
 		9C524A6527C7650A009993DE /* XXSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6427C7650A009993DE /* XXSDK.m */; };
 		9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6727C7709A009993DE /* XXSDKConfig.m */; };
 		9C55797328DDC60700717A46 /* NSOperationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C55797228DDC60700717A46 /* NSOperationVC.m */; };
+		9C5A1391296E9F480095F583 /* AntiFraudVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A1390296E9F480095F583 /* AntiFraudVC.m */; };
+		9C5A1394296E9FCE0095F583 /* AntiFraudHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A1393296E9FCE0095F583 /* AntiFraudHeadView.m */; };
+		9C5A1399296EA9020095F583 /* afi_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5A1398296EA9020095F583 /* afi_02.png */; };
+		9C5A139B296EAB610095F583 /* afi_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 9C5A139A296EAB610095F583 /* afi_01.png */; };
+		9C5A139E296EAF6A0095F583 /* AntiFraudViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A139D296EAF6A0095F583 /* AntiFraudViewModel.m */; };
+		9C5A13A1296EB3B70095F583 /* AntiFraudDataCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5A13A0296EB3B70095F583 /* AntiFraudDataCell.m */; };
 		9C5C041E27FEBE720059FCD8 /* UIFont+XRScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */; };
 		9C5FC14028E42FB90002CC3D /* NSOperationQueue.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C5FC13F28E42FB90002CC3D /* NSOperationQueue.md */; };
 		9C75423927F3F78700972781 /* DataTypeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C75423827F3F78700972781 /* DataTypeVC.m */; };
@@ -317,6 +326,12 @@
 		9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitCommandVC.m; sourceTree = "<group>"; };
 		9C00F7B128B47F0700E8FC90 /* LinuxCommandVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinuxCommandVC.h; sourceTree = "<group>"; };
 		9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinuxCommandVC.m; sourceTree = "<group>"; };
+		9C230E102987B52000961334 /* XRRouteTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRouteTestVC.h; sourceTree = "<group>"; };
+		9C230E112987B52000961334 /* XRRouteTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRouteTestVC.m; sourceTree = "<group>"; };
+		9C343905291A2D4B00B74050 /* XRRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRoute.h; sourceTree = "<group>"; };
+		9C343906291A2D4B00B74050 /* XRRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRoute.m; sourceTree = "<group>"; };
+		9C343908291A48DD00B74050 /* XRRouteTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRouteTest.h; sourceTree = "<group>"; };
+		9C343909291A48DD00B74050 /* XRRouteTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRouteTest.m; sourceTree = "<group>"; };
 		9C3480D027EB015C00F9C585 /* RunLoopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopVC.h; sourceTree = "<group>"; };
 		9C3480D127EB015C00F9C585 /* RunLoopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopVC.m; sourceTree = "<group>"; };
 		9C524A6027C764AE009993DE /* SDK_API_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDK_API_VC.h; sourceTree = "<group>"; };
@@ -327,6 +342,16 @@
 		9C524A6727C7709A009993DE /* XXSDKConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXSDKConfig.m; sourceTree = "<group>"; };
 		9C55797128DDC60700717A46 /* NSOperationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSOperationVC.h; sourceTree = "<group>"; };
 		9C55797228DDC60700717A46 /* NSOperationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSOperationVC.m; sourceTree = "<group>"; };
+		9C5A138F296E9F480095F583 /* AntiFraudVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntiFraudVC.h; sourceTree = "<group>"; };
+		9C5A1390296E9F480095F583 /* AntiFraudVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiFraudVC.m; sourceTree = "<group>"; };
+		9C5A1392296E9FCE0095F583 /* AntiFraudHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntiFraudHeadView.h; sourceTree = "<group>"; };
+		9C5A1393296E9FCE0095F583 /* AntiFraudHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiFraudHeadView.m; sourceTree = "<group>"; };
+		9C5A1398296EA9020095F583 /* afi_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afi_02.png; sourceTree = "<group>"; };
+		9C5A139A296EAB610095F583 /* afi_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = afi_01.png; sourceTree = "<group>"; };
+		9C5A139C296EAF6A0095F583 /* AntiFraudViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntiFraudViewModel.h; sourceTree = "<group>"; };
+		9C5A139D296EAF6A0095F583 /* AntiFraudViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiFraudViewModel.m; sourceTree = "<group>"; };
+		9C5A139F296EB3B70095F583 /* AntiFraudDataCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AntiFraudDataCell.h; sourceTree = "<group>"; };
+		9C5A13A0296EB3B70095F583 /* AntiFraudDataCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AntiFraudDataCell.m; sourceTree = "<group>"; };
 		9C5C041C27FEBE720059FCD8 /* UIFont+XRScale.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIFont+XRScale.h"; sourceTree = "<group>"; };
 		9C5C041D27FEBE720059FCD8 /* UIFont+XRScale.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIFont+XRScale.m"; sourceTree = "<group>"; };
 		9C5C041F27FEBE9F0059FCD8 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -472,6 +497,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				9C5A138E296E9F0C0095F583 /* 反诈平台 */,
 				9C00F7B428B4823700E8FC90 /* 命令行 */,
 				9C524A5F27C76471009993DE /* SDK_API设计 */,
 				9CEB886D27BB9A0C00841C3C /* 多线程编程和线程安全 */,
@@ -647,6 +673,12 @@
 				1D0FD647269E72D200726555 /* RuntimeVC.m */,
 				9C3480D027EB015C00F9C585 /* RunLoopVC.h */,
 				9C3480D127EB015C00F9C585 /* RunLoopVC.m */,
+				9C343905291A2D4B00B74050 /* XRRoute.h */,
+				9C343906291A2D4B00B74050 /* XRRoute.m */,
+				9C343908291A48DD00B74050 /* XRRouteTest.h */,
+				9C343909291A48DD00B74050 /* XRRouteTest.m */,
+				9C230E102987B52000961334 /* XRRouteTestVC.h */,
+				9C230E112987B52000961334 /* XRRouteTestVC.m */,
 			);
 			path = "Runtime相关";
 			sourceTree = "<group>";
@@ -891,6 +923,31 @@
 				9C524A6727C7709A009993DE /* XXSDKConfig.m */,
 			);
 			path = "SDK_API设计";
+			sourceTree = "<group>";
+		};
+		9C5A138E296E9F0C0095F583 /* 反诈平台 */ = {
+			isa = PBXGroup;
+			children = (
+				9C5A138F296E9F480095F583 /* AntiFraudVC.h */,
+				9C5A1390296E9F480095F583 /* AntiFraudVC.m */,
+				9C5A1392296E9FCE0095F583 /* AntiFraudHeadView.h */,
+				9C5A1393296E9FCE0095F583 /* AntiFraudHeadView.m */,
+				9C5A139C296EAF6A0095F583 /* AntiFraudViewModel.h */,
+				9C5A139D296EAF6A0095F583 /* AntiFraudViewModel.m */,
+				9C5A139F296EB3B70095F583 /* AntiFraudDataCell.h */,
+				9C5A13A0296EB3B70095F583 /* AntiFraudDataCell.m */,
+				9C5A1395296EA1D00095F583 /* resources */,
+			);
+			path = "反诈平台";
+			sourceTree = "<group>";
+		};
+		9C5A1395296EA1D00095F583 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				9C5A1398296EA9020095F583 /* afi_02.png */,
+				9C5A139A296EAB610095F583 /* afi_01.png */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		9C75423427F2E63F00972781 /* 宏定义用法 */ = {
@@ -1285,11 +1342,13 @@
 				1D2BA8B526561C2F0089E899 /* LaunchScreen.storyboard in Resources */,
 				9C75423B27F4292B00972781 /* 32-64.jpg in Resources */,
 				B42C463526FC6B1500785D93 /* directorie.png in Resources */,
+				9C5A139B296EAB610095F583 /* afi_01.png in Resources */,
 				B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */,
 				1DB3C88B2771798B0068FEFA /* README.md in Resources */,
 				B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */,
 				1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */,
 				1D1EE34026B13FF0001BE780 /* bizhi_01.jpg in Resources */,
+				9C5A1399296EA9020095F583 /* afi_02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1446,14 +1505,17 @@
 				9CB336C4289A954D003E4C01 /* DynamicAnimatorVC.m in Sources */,
 				B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */,
 				1D169DC726A7C8F700933E1C /* GKPageScrollView.m in Sources */,
+				9C230E122987B52000961334 /* XRRouteTestVC.m in Sources */,
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
 				9C9777372851FAA0008095D3 /* NSString+STRegex.m in Sources */,
 				B4859CA6273BA95700F49091 /* CTMediator+Second.m in Sources */,
 				1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */,
 				9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */,
+				9C5A139E296EAF6A0095F583 /* AntiFraudViewModel.m in Sources */,
 				9C00F7B028B3707000E8FC90 /* GitCommandVC.m in Sources */,
 				1D1EE34A26B2A3E9001BE780 /* XRPhotoBrowerNav.m in Sources */,
+				9C5A1391296E9F480095F583 /* AntiFraudVC.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
 				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
@@ -1488,8 +1550,10 @@
 				9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */,
 				1D169DC826A7C8F700933E1C /* GKPageTableView.m in Sources */,
 				1D0FD648269E72D300726555 /* RuntimeVC.m in Sources */,
+				9C34390A291A48DD00B74050 /* XRRouteTest.m in Sources */,
 				1DD006A2265D27A900B805FE /* Person.m in Sources */,
 				B4859CA3273BA94700F49091 /* CTMediator+First.m in Sources */,
+				9C343907291A2D4B00B74050 /* XRRoute.m in Sources */,
 				1D0FD75A26AAB41F00A61E96 /* swiftClass.swift in Sources */,
 				B47FEE3F2754AD3900F3D00B /* XRTool.m in Sources */,
 				9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */,
@@ -1497,6 +1561,7 @@
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
+				9C5A13A1296EB3B70095F583 /* AntiFraudDataCell.m in Sources */,
 				9C8CD694280509AC00A52F06 /* Modifier.m in Sources */,
 				9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */,
 				B4859C9A273BA8EC00F49091 /* ZJSecondViewController.m in Sources */,
@@ -1507,6 +1572,7 @@
 				1D169D9926A6683A00933E1C /* BViewController.m in Sources */,
 				1D0FD83B26B0001800A61E96 /* NSObject+Property.m in Sources */,
 				1D0FD7C026AEB28600A61E96 /* XRNetRequest.m in Sources */,
+				9C5A1394296E9FCE0095F583 /* AntiFraudHeadView.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
 				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
 				B4859CA0273BA91B00F49091 /* Target_first.m in Sources */,

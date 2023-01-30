@@ -10,7 +10,7 @@
 #import "Person.h"
 #import "CTMediator+First.h"
 #import <FLEX/FLEX.h>
-
+#import <CoreBluetooth/CoreBluetooth.h>
 @interface AHeadView ()
 @property(nonatomic,strong)AViewModel *viewModel;
 @end
@@ -99,6 +99,7 @@
             @{@"title":@"git命令",     @"vc":@"GitCommandVC"},
             @{@"title":@"Linux命令",   @"vc":@"LinuxCommandVC"},
             @{@"title":@"RAC",        @"vc":@"RACVC"},
+            @{@"title":@"反诈平台",     @"vc":@"AntiFraudVC"},
             
         ];
     }
@@ -148,7 +149,6 @@
     }];
     
     NSLog(@"%@\n%@ hash - %ld",array,subA,array.hash);
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated{

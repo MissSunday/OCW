@@ -35,6 +35,7 @@
 #import "NSObject+Property.h"
 #import "UIFont+XRScale.h"
 #import "XRTool.h"
+#import "XRRoute.h"
 //桥接文件
 #import "OCW-Bridging-Header.h"
 //#import "OCW-Swift.h"
@@ -55,12 +56,12 @@ static inline CGFloat XR_Scale(CGFloat a){
 //weakSelf
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
-//#pragma mark NSLog
-//#ifdef DEBUG
-//#define NSLog(format, ...) printf("\n[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
-//#else
-//#define NSLog(format, ...)
-//#endif
+#pragma mark NSLog
+#ifdef DEBUG
+#define NSLog(format, ...) printf("\n[%s] [第%d行] %s\n", __TIME__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
 
 
 #ifdef DEBUG
@@ -86,6 +87,6 @@ static inline CGFloat XR_Scale(CGFloat a){
 //APP版本号
 #define kVersion [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
 //系统版本号
-#define kSystemVersion [[UIDevice currentDevice] systemVersion]
+#define kCurrentSystemVersion [[UIDevice currentDevice] systemVersion]
 
 #endif /* PrefixHeader_pch */

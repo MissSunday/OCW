@@ -18,22 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 //单利
 +(instancetype)tool;
 
-+(void)logPropertyOfClass:(Class)cls;
-+(void)logMethodNamesOfClass:(Class)cls;
-
-//runtime模糊调用方法传2个以上参数
-+ (id)performSelectorWithClassName:(NSString *)className
-                      selectorName:(NSString *)selectorName
-                           objects:(NSArray *)objects;
-
 // !!!: 判断是否是数组
 FOUNDATION_EXTERN BOOL isArray(id array);
 // !!!: 判断是否是字典
 FOUNDATION_EXTERN BOOL isDictionary(id dic);
 // !!!: 判断是否是字符串
 FOUNDATION_EXTERN BOOL isString(id string);
-
-
 
 @end
 

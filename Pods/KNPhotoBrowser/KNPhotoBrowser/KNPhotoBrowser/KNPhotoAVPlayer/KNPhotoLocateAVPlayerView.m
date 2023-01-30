@@ -31,6 +31,7 @@
 @property (nonatomic,assign) BOOL isDragging;
 @property (nonatomic,assign) BOOL isEnterBackground;
 @property (nonatomic,assign) BOOL isAddObserver;
+@property (nonatomic,assign) BOOL videoIsSwiping; // current video player is swiping?
 
 @property (nonatomic,strong) KNPhotoDownloadMgr *downloadMgr;
 @property (nonatomic,strong) KNPhotoItems *photoItems;
@@ -97,7 +98,6 @@
         [self addSubview:self.actionBar];
         
         _downloadBlock = nil;
-        
     }
     return self;
 }
@@ -160,7 +160,11 @@
     // AudioSession setting
     AVAudioSession *session = [AVAudioSession sharedInstance];
     [session setActive:true error:nil];
-    [session setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    if(_isSoloAmbient == true) {
+        [session setCategory:AVAudioSessionCategorySoloAmbient error:nil];
+    }else {
+        [session setCategory:AVAudioSessionCategoryAmbient error:nil];
+    }
     
     // Notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillResignActive) name:UIApplicationWillResignActiveNotification object:nil];
@@ -198,11 +202,9 @@
             }
             strongself.actionBar.currentTime = 0;
         }else{
-            if (strongself.isDragging == true) {
-                strongself.isDragging = false;
-                return;
+            if (strongself.isDragging == false) {
+                strongself.actionBar.currentTime = CMTimeGetSeconds(time);
             }
-            strongself.actionBar.currentTime = CMTimeGetSeconds(time);
         }
     }];
     
@@ -236,6 +238,7 @@
                     weakself.actionBar.currentTime = 0;
                     weakself.actionBar.isPlaying = false;
                     weakself.actionView.isPlaying = false;
+                    [weakself.actionView avplayerActionViewNeedHidden:weakself.videoIsSwiping];
                 }
             }];
         }
@@ -275,6 +278,7 @@
     [_actionView avplayerActionViewNeedHidden:true];
     _actionBar.hidden = true;
     _progressHUD.hidden = true;
+    _videoIsSwiping = true;
 }
 /// AVPlayer will cancel swipe
 - (void)playerWillSwipeCancel{
@@ -289,6 +293,10 @@
         }
     }else {
         _progressHUD.hidden = true;
+    }
+    _videoIsSwiping = false;
+    if (_actionBar.currentTime == 0) {
+        [_actionView avplayerActionViewNeedHidden:false];
     }
 }
 - (void)playerRate:(CGFloat)rate{
@@ -408,10 +416,17 @@
         _isPlaying = false;
     }
 }
-- (void)photoAVPlayerActionBarChangeValue:(float)value{
+- (void)photoAVPlayerActionBarBeginChange{
     _isDragging = true;
-    [_player seekToTime:CMTimeMake(value, 1) completionHandler:^(BOOL finished) {
-        
+}
+- (void)photoAVPlayerActionBarChangeValue:(float)value{
+    __weak typeof(self) weakself = self;
+    [_player seekToTime:CMTimeMake(value, 1) toleranceBefore:CMTimeMake(1, 1000) toleranceAfter:CMTimeMake(1, 1000) completionHandler:^(BOOL finished) {
+        if (finished == true) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                weakself.isDragging = false;
+            });
+        }
     }];
 }
 
@@ -424,7 +439,7 @@
     self.actionView.frame   = self.playerBgView.frame;
     self.placeHolderImgView.frame  = self.playerBgView.bounds;
     
-    if (iPhoneX || iPhoneXR || iPhoneXs_Max || iPhone12 || iPhone12_Pro_Max) {
+    if (PBDeviceHasBang) {
         self.actionBar.frame    = CGRectMake(15, self.frame.size.height - 70, self.frame.size.width - 30, 40);
     }else {
         self.actionBar.frame    = CGRectMake(15, self.frame.size.height - 50, self.frame.size.width - 30, 40);

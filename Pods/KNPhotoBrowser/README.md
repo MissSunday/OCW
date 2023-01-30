@@ -1,6 +1,6 @@
 ![image](https://upload-images.jianshu.io/upload_images/1693073-222e76b529bc5f9e.png)
 
-[![CocoaPods](http://img.shields.io/cocoapods/v/KNPhotoBrowser.svg?style=flat)](http://cocoapods.org/?q=KNPhotoBrowser)&nbsp;![CocoaPods](http://img.shields.io/cocoapods/p/KNPhotoBrowser.svg?style=flat)&nbsp;[![Support](https://img.shields.io/badge/support-iOS%2010%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
+[![CocoaPods](http://img.shields.io/cocoapods/v/KNPhotoBrowser.svg?style=flat)](http://cocoapods.org/?q=KNPhotoBrowser)&nbsp;![CocoaPods](http://img.shields.io/cocoapods/p/KNPhotoBrowser.svg?style=flat)&nbsp;[![Support](https://img.shields.io/badge/support-iOS%209.0%2B%20-blue.svg?style=flat)](https://www.apple.com/nl/ios/)&nbsp;
 
 # KNPhotoBrowser
 [中文](https://github.com/LuKane/KNPhotoBrowser/blob/master/README_Chinese.md) | [English](https://github.com/LuKane/KNPhotoBrowser/blob/master/README.md)
@@ -13,28 +13,33 @@
 
 ## Update content
 
-| DESCRIPTION | STATUS|
-| ------------- | ------------ |
-| Base on UIViewController | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Adapt for rotate of the screen | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Adapt for `iPhone5`~`iPhone12Pro_Max` | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Locate and net image and gif image  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Locate and net video  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| PanGesture to dismiss or cancel [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Prefetch image, max is 8 [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Video player auto play [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Video player times speed play [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Show custom view on PhotoBrowser [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Show custom view on PhotoBrowser, and set animated following photoBrowser [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| Before the photoBrowser show, all image control can be custom [**API**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
-| All operation though the delegate [**Delegate**]  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;√ |
+| DESCRIPTION | 
+| ------------- |
+| Base on UIViewController |
+| Adapt for rotate of the screen, split screen of iPad |
+| Adapt for `iPhone5`~`iPhone14Pro_Max` |
+| Locate and net image and gif image | 
+| Locate and net video |
+| PageControl can add target to change value [**API**] |
+| PanGesture to dismiss or cancel(normal image, long image, video) [**API**]  |
+| Prefetch image, max is 8 [**API**]  | 
+| Video player auto play [**API**]  | 
+| Video player times speed play [**API**]  |
+| Video player support play online(no cache,no download) [**API**]  |
+| Video player support play after download(it will search next time) [**API**]  |
+| Show custom view on PhotoBrowser [**API**]  |
+| Show custom view on PhotoBrowser, and set animated following photoBrowser [**API**]  |
+| Before the photoBrowser show, all image control can be custom [**API**]  | 
+| All operation though the delegate [**Delegate**]  |
+
+
 
 ## 1.Before use, you need to know
-* 1.depend `SDWebImage(5.0)`, if need locate gif image, depend `SDWebImage(5.8.3)`
+* 1.depend `>=SDWebImage(5.0)`, if need locate gif image, depend `>=SDWebImage(5.8.3)`
 * 2.image and video play is ready for use
 * 3.download image or video is ready for use
 * 4.custom control as you wish
-* 5.auto manager image or video of download is not contain
+* 5.auto manager image or video of download is finished
 
 ## 2.How to use
 

@@ -1,6 +1,0 @@
-framework module QSDispatchQueue {
-  umbrella header "QSDispatchQueue-umbrella.h"
-
-  export *
-  module * { export * }
-}
