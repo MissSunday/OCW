@@ -30,29 +30,14 @@
 #import <TZImagePickerController/TZImagePickerController.h>
 #import <AFNetworking/AFNetworking.h>
 //自定义工具
+#import <XROCSupport/XROCSupport.h>
 #import "XRNetRequest.h"
 #import "UIColor+someColor.h"
-#import "NSObject+Property.h"
-#import "UIFont+XRScale.h"
-#import "XRTool.h"
 #import "XRRoute.h"
 //桥接文件
 #import "OCW-Bridging-Header.h"
 //#import "OCW-Swift.h"
 
-//宏定义
-#define kStatuBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
-#define IS_IPHONEX [XRTool tool].isIPhoneX
-#define kS_H [UIScreen mainScreen].bounds.size.height
-#define kS_W [UIScreen mainScreen].bounds.size.width
-#define kNavHeight (IS_IPHONEX ? (kStatuBarHeight + 44) : 64)
-#define kTabbarHeight  (IS_IPHONEX ? 83 : 49)
-#define kBottomHeight (IS_IPHONEX ? 34 : 0)
-#define kBottomLittleHeiget (IS_IPHONEX ? 14 : 0)
-/** 屏幕适配比率 */
-static inline CGFloat XR_Scale(CGFloat a){
-    return (kS_W/375)*(a);
-}
 //weakSelf
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 

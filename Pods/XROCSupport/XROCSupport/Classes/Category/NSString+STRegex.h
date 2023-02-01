@@ -4,11 +4,7 @@
 //
 //  Created by yls on 14-1-15.
 //  Copyright (c) 2014年 yls. All rights reserved.
-//
-// http://git.oschina.net/yanglishuan/NSString-STRegex
-// emailto: 2008.yls@163.com
-// QQ: 603291699
-//
+
 
 #import <Foundation/Foundation.h>
 

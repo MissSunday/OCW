@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "XRPCH.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIFont (XRScale)

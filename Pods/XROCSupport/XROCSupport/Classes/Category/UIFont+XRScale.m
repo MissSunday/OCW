@@ -7,6 +7,8 @@
 
 #import "UIFont+XRScale.h"
 
+
+
 @implementation UIFont (XRScale)
 +(UIFont *)ScaleFontOfSize:(CGFloat)fontSize{
     return [self ScaleFontOfSize:fontSize weight:(UIFontWeightRegular)];

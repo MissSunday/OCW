@@ -2,6 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-OCW-OCWUITests/Pods-OCW-OCWUITests-framew
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
 ${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework
 ${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework
+${BUILT_PRODUCTS_DIR}/FSLineChart/FSLineChart.framework
 ${BUILT_PRODUCTS_DIR}/JLRoutes/JLRoutes.framework
 ${BUILT_PRODUCTS_DIR}/JXCategoryView/JXCategoryView.framework
 ${BUILT_PRODUCTS_DIR}/KNPhotoBrowser/KNPhotoBrowser.framework
@@ -12,6 +13,7 @@ ${BUILT_PRODUCTS_DIR}/Reachability/Reachability.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework
+${BUILT_PRODUCTS_DIR}/XROCSupport/XROCSupport.framework
 ${BUILT_PRODUCTS_DIR}/YYAsyncLayer/YYAsyncLayer.framework
 ${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework
 ${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework

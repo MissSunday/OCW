@@ -19,23 +19,33 @@ PODS:
     - cocore (~> 1.2.0)
   - CTMediator (46)
   - FLEX (4.4.1)
+  - FSLineChart (0.1.7)
   - JLRoutes (2.1)
   - JXCategoryView (1.5.9)
-  - KNPhotoBrowser (2.5.3):
+  - KNPhotoBrowser (2.6.2):
     - SDWebImage
   - LTScrollView (0.3.0)
   - Masonry (1.1.0)
   - MJRefresh (3.7.5)
   - Reachability (3.2)
   - ReactiveObjC (3.1.1)
-  - SDWebImage (5.13.4):
-    - SDWebImage/Core (= 5.13.4)
-  - SDWebImage/Core (5.13.4)
+  - SDWebImage (5.15.0):
+    - SDWebImage/Core (= 5.15.0)
+  - SDWebImage/Core (5.15.0)
   - TZImagePickerController (3.8.3):
     - TZImagePickerController/Basic (= 3.8.3)
     - TZImagePickerController/Location (= 3.8.3)
   - TZImagePickerController/Basic (3.8.3)
   - TZImagePickerController/Location (3.8.3)
+  - XROCSupport (0.5.1):
+    - XROCSupport/A (= 0.5.1)
+    - XROCSupport/Base (= 0.5.1)
+    - XROCSupport/Category (= 0.5.1)
+  - XROCSupport/A (0.5.1)
+  - XROCSupport/Base (0.5.1):
+    - XROCSupport/A
+  - XROCSupport/Category (0.5.1):
+    - XROCSupport/A
   - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -56,15 +66,17 @@ DEPENDENCIES:
   - coobjc (~> 1.2.0)
   - CTMediator (~> 46)
   - FLEX (= 4.4.1)
+  - FSLineChart (~> 0.1.7)
   - JLRoutes (~> 2.1)
   - JXCategoryView (= 1.5.9)
-  - KNPhotoBrowser (= 2.5.3)
+  - KNPhotoBrowser (= 2.6.2)
   - LTScrollView (= 0.3.0)
   - Masonry (= 1.1.0)
   - MJRefresh
   - Reachability (~> 3.2)
   - ReactiveObjC (= 3.1.1)
   - TZImagePickerController (= 3.8.3)
+  - XROCSupport (= 0.5.1)
   - YYAsyncLayer (~> 1.0)
   - YYCategories (= 1.0.4)
   - YYDispatchQueuePool (~> 1.0)
@@ -79,6 +91,7 @@ SPEC REPOS:
     - coobjc
     - CTMediator
     - FLEX
+    - FSLineChart
     - JLRoutes
     - JXCategoryView
     - KNPhotoBrowser
@@ -89,6 +102,7 @@ SPEC REPOS:
     - ReactiveObjC
     - SDWebImage
     - TZImagePickerController
+    - XROCSupport
     - YYAsyncLayer
     - YYCache
     - YYCategories
@@ -99,21 +113,23 @@ SPEC REPOS:
     - YYWebImage
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   cocore: d6abaa4dd8c15115290362b9accbb42cc2bce9a0
   coobjc: 090a460e32e90d0e820e64c31cf7b79dece51a7c
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FLEX: 7ca2c8cd3a435ff501ff6d2f2141e9bdc934eaab
+  FSLineChart: 1b8d3727e8feb323144126d381184bf1b15e6efc
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
   JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
-  KNPhotoBrowser: 38371b4b9113c6eadb7511b56a1bd2befefa04bc
+  KNPhotoBrowser: bbf8f95273f56a194fbcc248bd3759bfe5f504db
   LTScrollView: 46029b501f34d31e33e33392935cb240eb1d1ed0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
-  SDWebImage: e5cc87bf736e60f49592f307bdf9e157189298a3
+  SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
+  XROCSupport: f39858a1dd32b20f60f28af8fa21915c7c997fe6
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -123,6 +139,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 22f5f2630f4f3c7720819b1f3d2ea1c1716c76c8
+PODFILE CHECKSUM: 3f9f6eb1d162a4ae24474271c92bfbb5b07fd81a
 
 COCOAPODS: 1.11.2

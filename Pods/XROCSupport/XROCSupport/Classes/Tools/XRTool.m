@@ -7,6 +7,8 @@
 
 #import "XRTool.h"
 
+#import "XRPCH.h"
+
 @interface XRTool ()
 
 @property(nonatomic,readwrite,assign)BOOL isIPad;
