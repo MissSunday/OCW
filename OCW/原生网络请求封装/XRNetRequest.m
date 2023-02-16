@@ -41,13 +41,14 @@
 /// @param success 成功回调  这里判断下statuscode是否是1000  不是1000的话 就说明返回的不是正常数据  需要单独解析
 /// @param failure 返回错误和当前手机网络
 +(void)requestWay:(NSString *)way url:(NSString *)url header:(NSDictionary *)headerParams body:(NSDictionary *)bodyParams success:(void (^)(id _Nullable data, BOOL isCanUse))success failure:(void (^)(NSError * _Nonnull error, BOOL haveNet))failure{
-    
+
     //NSURLSession
     NSURL *URL = [NSURL URLWithString:url];//URL地址
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:URL];
     [request setHTTPMethod:way];//请求方式
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setTimeoutInterval:20.0];//超时时间
+    
     if (bodyParams) {
         [request setHTTPBody:[NSJSONSerialization dataWithJSONObject:bodyParams options:NSJSONWritingPrettyPrinted error:nil]];//参数内容
     }

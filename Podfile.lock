@@ -37,15 +37,19 @@ PODS:
     - TZImagePickerController/Location (= 3.8.3)
   - TZImagePickerController/Basic (3.8.3)
   - TZImagePickerController/Location (3.8.3)
-  - XROCSupport (0.5.1):
-    - XROCSupport/A (= 0.5.1)
-    - XROCSupport/Base (= 0.5.1)
-    - XROCSupport/Category (= 0.5.1)
-  - XROCSupport/A (0.5.1)
-  - XROCSupport/Base (0.5.1):
+  - XROCSupport (1.0.0):
+    - XROCSupport/A (= 1.0.0)
+    - XROCSupport/Base (= 1.0.0)
+    - XROCSupport/Category (= 1.0.0)
+    - XROCSupport/Resources (= 1.0.0)
+  - XROCSupport/A (1.0.0)
+  - XROCSupport/Base (1.0.0):
     - XROCSupport/A
-  - XROCSupport/Category (0.5.1):
+    - XROCSupport/Category
+  - XROCSupport/Category (1.0.0):
     - XROCSupport/A
+    - XROCSupport/Resources
+  - XROCSupport/Resources (1.0.0)
   - YYAsyncLayer (1.0)
   - YYCache (1.0.4)
   - YYCategories (1.0.4):
@@ -76,7 +80,7 @@ DEPENDENCIES:
   - Reachability (~> 3.2)
   - ReactiveObjC (= 3.1.1)
   - TZImagePickerController (= 3.8.3)
-  - XROCSupport (= 0.5.1)
+  - XROCSupport (= 1.0.0)
   - YYAsyncLayer (~> 1.0)
   - YYCategories (= 1.0.4)
   - YYDispatchQueuePool (~> 1.0)
@@ -129,7 +133,7 @@ SPEC CHECKSUMS:
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 9bec4c5cdd9579e1f57104735ee0c37df274d593
   TZImagePickerController: e9909edbadf7381140efc5b5c9f5bdbfd630f7d4
-  XROCSupport: f39858a1dd32b20f60f28af8fa21915c7c997fe6
+  XROCSupport: cfc4e143569b8f9358e6dd550ad6b8efbb22c4ca
   YYAsyncLayer: df6b01ebc695c5f6b4c15dd5c23fa3e081eb25c0
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
@@ -139,6 +143,6 @@ SPEC CHECKSUMS:
   YYText: 5c461d709e24d55a182d1441c41dc639a18a4849
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 3f9f6eb1d162a4ae24474271c92bfbb5b07fd81a
+PODFILE CHECKSUM: 472359548f368604dc2579c101c70522c6f99f2c
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

@@ -78,6 +78,7 @@
 		9C343907291A2D4B00B74050 /* XRRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343906291A2D4B00B74050 /* XRRoute.m */; };
 		9C34390A291A48DD00B74050 /* XRRouteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343909291A48DD00B74050 /* XRRouteTest.m */; };
 		9C3480D227EB015C00F9C585 /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3480D127EB015C00F9C585 /* RunLoopVC.m */; };
+		9C4022FB2992274100D4F5BC /* XRAFNRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4022FA2992274100D4F5BC /* XRAFNRequest.m */; };
 		9C524A6227C764AE009993DE /* SDK_API_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6127C764AE009993DE /* SDK_API_VC.m */; };
 		9C524A6527C7650A009993DE /* XXSDK.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6427C7650A009993DE /* XXSDK.m */; };
 		9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C524A6727C7709A009993DE /* XXSDKConfig.m */; };
@@ -94,6 +95,10 @@
 		9C8CD6902804499400A52F06 /* XRDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD68F2804499400A52F06 /* XRDeviceInfo.m */; };
 		9C8CD694280509AC00A52F06 /* Modifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD693280509AC00A52F06 /* Modifier.m */; };
 		9C8CD6E928081C7D00A52F06 /* base62.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C8CD6E828081C7D00A52F06 /* base62.m */; };
+		9C91AECF299B7B80005D21C6 /* XRLocationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91AECE299B7B80005D21C6 /* XRLocationVC.m */; };
+		9C91AED1299B7E3E005D21C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C91AED0299B7E3D005D21C6 /* CoreLocation.framework */; };
+		9C91AED3299B8652005D21C6 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9C91AED2299B8652005D21C6 /* Location.gpx */; };
+		9C91AED5299B9DB0005D21C6 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */; };
 		9CB3367428895851003E4C01 /* XRSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3367328895851003E4C01 /* XRSDK.docc */; };
 		9CB3367A28895851003E4C01 /* XRSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB3367028895851003E4C01 /* XRSDK.framework */; };
 		9CB3368128895851003E4C01 /* XRSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3368028895851003E4C01 /* XRSDKTests.m */; };
@@ -327,6 +332,8 @@
 		9C343909291A48DD00B74050 /* XRRouteTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRouteTest.m; sourceTree = "<group>"; };
 		9C3480D027EB015C00F9C585 /* RunLoopVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopVC.h; sourceTree = "<group>"; };
 		9C3480D127EB015C00F9C585 /* RunLoopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopVC.m; sourceTree = "<group>"; };
+		9C4022F92992274100D4F5BC /* XRAFNRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRAFNRequest.h; sourceTree = "<group>"; };
+		9C4022FA2992274100D4F5BC /* XRAFNRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRAFNRequest.m; sourceTree = "<group>"; };
 		9C524A6027C764AE009993DE /* SDK_API_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDK_API_VC.h; sourceTree = "<group>"; };
 		9C524A6127C764AE009993DE /* SDK_API_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDK_API_VC.m; sourceTree = "<group>"; };
 		9C524A6327C7650A009993DE /* XXSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXSDK.h; sourceTree = "<group>"; };
@@ -357,6 +364,11 @@
 		9C8CD693280509AC00A52F06 /* Modifier.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Modifier.m; sourceTree = "<group>"; };
 		9C8CD6E728081C7D00A52F06 /* base62.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base62.h; sourceTree = "<group>"; };
 		9C8CD6E828081C7D00A52F06 /* base62.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = base62.m; sourceTree = "<group>"; };
+		9C91AECD299B7B80005D21C6 /* XRLocationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocationVC.h; sourceTree = "<group>"; };
+		9C91AECE299B7B80005D21C6 /* XRLocationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocationVC.m; sourceTree = "<group>"; };
+		9C91AED0299B7E3D005D21C6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9C91AED2299B8652005D21C6 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		9CB3367028895851003E4C01 /* XRSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XRSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB3367228895851003E4C01 /* XRSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRSDK.h; sourceTree = "<group>"; };
 		9CB3367328895851003E4C01 /* XRSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = XRSDK.docc; sourceTree = "<group>"; };
@@ -410,6 +422,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C91AED5299B9DB0005D21C6 /* ExternalAccessory.framework in Frameworks */,
+				9C91AED1299B7E3E005D21C6 /* CoreLocation.framework in Frameworks */,
 				AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */,
 				9CB3368528895851003E4C01 /* XRSDK.framework in Frameworks */,
 			);
@@ -482,6 +496,7 @@
 			children = (
 				1D169D9426A6682700933E1C /* AViewController.h */,
 				1D169D9526A6682700933E1C /* AViewController.m */,
+				9C91AECC299B7B4C005D21C6 /* 定位检测 */,
 				9C5A138E296E9F0C0095F583 /* 反诈平台 */,
 				9C00F7B428B4823700E8FC90 /* 命令行 */,
 				9C524A5F27C76471009993DE /* SDK_API设计 */,
@@ -541,6 +556,8 @@
 			children = (
 				1D0FD7BE26AEB28600A61E96 /* XRNetRequest.h */,
 				1D0FD7BF26AEB28600A61E96 /* XRNetRequest.m */,
+				9C4022F92992274100D4F5BC /* XRAFNRequest.h */,
+				9C4022FA2992274100D4F5BC /* XRAFNRequest.m */,
 			);
 			path = "原生网络请求封装";
 			sourceTree = "<group>";
@@ -963,6 +980,16 @@
 			path = "修饰词用法";
 			sourceTree = "<group>";
 		};
+		9C91AECC299B7B4C005D21C6 /* 定位检测 */ = {
+			isa = PBXGroup;
+			children = (
+				9C91AECD299B7B80005D21C6 /* XRLocationVC.h */,
+				9C91AECE299B7B80005D21C6 /* XRLocationVC.m */,
+				9C91AED2299B8652005D21C6 /* Location.gpx */,
+			);
+			path = "定位检测";
+			sourceTree = "<group>";
+		};
 		9C97773028504BAE008095D3 /* 包装工具文件 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1112,6 +1139,8 @@
 		E7652818A61F1470D07E8A19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */,
+				9C91AED0299B7E3D005D21C6 /* CoreLocation.framework */,
 				BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */,
 				D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */,
 				1BAC3B171FFF874EF6065A0C /* Pods_OCWTests.framework */,
@@ -1323,6 +1352,7 @@
 				B42C463326FC63D900785D93 /* Markdown 语法使用说明.md in Resources */,
 				1D2BA8B226561C2F0089E899 /* Assets.xcassets in Resources */,
 				1D1EE34026B13FF0001BE780 /* bizhi_01.jpg in Resources */,
+				9C91AED3299B8652005D21C6 /* Location.gpx in Resources */,
 				9C5A1399296EA9020095F583 /* afi_02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1484,6 +1514,7 @@
 				1DF9E4C526895B77008BCB38 /* T.m in Sources */,
 				1D7301E52692F6E600708655 /* RACVC.m in Sources */,
 				B4859CA6273BA95700F49091 /* CTMediator+Second.m in Sources */,
+				9C4022FB2992274100D4F5BC /* XRAFNRequest.m in Sources */,
 				1D0FD7A026AE51D600A61E96 /* BHLTViewController.m in Sources */,
 				9C524A6827C7709A009993DE /* XXSDKConfig.m in Sources */,
 				9C5A139E296EAF6A0095F583 /* AntiFraudViewModel.m in Sources */,
@@ -1531,6 +1562,7 @@
 				9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */,
 				9C8CD6E928081C7D00A52F06 /* base62.m in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
+				9C91AECF299B7B80005D21C6 /* XRLocationVC.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
 				9C5A13A1296EB3B70095F583 /* AntiFraudDataCell.m in Sources */,

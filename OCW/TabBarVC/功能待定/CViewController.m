@@ -9,6 +9,7 @@
 #import <Security/Security.h>
 //#import <SenseTimeFaceSDK_iOS/SenseTimeFaceHeader.h>
 #import <LocalAuthentication/LocalAuthentication.h>
+#import "XRAFNRequest.h"
 @interface CViewController ()
 
 @property(nonatomic,strong)UISwitch *open;
@@ -88,8 +89,14 @@ int CMethod(void);
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     //NSLog(@"---- %@  ",[self deviceHasPasscode]);
-    [self faceCheck];
-    [self passwordCheck];
+    //[self faceCheck];
+    //[self passwordCheck];
+    
+    
+    XRAFNRequest *req = [[XRAFNRequest alloc]init];
+    [req req];
+    
+    
 }
 
 

@@ -23,9 +23,9 @@ target 'OCW' do
   pod 'Reachability', '~> 3.2'
   pod 'KNPhotoBrowser', '2.6.2' #依赖SDWebImage ～> 5.0
   pod 'TZImagePickerController', '3.8.3'
-  pod 'XROCSupport', '0.5.1'
+  pod 'XROCSupport', '1.0.0'
   
-  
+  #pod 'KissXML', '~> 5.3.1' #XML文件读写
   
   
   pod 'FSLineChart', '~> 0.1.7'

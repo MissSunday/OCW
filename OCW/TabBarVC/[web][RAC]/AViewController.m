@@ -99,7 +99,8 @@
             @{@"title":@"git命令",     @"vc":@"GitCommandVC"},
             @{@"title":@"Linux命令",   @"vc":@"LinuxCommandVC"},
             @{@"title":@"RAC",        @"vc":@"RACVC"},
-            @{@"title":@"反诈平台",     @"vc":@"AntiFraudVC"},
+            @{@"title":@"反诈",        @"vc":@"AntiFraudVC"},
+            @{@"title":@"定位检测",     @"vc":@"XRLocationVC"},
             
         ];
     }

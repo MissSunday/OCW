@@ -52,6 +52,10 @@
     UIView *view = self.navigationController.navigationBar.subviews.firstObject;
     view.backgroundColor = UIColor.orangeColor;
     self.navigationController.navigationBar.translucent = NO;
+    
+
+
+    
 }
 -(void)updateNav{
     [self.navigationController setNavigationBarHidden:self.isHidenNav animated:YES];
