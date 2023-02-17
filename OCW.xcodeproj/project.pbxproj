@@ -99,6 +99,7 @@
 		9C91AED1299B7E3E005D21C6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C91AED0299B7E3D005D21C6 /* CoreLocation.framework */; };
 		9C91AED3299B8652005D21C6 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9C91AED2299B8652005D21C6 /* Location.gpx */; };
 		9C91AED5299B9DB0005D21C6 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */; };
+		9C91AEDB299F2742005D21C6 /* CLLocation+XRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91AEDA299F2742005D21C6 /* CLLocation+XRLocation.m */; };
 		9CB3367428895851003E4C01 /* XRSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3367328895851003E4C01 /* XRSDK.docc */; };
 		9CB3367A28895851003E4C01 /* XRSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB3367028895851003E4C01 /* XRSDK.framework */; };
 		9CB3368128895851003E4C01 /* XRSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3368028895851003E4C01 /* XRSDKTests.m */; };
@@ -369,6 +370,8 @@
 		9C91AED0299B7E3D005D21C6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9C91AED2299B8652005D21C6 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		9C91AED9299F2742005D21C6 /* CLLocation+XRLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLLocation+XRLocation.h"; sourceTree = "<group>"; };
+		9C91AEDA299F2742005D21C6 /* CLLocation+XRLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+XRLocation.m"; sourceTree = "<group>"; };
 		9CB3367028895851003E4C01 /* XRSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XRSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB3367228895851003E4C01 /* XRSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRSDK.h; sourceTree = "<group>"; };
 		9CB3367328895851003E4C01 /* XRSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = XRSDK.docc; sourceTree = "<group>"; };
@@ -985,6 +988,8 @@
 			children = (
 				9C91AECD299B7B80005D21C6 /* XRLocationVC.h */,
 				9C91AECE299B7B80005D21C6 /* XRLocationVC.m */,
+				9C91AED9299F2742005D21C6 /* CLLocation+XRLocation.h */,
+				9C91AEDA299F2742005D21C6 /* CLLocation+XRLocation.m */,
 				9C91AED2299B8652005D21C6 /* Location.gpx */,
 			);
 			path = "定位检测";
@@ -1577,6 +1582,7 @@
 				1D0FD7C026AEB28600A61E96 /* XRNetRequest.m in Sources */,
 				9C5A1394296E9FCE0095F583 /* AntiFraudHeadView.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
+				9C91AEDB299F2742005D21C6 /* CLLocation+XRLocation.m in Sources */,
 				1D169DB326A7C26400933E1C /* BTViewController.m in Sources */,
 				B4859CA0273BA91B00F49091 /* Target_first.m in Sources */,
 				1D169D9626A6682700933E1C /* AViewController.m in Sources */,
