@@ -53,20 +53,43 @@
     NSLog(@"---- %@",locations);
     
     if (locations.count) {
-        CLLocation *firstLoca = locations.firstObject;
+        CLLocation *currentLocation = locations.firstObject;
         
-        CLLocationDegrees lat =  firstLoca.coordinate.latitude;
-        CLLocationDegrees log = firstLoca.coordinate.longitude;
+        //纬度
+        CLLocationDegrees  lat                = currentLocation.coordinate.latitude;
+        //经度
+        CLLocationDegrees  log                = currentLocation.coordinate.longitude;
+        //海拔
+        CLLocationDistance altitude           = currentLocation.altitude;
+        //垂直精度
+        CLLocationAccuracy verticalAccuracy   = currentLocation.verticalAccuracy;
+        //水平精度
+        CLLocationAccuracy horizontalAccuracy = currentLocation.horizontalAccuracy;
+        //时间
+        NSDate             *time              = currentLocation.timestamp;
+        //楼层
+        NSInteger          floor              = currentLocation.floor.level;
         
-        CLLocationAccuracy verticalAccuracy = firstLoca.verticalAccuracy;
-        CLLocationAccuracy horizontalAccuracy = firstLoca.horizontalAccuracy;
+        
+        //方向
+        CLLocationDirection course = currentLocation.course;
+        if (@available(iOS 13.4, *)) {
+            //CLLocationDirectionAccuracy courseAccuracy = currentLocation.courseAccuracy;
+        }
+        //速度
+        CLLocationSpeed speed = currentLocation.speed;
+        if (@available(iOS 13.0, *)) {
+            //CLLocationSpeedAccuracy speedAccuracy = currentLocation.speedAccuracy;
+        }
+        
+        //位置来源
+        if (@available(iOS 15.0, *)) {
+            NSLog(@"定位来源 %@ 由软件模拟器生成",currentLocation.sourceInformation.isSimulatedBySoftware ? @"是" : @"不是");
+            NSLog(@"定位来源 %@ CarPlay或MFi配件",currentLocation.sourceInformation.isProducedByAccessory ? @"是" : @"不是");
+        }
         
         
-        CLLocationDistance altitude = firstLoca.altitude;
-        
-        NSLog(@"%f\n%f\n%f\n海拔 %f",lat,log,verticalAccuracy,altitude);
-        
-        NSString *loca = [NSString stringWithFormat:@"%.14f\n%.14f\n%f\n%f\n%f",lat,log,horizontalAccuracy,verticalAccuracy,altitude];
+        NSString *loca = [NSString stringWithFormat:@"纬度%.14f\n经度%.14f\n水平精度%f\n垂直精度%f\n海拔%f\n course%f\n速度%f\n楼层%ld\n时间%@",lat,log,horizontalAccuracy,verticalAccuracy,altitude,course,speed,floor,time];
         
         self.label.text = loca;
         

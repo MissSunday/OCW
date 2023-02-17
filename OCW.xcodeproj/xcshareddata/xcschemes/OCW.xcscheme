@@ -82,8 +82,8 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "com.apple.dt.IDEFoundation.CurrentLocationScenarioIdentifier"
-         referenceType = "1">
+         identifier = "../OCW/TabBarVC/[web][RAC]/&#x5b9a;&#x4f4d;&#x68c0;&#x6d4b;/Location.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
