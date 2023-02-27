@@ -7,11 +7,15 @@
 
 #import "XRLocationVC.h"
 #import <CoreLocation/CoreLocation.h>
-#import <ExternalAccessory/ExternalAccessory.h>
+#import "CLLocation+XRLocation.h"
+#import "XRLocationHook.h"
+
+#import "XRRunTime.h"
 @interface XRLocationVC ()<CLLocationManagerDelegate>
 
 
 @property(nonatomic,strong)UILabel *label;
+@property(nonatomic,strong)UILabel *label2;
 @property(nonatomic,strong)CLLocationManager *locationManager;
 @end
 
@@ -19,17 +23,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+ 
+    NSArray *a = [XRLocationHook checkCLLocationDetectApis];
+    NSArray *b = [XRLocationHook checkCLLocationManagerDetectApis];
+    NSArray *c = [XRLocationHook checkCLLocationSourceInformationDetectApis];
     
+    NSLog(@"%@ %@ %@",a,b,c);
     
-    //是否有外接设备
-    if([EAAccessoryManager sharedAccessoryManager].connectedAccessories.count>0){
-        
-    }
     
     [self.view addSubview:self.label];
+    [self.view addSubview:self.label2];
     [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    [self.label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.right.equalTo(self.view);
+        make.height.mas_equalTo(66);
+    }];
+   
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -39,8 +51,6 @@
     //[self.locationManager requestLocation];
     
     [self.locationManager startUpdatingLocation];
-    
-
     
 }
 
@@ -53,7 +63,10 @@
     NSLog(@"---- %@",locations);
     
     if (locations.count) {
-        CLLocation *currentLocation = locations.firstObject;
+        
+       CLLocation *currentLocation = locations.firstObject;
+        
+       self.label2.text =  [currentLocation locationSourceDescription];
         
         //纬度
         CLLocationDegrees  lat                = currentLocation.coordinate.latitude;
@@ -82,16 +95,24 @@
             //CLLocationSpeedAccuracy speedAccuracy = currentLocation.speedAccuracy;
         }
         
+        NSString *loca = [NSString stringWithFormat:@"纬度%@\n经度%@\n水平精度%@\n垂直精度%@\n海拔%@\n course%@\n速度%@\n楼层%ld\n时间%@",@(lat),@(log),@(horizontalAccuracy),@(verticalAccuracy),@(altitude),@(course),@(speed),floor,time];
         //位置来源
         if (@available(iOS 15.0, *)) {
-            NSLog(@"定位来源 %@ 由软件模拟器生成",currentLocation.sourceInformation.isSimulatedBySoftware ? @"是" : @"不是");
-            NSLog(@"定位来源 %@ CarPlay或MFi配件",currentLocation.sourceInformation.isProducedByAccessory ? @"是" : @"不是");
+            
+            NSString *source1 = [NSString stringWithFormat:@"定位来源 %@ 由软件模拟器生成",currentLocation.sourceInformation.isSimulatedBySoftware ? @"是" : @"不是"];
+            
+            NSLog(@"%@",source1);
+            
+            NSString *source2 = [NSString stringWithFormat:@"定位来源 %@ CarPlay或MFi配件",currentLocation.sourceInformation.isProducedByAccessory ? @"是" : @"不是"];
+            
+            NSLog(@"%@",source2);
+            
+            loca = [loca stringByAppendingFormat:@"\n%@\n%@",source1,source2];
         }
         
-        
-        NSString *loca = [NSString stringWithFormat:@"纬度%.14f\n经度%.14f\n水平精度%f\n垂直精度%f\n海拔%f\n course%f\n速度%f\n楼层%ld\n时间%@",lat,log,horizontalAccuracy,verticalAccuracy,altitude,course,speed,floor,time];
-        
         self.label.text = loca;
+        
+        
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [manager stopUpdatingLocation];
@@ -105,6 +126,7 @@
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
     
     NSLog(@"定位失败了");
+    self.label2.text = [manager.location locationSourceDescription];
 }
 
 - (CLLocationManager *)locationManager{
@@ -125,7 +147,16 @@
     }
     return _label;
 }
-
+- (UILabel *)label2{
+    if(!_label2){
+        _label2 = [UILabel new];
+        _label2.textColor = UIColor.blackColor;
+        _label2.font = [UIFont boldSystemFontOfSize:18];
+        _label2.textAlignment = NSTextAlignmentCenter;
+        _label2.numberOfLines = 0;
+    }
+    return _label2;
+}
 
 //hook工具的一种
 +(NSInteger)hasDobby{

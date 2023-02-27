@@ -74,6 +74,7 @@
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
 		9C00F7B028B3707000E8FC90 /* GitCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */; };
 		9C00F7B328B47F0800E8FC90 /* LinuxCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */; };
+		9C1C131529A7362E00FBE045 /* CLLocationHookDetect.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C131429A7362E00FBE045 /* CLLocationHookDetect.md */; };
 		9C230E122987B52000961334 /* XRRouteTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C230E112987B52000961334 /* XRRouteTestVC.m */; };
 		9C343907291A2D4B00B74050 /* XRRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343906291A2D4B00B74050 /* XRRoute.m */; };
 		9C34390A291A48DD00B74050 /* XRRouteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343909291A48DD00B74050 /* XRRouteTest.m */; };
@@ -100,6 +101,9 @@
 		9C91AED3299B8652005D21C6 /* Location.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 9C91AED2299B8652005D21C6 /* Location.gpx */; };
 		9C91AED5299B9DB0005D21C6 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */; };
 		9C91AEDB299F2742005D21C6 /* CLLocation+XRLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91AEDA299F2742005D21C6 /* CLLocation+XRLocation.m */; };
+		9C91AEE429A63899005D21C6 /* XRLocationHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91AEE329A63899005D21C6 /* XRLocationHook.m */; };
+		9C91AEE729A7043B005D21C6 /* XRRunTime.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C91AEE629A7043B005D21C6 /* XRRunTime.m */; };
+		9C91AEE929A70637005D21C6 /* CLLocationManagerHookDetect.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C91AEE829A70637005D21C6 /* CLLocationManagerHookDetect.md */; };
 		9CB3367428895851003E4C01 /* XRSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3367328895851003E4C01 /* XRSDK.docc */; };
 		9CB3367A28895851003E4C01 /* XRSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CB3367028895851003E4C01 /* XRSDK.framework */; };
 		9CB3368128895851003E4C01 /* XRSDKTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3368028895851003E4C01 /* XRSDKTests.m */; };
@@ -325,6 +329,7 @@
 		9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GitCommandVC.m; sourceTree = "<group>"; };
 		9C00F7B128B47F0700E8FC90 /* LinuxCommandVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LinuxCommandVC.h; sourceTree = "<group>"; };
 		9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinuxCommandVC.m; sourceTree = "<group>"; };
+		9C1C131429A7362E00FBE045 /* CLLocationHookDetect.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLLocationHookDetect.md; sourceTree = "<group>"; };
 		9C230E102987B52000961334 /* XRRouteTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRouteTestVC.h; sourceTree = "<group>"; };
 		9C230E112987B52000961334 /* XRRouteTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRouteTestVC.m; sourceTree = "<group>"; };
 		9C343905291A2D4B00B74050 /* XRRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRoute.h; sourceTree = "<group>"; };
@@ -372,6 +377,11 @@
 		9C91AED4299B9DB0005D21C6 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		9C91AED9299F2742005D21C6 /* CLLocation+XRLocation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CLLocation+XRLocation.h"; sourceTree = "<group>"; };
 		9C91AEDA299F2742005D21C6 /* CLLocation+XRLocation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+XRLocation.m"; sourceTree = "<group>"; };
+		9C91AEE229A63899005D21C6 /* XRLocationHook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocationHook.h; sourceTree = "<group>"; };
+		9C91AEE329A63899005D21C6 /* XRLocationHook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLocationHook.m; sourceTree = "<group>"; };
+		9C91AEE529A7043B005D21C6 /* XRRunTime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRunTime.h; sourceTree = "<group>"; };
+		9C91AEE629A7043B005D21C6 /* XRRunTime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRunTime.m; sourceTree = "<group>"; };
+		9C91AEE829A70637005D21C6 /* CLLocationManagerHookDetect.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLLocationManagerHookDetect.md; sourceTree = "<group>"; };
 		9CB3367028895851003E4C01 /* XRSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XRSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CB3367228895851003E4C01 /* XRSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRSDK.h; sourceTree = "<group>"; };
 		9CB3367328895851003E4C01 /* XRSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = XRSDK.docc; sourceTree = "<group>"; };
@@ -990,7 +1000,13 @@
 				9C91AECE299B7B80005D21C6 /* XRLocationVC.m */,
 				9C91AED9299F2742005D21C6 /* CLLocation+XRLocation.h */,
 				9C91AEDA299F2742005D21C6 /* CLLocation+XRLocation.m */,
+				9C91AEE229A63899005D21C6 /* XRLocationHook.h */,
+				9C91AEE329A63899005D21C6 /* XRLocationHook.m */,
 				9C91AED2299B8652005D21C6 /* Location.gpx */,
+				9C91AEE529A7043B005D21C6 /* XRRunTime.h */,
+				9C91AEE629A7043B005D21C6 /* XRRunTime.m */,
+				9C91AEE829A70637005D21C6 /* CLLocationManagerHookDetect.md */,
+				9C1C131429A7362E00FBE045 /* CLLocationHookDetect.md */,
 			);
 			path = "定位检测";
 			sourceTree = "<group>";
@@ -1349,7 +1365,9 @@
 			files = (
 				9C5FC14028E42FB90002CC3D /* NSOperationQueue.md in Resources */,
 				1D2BA8B526561C2F0089E899 /* LaunchScreen.storyboard in Resources */,
+				9C1C131529A7362E00FBE045 /* CLLocationHookDetect.md in Resources */,
 				9C75423B27F4292B00972781 /* 32-64.jpg in Resources */,
+				9C91AEE929A70637005D21C6 /* CLLocationManagerHookDetect.md in Resources */,
 				B42C463526FC6B1500785D93 /* directorie.png in Resources */,
 				9C5A139B296EAB610095F583 /* afi_01.png in Resources */,
 				B47FEE2D274CD26800F3D00B /* MasonryTestVC_Xib.xib in Resources */,
@@ -1567,6 +1585,7 @@
 				9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */,
 				9C8CD6E928081C7D00A52F06 /* base62.m in Sources */,
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
+				9C91AEE429A63899005D21C6 /* XRLocationHook.m in Sources */,
 				9C91AECF299B7B80005D21C6 /* XRLocationVC.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
@@ -1579,6 +1598,7 @@
 				1D7301E82693FA5B00708655 /* RACCell.m in Sources */,
 				1D2BA8B826561C2F0089E899 /* main.m in Sources */,
 				1D169D9926A6683A00933E1C /* BViewController.m in Sources */,
+				9C91AEE729A7043B005D21C6 /* XRRunTime.m in Sources */,
 				1D0FD7C026AEB28600A61E96 /* XRNetRequest.m in Sources */,
 				9C5A1394296E9FCE0095F583 /* AntiFraudHeadView.m in Sources */,
 				1D169D9326A667F200933E1C /* ATabBarViewController.m in Sources */,
@@ -1925,7 +1945,9 @@
 			baseConfigurationReference = 786F0916543F0800F7200329 /* Pods-OCW-OCWUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OCWUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1935,6 +1957,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.wang.OCWUITests;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OCW;
 			};
@@ -1945,7 +1968,9 @@
 			baseConfigurationReference = 760C1F4CB50F427A4FA1BBF4 /* Pods-OCW-OCWUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = OCWUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1955,6 +1980,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.wang.OCWUITests;
 				"PRODUCT_BUNDLE_IDENTIFIER[sdk=macosx*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = OCW;
 			};

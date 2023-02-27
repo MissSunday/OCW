@@ -82,8 +82,8 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "../OCW/TabBarVC/[web][RAC]/&#x5b9a;&#x4f4d;&#x68c0;&#x6d4b;/Location.gpx"
-         referenceType = "0">
+         identifier = "Hong Kong, China"
+         referenceType = "1">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
