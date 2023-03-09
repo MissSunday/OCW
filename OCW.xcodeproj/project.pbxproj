@@ -69,13 +69,13 @@
 		1DE9871E26CE5F1D0086731A /* Medium.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9871D26CE5F1D0086731A /* Medium.swift */; };
 		1DE9872126CE5F320086731A /* MediumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9871F26CE5F310086731A /* MediumView.swift */; };
 		1DE9872226CE5F320086731A /* MediumPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DE9872026CE5F310086731A /* MediumPlaceholder.swift */; };
-		1DF9E4C226895A42008BCB38 /* SVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C126895A42008BCB38 /* SVC.m */; };
 		1DF9E4C526895B77008BCB38 /* T.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DF9E4C426895B77008BCB38 /* T.m */; };
 		4B56A7C7F288782E0D8CFA3C /* Pods_OCW_OCWUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9CE904050AD4C640B4CA800 /* Pods_OCW_OCWUITests.framework */; };
 		9C00F7B028B3707000E8FC90 /* GitCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */; };
 		9C00F7B328B47F0800E8FC90 /* LinuxCommandVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C00F7B228B47F0700E8FC90 /* LinuxCommandVC.m */; };
 		9C1C131529A7362E00FBE045 /* CLLocationHookDetect.md in Resources */ = {isa = PBXBuildFile; fileRef = 9C1C131429A7362E00FBE045 /* CLLocationHookDetect.md */; };
 		9C230E122987B52000961334 /* XRRouteTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C230E112987B52000961334 /* XRRouteTestVC.m */; };
+		9C2B488629AF346600A7A4D1 /* XRLeetCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C2B488529AF346600A7A4D1 /* XRLeetCodeVC.m */; };
 		9C343907291A2D4B00B74050 /* XRRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343906291A2D4B00B74050 /* XRRoute.m */; };
 		9C34390A291A48DD00B74050 /* XRRouteTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C343909291A48DD00B74050 /* XRRouteTest.m */; };
 		9C3480D227EB015C00F9C585 /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C3480D127EB015C00F9C585 /* RunLoopVC.m */; };
@@ -114,6 +114,7 @@
 		9CB3369028895911003E4C01 /* XRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB3368E28895911003E4C01 /* XRPerson.m */; };
 		9CB336C4289A954D003E4C01 /* DynamicAnimatorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB336C3289A954D003E4C01 /* DynamicAnimatorVC.m */; };
 		9CBAA0B027BE31EE00871D66 /* ThreadLockVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */; };
+		9CBE798529B8628800DBA305 /* UIControl+XRControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CBE798429B8628800DBA305 /* UIControl+XRControl.m */; };
 		9CEB887027BB9A2800841C3C /* ThreadSafeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */; };
 		AC9A7F044C32B79B32207FF6 /* Pods_OCW.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCBA02B3DD1DEE7AD1BA13C6 /* Pods_OCW.framework */; };
 		B42C463026FC60FE00785D93 /* XRLocalSaveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B42C462F26FC60FE00785D93 /* XRLocalSaveVC.m */; };
@@ -317,8 +318,6 @@
 		1DE9871D26CE5F1D0086731A /* Medium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medium.swift; sourceTree = "<group>"; };
 		1DE9871F26CE5F310086731A /* MediumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumView.swift; sourceTree = "<group>"; };
 		1DE9872026CE5F310086731A /* MediumPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediumPlaceholder.swift; sourceTree = "<group>"; };
-		1DF9E4C026895A42008BCB38 /* SVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SVC.h; sourceTree = "<group>"; };
-		1DF9E4C126895A42008BCB38 /* SVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SVC.m; sourceTree = "<group>"; };
 		1DF9E4C326895B76008BCB38 /* T.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = T.h; sourceTree = "<group>"; };
 		1DF9E4C426895B77008BCB38 /* T.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = T.m; sourceTree = "<group>"; };
 		45CB95BC28DDA4EF3B0A3D90 /* Pods-OCWTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCWTests.release.xcconfig"; path = "Target Support Files/Pods-OCWTests/Pods-OCWTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,6 +331,8 @@
 		9C1C131429A7362E00FBE045 /* CLLocationHookDetect.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CLLocationHookDetect.md; sourceTree = "<group>"; };
 		9C230E102987B52000961334 /* XRRouteTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRouteTestVC.h; sourceTree = "<group>"; };
 		9C230E112987B52000961334 /* XRRouteTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRouteTestVC.m; sourceTree = "<group>"; };
+		9C2B488429AF346600A7A4D1 /* XRLeetCodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLeetCodeVC.h; sourceTree = "<group>"; };
+		9C2B488529AF346600A7A4D1 /* XRLeetCodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRLeetCodeVC.m; sourceTree = "<group>"; };
 		9C343905291A2D4B00B74050 /* XRRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRoute.h; sourceTree = "<group>"; };
 		9C343906291A2D4B00B74050 /* XRRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRRoute.m; sourceTree = "<group>"; };
 		9C343908291A48DD00B74050 /* XRRouteTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRRouteTest.h; sourceTree = "<group>"; };
@@ -393,6 +394,8 @@
 		9CB336C3289A954D003E4C01 /* DynamicAnimatorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicAnimatorVC.m; sourceTree = "<group>"; };
 		9CBAA0AE27BE31EE00871D66 /* ThreadLockVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadLockVC.h; sourceTree = "<group>"; };
 		9CBAA0AF27BE31EE00871D66 /* ThreadLockVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadLockVC.m; sourceTree = "<group>"; };
+		9CBE798329B8628800DBA305 /* UIControl+XRControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+XRControl.h"; sourceTree = "<group>"; };
+		9CBE798429B8628800DBA305 /* UIControl+XRControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+XRControl.m"; sourceTree = "<group>"; };
 		9CEB886E27BB9A2800841C3C /* ThreadSafeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadSafeVC.h; sourceTree = "<group>"; };
 		9CEB886F27BB9A2800841C3C /* ThreadSafeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeVC.m; sourceTree = "<group>"; };
 		B42C462E26FC60FE00785D93 /* XRLocalSaveVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRLocalSaveVC.h; sourceTree = "<group>"; };
@@ -686,6 +689,8 @@
 				9C343909291A48DD00B74050 /* XRRouteTest.m */,
 				9C230E102987B52000961334 /* XRRouteTestVC.h */,
 				9C230E112987B52000961334 /* XRRouteTestVC.m */,
+				9CBE798329B8628800DBA305 /* UIControl+XRControl.h */,
+				9CBE798429B8628800DBA305 /* UIControl+XRControl.m */,
 			);
 			path = "Runtime相关";
 			sourceTree = "<group>";
@@ -806,17 +811,16 @@
 				1D169D8726A664E200933E1C /* Base */,
 				1D169DA026A66B9F00933E1C /* Category */,
 				1D169D8626A6617300933E1C /* TabBarVC */,
+				9C2B488329AF32E800A7A4D1 /* 算法 */,
 				1D169DA526A6B3D600933E1C /* RAC学习笔记 */,
 				1D169DAA26A6C18100933E1C /* Runtime相关 */,
 				1D169DA426A6AF1100933E1C /* 链式编程模型 */,
-				1D0FD75726AAB3E600A61E96 /* swift */,
 				1D0FD7BD26AEB22E00A61E96 /* 原生网络请求封装 */,
 				9C75423427F2E63F00972781 /* 宏定义用法 */,
 				9C75423627F3F74A00972781 /* 数据类型整理 */,
 				9C8CD68D2804495800A52F06 /* 信息整理 */,
 				9C8CD6912805095500A52F06 /* 修饰词用法 */,
-				1DF9E4C026895A42008BCB38 /* SVC.h */,
-				1DF9E4C126895A42008BCB38 /* SVC.m */,
+				1D0FD75726AAB3E600A61E96 /* swift */,
 				1DF9E4C326895B76008BCB38 /* T.h */,
 				1DF9E4C426895B77008BCB38 /* T.m */,
 				B42C463126FC63BA00785D93 /* 文件 */,
@@ -915,6 +919,15 @@
 				9C00F7AF28B3707000E8FC90 /* GitCommandVC.m */,
 			);
 			path = "命令行";
+			sourceTree = "<group>";
+		};
+		9C2B488329AF32E800A7A4D1 /* 算法 */ = {
+			isa = PBXGroup;
+			children = (
+				9C2B488429AF346600A7A4D1 /* XRLeetCodeVC.h */,
+				9C2B488529AF346600A7A4D1 /* XRLeetCodeVC.m */,
+			);
+			path = "算法";
 			sourceTree = "<group>";
 		};
 		9C524A5F27C76471009993DE /* SDK_API设计 */ = {
@@ -1546,7 +1559,6 @@
 				9C5A1391296E9F480095F583 /* AntiFraudVC.m in Sources */,
 				1D169DA326A66BCC00933E1C /* UIColor+someColor.m in Sources */,
 				1D2C2F12269ED91700EEA3EC /* QJCommonWebViewCustomNav.m in Sources */,
-				1DF9E4C226895A42008BCB38 /* SVC.m in Sources */,
 				1D169D8A26A6650700933E1C /* BaseViewController.m in Sources */,
 				B4859C9D273BA90C00F49091 /* Target_second.m in Sources */,
 				B44395742767560E007FCC4B /* XRRequestParam.m in Sources */,
@@ -1587,6 +1599,8 @@
 				1D169DAE26A7C19200933E1C /* SPPageMenu.m in Sources */,
 				9C91AEE429A63899005D21C6 /* XRLocationHook.m in Sources */,
 				9C91AECF299B7B80005D21C6 /* XRLocationVC.m in Sources */,
+				9C2B488629AF346600A7A4D1 /* XRLeetCodeVC.m in Sources */,
+				9CBE798529B8628800DBA305 /* UIControl+XRControl.m in Sources */,
 				1D0FD83826AFFA6100A61E96 /* TZImagePickerItem.m in Sources */,
 				1D2C2F13269ED91700EEA3EC /* QJWeakWebViewScriptMessageDelegate.m in Sources */,
 				9C5A13A1296EB3B70095F583 /* AntiFraudDataCell.m in Sources */,

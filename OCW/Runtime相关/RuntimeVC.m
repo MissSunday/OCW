@@ -10,20 +10,20 @@
 #import <objc/message.h>
 #import "Person.h"
 #import <XRSDK/XRSDK.h>
+
 @interface RuntimeVC ()
 
 @end
 
 @implementation RuntimeVC
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = NSStringFromClass(self.class);
     
-    
-    
+ 
 }
+
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
     Class testClass = [[XRRoute router] routerClassName:@"XRRouteTestVC"];
@@ -34,7 +34,6 @@
         [vc setValue:[UIColor redColor] forKey:@"bgColor"];
         
         [self.navigationController pushViewController:vc animated:YES];
-        
         
     }
     

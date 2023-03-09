@@ -101,7 +101,7 @@
             @{@"title":@"RAC",        @"vc":@"RACVC"},
             @{@"title":@"反诈",        @"vc":@"AntiFraudVC"},
             @{@"title":@"定位检测",     @"vc":@"XRLocationVC"},
-            
+            @{@"title":@"ss",          @"vc":@"XRLeetCodeVC"},
         ];
     }
     return self;

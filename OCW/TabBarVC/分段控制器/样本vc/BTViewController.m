@@ -6,7 +6,6 @@
 //
 
 #import "BTViewController.h"
-#import "SVC.h"
 @interface BTViewController ()
 
 @end
@@ -20,7 +19,7 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     NSLog(@"- %@",self.navigationController);
     //2021-07-21 10:59:13.449653+0800 OCW[42784:4520781] - <BaseNavigationController: 0x15b85e200>
-    [self.navigationController pushViewController:SVC.new animated:YES];
+    //[self.navigationController pushViewController:SVC.new animated:YES];
 }
 /*
 #pragma mark - Navigation

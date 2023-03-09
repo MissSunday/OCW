@@ -34,6 +34,7 @@
 #import "XRNetRequest.h"
 #import "UIColor+someColor.h"
 #import "XRRoute.h"
+#import "UIControl+XRControl.h"
 //桥接文件
 #import "OCW-Bridging-Header.h"
 //#import "OCW-Swift.h"

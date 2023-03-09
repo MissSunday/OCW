@@ -24,6 +24,18 @@
     [self.view addSubview:self.someView];
     [self.view addSubview:self.otherView];
     
+    
+    
+    /*
+     
+     每种字体的 LineHeight 是不同的，例如 SFUI 的 LineHeight 是字号的 1.2 倍，PingFangSC 的 LineHeight 是字号的 1.4 倍。
+     SFUI 中没有中文字体，最后系统会 fall back 到 PingFangSC，字形的显示是相同的，但是由于字体不用，导致 LineHeight 不一样。用 systemFontOfSize:size 和 fontWithName:@"PingFangSC-Regular" size:size  设置 UILabel 的 font，相同中文内容的 UILabel 高度不一样。
+     baselineOffset 很奇怪，移动的效果是设置值的两倍，例如设置 1 pt，向上移动 2 pt，所以修复公式最后是 / 4 而不是 / 2。
+     */
+    
+    
+    
+    
     [self.someView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(200);
         make.centerX.equalTo(self.view);
